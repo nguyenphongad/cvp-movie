@@ -1,0 +1,9 @@
+$main-color-while : #f9f9f9;
+
+
+@mixin styleDisFlexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+}
