@@ -73,7 +73,6 @@ function RenderHeader() {
                     <RenderCustomMenu />
 
 
-
                 </div>
                 <div className="box_navigation">
                     <div className="row-section--nav">
@@ -81,43 +80,57 @@ function RenderHeader() {
                             <BiSearchAlt2 />
                         </div>
                         <div className="btn_section btn_section_notification" ref={dropNotiRef}>
-                            <div onClick={handleButtonDropNoti}>
+                            <button onClick={handleButtonDropNoti}>
                                 <IoNotifications />
-                            </div>
+                            </button>
 
                             <div className={`box_drops-notification ${dropdownBoxNoti ? "active" : "inactive"}`}>
                                 <div className="body__drop">
-                                    <div className="item_list--noti">
-                                        <img src={Picture_noti_1}/>
-                                        <div className="heading_noti-public">
-                                            <div className="title-heading">Wednesday | 2022</div>
-                                            <div className="font-exp_day">Just released : 10 day ago</div>
+                                    <div className="top_show">
+                                        <div className={`an_border-top ${dropdownBoxNoti ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
                                         </div>
                                     </div>
                                     <div className="item_list--noti">
-                                        <img src={Picture_noti_2}/>
-                                        <div className="heading_noti-public">
-                                            <div className="title-heading">Avatar 2 | 2022</div>
-                                            <div className="font-exp_day">Expectation : 1 more week</div>
-                                        </div>
+                                        <Link to="#">
+                                            <img src={Picture_noti_1} />
+                                            <div className="heading_noti-public">
+                                                <div className="title-heading">Wednesday | 2022</div>
+                                                <div className="font-exp_day">Just released : 10 day ago</div>
+                                            </div>
+                                        </Link>
                                     </div>
                                     <div className="item_list--noti">
-                                        <img src={Picture_noti_3}/>
-                                        <div className="heading_noti-public">
-                                            <div className="title-heading">Peaky bliders 3 | 2022</div>
-                                            <div className="font-exp_day">Expectation : 2 more week</div>
-                                        </div>
+                                        <Link to="#">
+                                            <img src={Picture_noti_2} />
+                                            <div className="heading_noti-public">
+                                                <div className="title-heading">Avatar 2 | 2022</div>
+                                                <div className="font-exp_day">Expectation : 1 more week</div>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="item_list--noti">
+                                        <Link to="#">
+                                            <img src={Picture_noti_3} />
+                                            <div className="heading_noti-public">
+                                                <div className="title-heading">Peaky bliders 3 | 2022</div>
+                                                <div className="font-exp_day">Expectation : 2 more week</div>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                         <div className="btn_dropdown-account" ref={dropRef}>
-                            <div className="border-drop" onClick={handleButtonDrop}>
+                            <button className="border-drop" onClick={handleButtonDrop}>
                                 <img src={Picture_avatar_cvp} />
-                            </div>
+                            </button>
                             <div className={`box_drops-account ${dropdownBoxSel ? "active" : "inactive"}`}>
                                 <div className="body__drop">
+                                    <div className="top_show">
+                                        <div className={`an_border-top ${dropdownBoxSel ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
+                                        </div>
+                                    </div>
                                     <div className="item_select-drop">
                                         <Link to="#">
                                             <RiAccountCircleFill />
