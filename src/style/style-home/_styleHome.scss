@@ -75,17 +75,15 @@
                 @include styleDisFlexCenter();
                 justify-content: right;
                 margin-top: 250px;
-
                 .borderPP-trailer {
                     cursor: pointer;
-                    margin-right: 15px;
                     width: 40px;
                     height: 40px;
                     border: 2px solid $main-color-while;
                     border-radius: 100%;
                     @include styleDisFlexCenter();
                     background-color: #ffffff3b;
-
+                    margin-right: 10px;
                     .an_icon_pp-trailer {
                         animation: an_huB 0.5s forwards;
                         @keyframes an_huB {
@@ -106,6 +104,7 @@
                     font-weight: 600;
                     @include styleDisFlexCenter();
                     background-color: #ff0202af;
+                    margin: 0px 10px;
                 }
             }
         }
@@ -120,7 +119,7 @@
     }
     .box_slide-review {
         width: 100%;
-        margin-top: -210px;
+        margin-top: -190px;
         position: relative;
         z-index: 8;
         .body_slide-image {
@@ -201,7 +200,23 @@
         padding: 40px 50px;
         .render_view_box_channle {
             width: 100%;
-            margin-bottom: 40px;
+            margin-top: 20px;
+            .row_heading-line{
+                width: 100%;
+                margin-bottom: 20px;
+                .text_heading-bold{
+                    font-size: 35px;
+                    font-weight: 600;
+                    @include styleDisFlexCenter;
+                    justify-content: left;
+                    svg{
+                        font-size: 50px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+
             .body_tr-view {
                 width: 100%;
                 @include styleDisFlexCenter;
@@ -214,14 +229,13 @@
                     box-shadow: $main-color_box_shadow;
                     cursor: pointer;
                     overflow: hidden;
-                    position: relative;
                     transition: all 0.4s;
                     border: 2px solid #f9f9f91a;
 
-                    > video {
+                    .img-bgr_play {
                         width: 100%;
                         height: 100%;
-                        opacity: 0;
+                        opacity: 0.05;
                         transition: all 0.4s;
                         transform: scale(1.1);
                     }
@@ -231,13 +245,13 @@
                         position: absolute;
                         top: 0px;
                         left: 0px;
-                        background-color: #00000057;
+                        background-color: #222a442f;
                         & > a {
                             width: 100%;
                             height: 100%;
                             @include styleDisFlexCenter;
                             & > img {
-                                width: 75%;
+                                width: 78%;
                             }
                         }
                     }
@@ -246,7 +260,7 @@
                     transform: scale(1.07);
                     border: 2px solid $main-color-while;
                     box-shadow: $main-color_box_shadow-hover;
-                    > video {
+                    .img-bgr_play {
                         opacity: 1;
                     }
                 }

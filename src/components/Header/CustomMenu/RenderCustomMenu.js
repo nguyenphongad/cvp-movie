@@ -12,27 +12,32 @@ function RenderCustomMenu() {
 
     const listMenuHeader = [
         {
+            id :1,
             to: "/",
             ref: element,
             styleDisplay: true
         },
         {
+            id :2,
             to: "/home",
             nameMenuHeader: "HOME",
             iconMenuHeader: <AiFillHome />,
             indexMenu: true
         },
         {
+            id : 3,
             to: "/my-list",
             nameMenuHeader: "MY LIST",
             iconMenuHeader: <MdPlaylistAdd />,
         },
         {
+            id : 4,
             to: "/movies",
             nameMenuHeader: "MOVIES",
             iconMenuHeader: <RiMovie2Fill />,
         },
         {
+            id :5,
             to: "/book-tickets",
             nameMenuHeader: "BOOK TICKES",
             iconMenuHeader: <IoTicketSharp />,
@@ -57,26 +62,24 @@ function RenderCustomMenu() {
 
     const listMenuHeaderMap = listMenuHeader.map((index) => {
         return (
-            <>
-                <div className={`border_location-menu ${index.styleDisplay ? "display-none" : ""}`} key={index.to}>
+            <div className={`border_location-menu ${index.styleDisplay ? "display-none" : ""}`} key={index.id}>
+                <NavLink
+                    to={index.to}
+                    onClick={index.indexMenu ? undefined : handelClickChangemenu}
+                    className={index.indexMenu ? navLinkMenuHome : navLinkMenu}
+                    ref={index.ref}
+                >
+                    {index.iconMenuHeader}
+                    <div className="text_menu">{index.nameMenuHeader}</div>
+                </NavLink>
+                <div>
                     <NavLink
                         to={index.to}
-                        onClick={index.indexMenu ? undefined : handelClickChangemenu}
-                        className={index.indexMenu ? navLinkMenuHome : navLinkMenu}
-                        ref={index.ref}
-                    >
-                        {index.iconMenuHeader}
-                        <div className="text_menu">{index.nameMenuHeader}</div>
-                    </NavLink>
-                    <div>
-                        <NavLink
-                            to={index.to}
-                            className={index.indexMenu ? navLinkMenuNavigationHome : navLinkMenuNavigation}
-                        ></NavLink>
-                    </div>
+                        className={index.indexMenu ? navLinkMenuNavigationHome : navLinkMenuNavigation}
+                    ></NavLink>
                 </div>
+            </div>
 
-            </>
         )
     })
     return (

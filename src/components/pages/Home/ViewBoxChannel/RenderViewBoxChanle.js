@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-import Video_view_box_channel_disney from "../../../../assets/video_viewBox/video_viewBox_disney.mp4";
-import Video_view_box_channel_marvel from "../../../../assets/video_viewBox/video_viewBox_marvel.mp4";
-import Video_view_box_channel_cartoon_network from "../../../../assets/video_viewBox/video_viewBox_cartoon_network.mp4";
-import Video_view_box_channel_national_geo from "../../../../assets/video_viewBox/video_viewBox_national-geo.mp4";
-import Video_view_box_channel_netflix from "../../../../assets/video_viewBox/video_viewBox_netflix.mp4";
+import Gif_view_box_channel_disney from "../../../../assets/gif_viewBox/gif_viewBox_disney.gif";
+import Gif_view_box_channel_marvel from "../../../../assets/gif_viewBox/gif_viewBox_marvel.gif";
+import Gif_view_box_channel_cartoon_network from "../../../../assets/gif_viewBox/gif_viewBox_cartoon_network.gif";
+import Gif_view_box_channel_national_geo from "../../../../assets/gif_viewBox/gif_viewBox_national-geo.gif";
+import Gif_view_box_channel_netflix from "../../../../assets/gif_viewBox/gif_viewBox_netflix.gif";
 
 
 import Picture_view_box_channel_disney from "../../../../assets/photo-box/image_view_box_channel/disney.jpg";
@@ -14,66 +14,65 @@ import Picture_view_box_channel_cartoon_network from "../../../../assets/photo-b
 import Picture_view_box_channel_national_geo from "../../../../assets/photo-box/image_view_box_channel/national-geographic.jpg";
 import Picture_view_box_channel_netflix from "../../../../assets/photo-box/image_view_box_channel/netflix.png";
 
-function RenderViewBoxChannle() {
+import { MdScanner } from "react-icons/md";
 
-    
+function RenderViewBoxChannle() {
 
     const list_view_box_channel = [
         {
-            id :1,
-            src_img : Picture_view_box_channel_disney,
-            scr_video : Video_view_box_channel_disney,
-            linkTo : "#"
+            id: 1,
+            src_img: Picture_view_box_channel_disney,
+            scr_gif: Gif_view_box_channel_disney,
+            linkTo: "#1"
         },
         {
-            id :2,
-            src_img : Picture_view_box_channel_marvel,
-            scr_video : Video_view_box_channel_marvel,
-            linkTo : "#"
+            id: 2,
+            src_img: Picture_view_box_channel_marvel,
+            scr_gif: Gif_view_box_channel_marvel,
+            linkTo: "#2"
         },
         {
-            id :3,
-            src_img : Picture_view_box_channel_cartoon_network,
-            scr_video : Video_view_box_channel_cartoon_network,
-            linkTo : "#"
+            id: 3,
+            src_img: Picture_view_box_channel_cartoon_network,
+            scr_gif: Gif_view_box_channel_cartoon_network,
+            linkTo: "#3"
         },
         {
-            id :4,
-            src_img : Picture_view_box_channel_national_geo,
-            scr_video : Video_view_box_channel_national_geo,
-            linkTo : "#"
+            id: 4,
+            src_img: Picture_view_box_channel_national_geo,
+            scr_gif: Gif_view_box_channel_national_geo,
+            linkTo: "#4"
         },
         {
-            id :5,
-            src_img : Picture_view_box_channel_netflix,
-            scr_video : Video_view_box_channel_netflix,
-            linkTo : "#"
+            id: 5,
+            src_img: Picture_view_box_channel_netflix,
+            scr_gif: Gif_view_box_channel_netflix,
+            linkTo: "#5"
         },
     ];
 
-    const renderList = list_view_box_channel.map((index)=>{
+    const renderList = list_view_box_channel.map((index) => {
         return (
-            <>
-                <div className="item_box-view" key={index.id}>
-                    <video
-                        src={index.scr_video}
-                        autoPlay={"autoPlay"}
-                        preload={true}
-                        loop
-                    />
-                    <div  className="box_view-chition" >
-                        <Link to={index.linkTo}>
-                            <img src={index.src_img} alt="image"/>
-                        </Link>
-                    </div>
+            <div className="item_box-view" key={index.id}>
+                <img className="img-bgr_play" src={index.scr_gif} alt="gif_view_box" />
+                <div className="box_view-chition" >
+                    <Link to={index.linkTo}>
+                        <img src={index.src_img} alt="image" />
+                    </Link>
                 </div>
-            </>
+            </div>
         )
-    })
+    });
 
     return (
         <div className="render_view_box_channle">
-            <div class="body_tr-view">
+            <div className="row_heading-line">
+                <div className="text_heading-bold">
+                    <MdScanner />
+                    Famous TV Channel
+                </div>
+            </div>
+            <div className="body_tr-view">
                 {renderList}
             </div>
         </div>

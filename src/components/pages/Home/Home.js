@@ -1,13 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Video_trailer_lookism from "../../../assets/video-trailers/lookism-trailer.mp4";
-import Picture_poster_trailer_lookism from "../../../assets/photo-box/lookism/picture_trailer_lookism.webp";
-import Picture_name_poster_lookism from "../../../assets/photo-box/lookism/picture_name_lookism.png";
 
-import { FaPlay } from "react-icons/fa";
-import { FaPause } from "react-icons/fa";
+// import Video_trailer_lookism from "../../../assets/video-trailers/lookism-trailer.mp4";
+// import Picture_poster_trailer_lookism from "../../../assets/photo-box/lookism/picture_trailer_lookism.webp";
+// import Picture_name_poster_lookism from "../../../assets/photo-box/lookism/picture_name_lookism.png";
+
+import Video_trailer_eldenring from "../../../assets/video-trailers/eldenring-trailer.mp4";
+import Picture_poster_trailer_eldenring from "../../../assets/photo-box/eldenring/picture_trailer_eldenring.webp";
+import Picture_name_poster_eldenring from "../../../assets/photo-box/eldenring/picture_name_eldenring.png";
+
+import { FaPlay,FaPause } from "react-icons/fa";
+import { IoGameController } from "react-icons/io5";
+
+
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import RenderSlideImage from './SlideImage/RenderSlideImage';
 import RenderViewBoxChannle from './ViewBoxChannel/RenderViewBoxChanle';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
 
@@ -43,28 +52,29 @@ function Home() {
 
     return (
         <div className="wrap__home">
-            <div class="video_trailer">
+            <div className="video_trailer">
 
                 <video
                     ref={videoTrailerRef}
                     loop
                     autoPlay
-                    src={Video_trailer_lookism}
-                    poster={Picture_poster_trailer_lookism}
+                    src={Video_trailer_eldenring}
+                    poster={Picture_poster_trailer_eldenring}
                     title="lookism - Chủ nghĩa ngoại hình " />
 
                 <div className="box_btn_control--work">
                     <div className="size-bozing_control">
-                        <img src={Picture_name_poster_lookism} />
+                        <img src={Picture_name_poster_eldenring} />
                         <div className="row-footer">
                             <div className="text_introduce_trailer">
-                                In a society that favors good looks,
-                                a high school outcast leads a double life switching between his
-                                two bodies that are polar opposites in appearance.
+                            A New World Created By Hidetaka Miyazaki And George R. R. Martin. 
+                            ELDEN RING, developed by FromSoftware, Inc. and BANDAI NAMCO Entertainment Inc.
+                            , is a fantasy action-RPG adventure set within a world created 
+                            by Hidetaka Miyazaki.
                             </div>
                         </div>
                         <div className="row block-btn__control">
-                            <button class="button-mixin border__btn_play--list btn btn-5 hover-border-11">
+                            <button className="button-mixin border__btn_play--list btn btn-5 hover-border-11">
                                 <span>
                                     <FaPlay />
                                     PLAY
@@ -86,6 +96,9 @@ function Home() {
                         <div className="border_old_warning">
                             16+
                         </div>
+                        <div className="border_old_warning">
+                            <IoGameController/>
+                        </div>
                     </div>
                 </div>
 
@@ -94,11 +107,13 @@ function Home() {
                 </div>
             </div>
             <div className="box_slide-review">
-                <RenderSlideImage/>
+                <RenderSlideImage />
             </div>
             <div className="body_home">
-                
-                <RenderViewBoxChannle/>
+
+                <RenderViewBoxChannle />
+
+
 
                 home<br></br>
                 home<br></br>
