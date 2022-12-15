@@ -1,16 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Name_logo_cvp from "../assets/image-logo/name_logo_cvp-movie.png"
 
 function RenderLoadingStart() {
     return (
-        <div className="wrap_loading-start">
-            <div className="text">
-                <div className="name_heading">CVP - MOVIE</div>
-                <span className="name_bicyi">Netflix and chill</span>
-                <div className="stage">
-                    <div className="dot-spin"></div>
+        <div className="back_dop-fillter">
+            <div className="wrap_loading-start">
+                <div className="text">
+                    {/* <div className="name_heading">CVP - MOVIE</div>
+                    <span className="name_bicyi">Netflix and chill</span> */}
+                    <div>
+                        <img src={Name_logo_cvp}/>
+                    </div>
+                    <div className="stage">
+                        <div className="dot-spin"></div>
+                    </div>
                 </div>
-            </div>
-        </div >
+            </div >
+        </div>
     )
 }
 

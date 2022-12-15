@@ -7,8 +7,10 @@ import RenderMyList from '../../components/pages/MyList/RenderMyList'
 import RenderBookTickets from '../../components/pages/BookTickets/RenderBookTickets'
 
 import { withErrorBoundary } from 'react-error-boundary';
-import RenderErrorBounDary from '../../components/error/RenderErrorBounDary'
+import RenderErrorBounDary from '../../components/Error/RenderErrorBounDary'
 import RenderSearchMain from '../../components/pages/SearchMain/RenderSearchMain'
+import RenderSetting from '../../components/Setting/RenderSetting'
+import RenderYourAccount from '../../components/YourAccount/RenderYourAccount'
 
 function RouterBody() {
 
@@ -21,8 +23,10 @@ function RouterBody() {
                 <Route path="/my-list" element={<RenderMyList />} />
                 <Route path="/book-tickets" element={<RenderBookTickets />} />
 
-
                 <Route path="/search" element={<RenderSearchMain />} />
+
+                <Route path="/your-account" element={<RenderYourAccount />} />
+                <Route path="/setting" element={<RenderSetting />} />
 
                 <Route path="*" element={<NotFound />} />
             </Routes>

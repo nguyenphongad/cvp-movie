@@ -2,22 +2,21 @@
 
 * {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   color: $main-color-while;
 }
-body{
-  margin : 0px;
+body {
+  margin: 0px;
   background-color: #232435;
   // background-image: url('../assets/photo-box/photo_looklsm.png');
 }
 .App {
   width: 100%;
-  .stl-routes{
+  .stl-routes {
     padding: 0px;
   }
 }
@@ -31,9 +30,15 @@ body{
   background-color: #ff0202af;
   border-radius: 10px;
 }
-
+.fullscreen {
+  overflow: auto;
+}
+:not(:root):fullscreen::backdrop {
+  background-color: #232435;
+}
 @import "./style-header/styleHeader";
 @import "./style-home/styleHome";
 @import "./style-footer/styleFooter";
 @import "./style-loading/styleLoading";
-@import "./style-searchMain/style_searchMain"
+@import "./style-searchMain/style_searchMain";
+@import "./style-setting/styleSettingMain";

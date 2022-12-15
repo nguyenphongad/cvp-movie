@@ -63,20 +63,19 @@ function RenderBoxSearch() {
                             </div>
                             <div className="box__contain-in">
                                 <input
+                                    autoFocus
                                     ref={focusValueRef}
                                     type="text"
                                     placeholder="Titles, people, movies"
                                     onChange={handleLocationSearch}
                                     value={value_search}
                                     className={toStateValueBoxSearch.dropdownBoxSearch ? "width_input" : ""}
-                                    autoFocus
                                 />
 
                                 <div className="btn__reset-input">
                                     <div
                                         className={`border__btn--reset ${btnReset ? "enable_btn-reset" : ""}`}
                                         onClick={handleResetInputSearch}
-
                                     >
                                         <IoClose />
                                     </div>

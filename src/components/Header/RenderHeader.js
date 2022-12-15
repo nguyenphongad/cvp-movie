@@ -1,9 +1,14 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
+import { UseContextFromFullScreen } from '../../views/RenderFullScreen';
+
+import React, { createContext,useContext, useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
+
+import { withErrorBoundary } from 'react-error-boundary';
+import RenderErrorBounDary from '../Error/RenderErrorBounDary';
+
 import Image_name_logo from "../../assets/image-logo/name_logo_cvp-movie.png";
 import RenderCustomMenu from '../Header/CustomMenu/RenderCustomMenu';
 import Picture_avatar_cvp from "../../assets/picture_avatar-cvp/picture_avatar_cvp-movie.png"
-
 
 import Picture_noti_1 from "../../assets/photo-box/photo_noti/picture_notification_1.jpeg";
 import Picture_noti_2 from "../../assets/photo-box/photo_noti/picture_notification_2.jpeg";
@@ -14,11 +19,10 @@ import { IoNotifications } from "react-icons/io5";
 import { RiAccountCircleFill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { AiFillSetting } from 'react-icons/ai';
 import { IoIosHelpCircle } from 'react-icons/io';
-import { MdDarkMode } from 'react-icons/md';
+import { RiFullscreenFill } from 'react-icons/ri';
 import RenderBoxSearch from './BoxSearch/RenderBoxSearch';
 
 export const DropBtnBoxSearch = createContext();
-
 
 function RenderHeader() {
 
@@ -29,26 +33,25 @@ function RenderHeader() {
     const [dropdownBoxNoti, setdropdownBoxNoti] = useState(false);
 
 
-    //search
-    const handleButtonDropSearch = () => {
-        setdropdownBoxSearch(!dropdownBoxSearch);
-    }
-    
-    let dropSearchRef = useRef();
-
- 
-    //select
     useEffect(() => {
         const handleScroll = () => {
-            setScroll(window.scrollY > 200);
+            setScroll(window.scrollY > 100);
         }
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleButtonDrop = () => {
-        setdropdownBoxSel(!dropdownBoxSel);
-    }
+
+
+    //search
+    const handleButtonDropSearch = () => { setdropdownBoxSearch(!dropdownBoxSearch) }
+    let dropSearchRef = useRef();
+
+
+
+
+    //select
+    const handleButtonDrop = () => { setdropdownBoxSel(!dropdownBoxSel); }
 
     let dropRef = useRef();
 
@@ -60,6 +63,58 @@ function RenderHeader() {
         document.addEventListener("mousedown", hanlder);
         return () => document.removeEventListener("mousedown", hanlder);
     });
+
+
+    const dataFromFullSc = useContext(UseContextFromFullScreen);
+
+
+    const listItemSelectDrop = [
+        {
+            nameBtnSelect: "Account",
+            linkTo: "/your-account",
+            icon_before: <RiAccountCircleFill />,
+        },
+        {
+            nameBtnSelect: "Setting",
+            linkTo: "/setting",
+            icon_before: <AiFillSetting />,
+        },
+        {
+            nameBtnSelect: "Full screen",
+            linkTo: "#",
+            icon_before: <RiFullscreenFill />,
+            dataOnClick: dataFromFullSc.handleFullSreen.active ?
+                dataFromFullSc.handleFullSreen.exit : dataFromFullSc.handleFullSreen.enter
+        },
+        {
+            nameBtnSelect: "Help center",
+            linkTo: "#",
+            icon_before: <IoIosHelpCircle />,
+        },
+        {
+            nameBtnSelect: "Sign out",
+            linkTo: "#",
+            icon_before: <RiLogoutCircleRFill />,
+            warning_hover: "waring_hover",
+        },
+    ]
+
+    const returnListSelectBtn = listItemSelectDrop.map((index) => {
+        return (
+            <div
+                className={`item_select-drop ${index.warning_hover}`}
+                onClick={()=>setdropdownBoxSel(false)}
+                key={index.nameBtnSelect}
+            >
+                <Link to={index.linkTo} onClick={index.dataOnClick}>
+                    {index.icon_before}
+                    <span>{index.nameBtnSelect}</span>
+                </Link>
+            </div>
+        )
+    });
+
+
 
     // noti
     const handleButtonDropNoti = () => {
@@ -107,7 +162,7 @@ function RenderHeader() {
                                     <button onClick={handleButtonDropSearch}>
                                         <BiSearchAlt2 />
                                     </button>
-                                <RenderBoxSearch />
+                                    <RenderBoxSearch />
 
                                 </div>
                                 <div className="btn_section btn_section_notification" ref={dropNotiRef}>
@@ -162,36 +217,7 @@ function RenderHeader() {
                                                 <div className={`an_border-top ${dropdownBoxSel ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
                                                 </div>
                                             </div>
-                                            <div className="item_select-drop">
-                                                <Link to="#">
-                                                    <RiAccountCircleFill />
-                                                    <span>Account</span>
-                                                </Link>
-                                            </div>
-                                            <div className="item_select-drop">
-                                                <Link to="#">
-                                                    <AiFillSetting />
-                                                    <span>Setting</span>
-                                                </Link>
-                                            </div>
-                                            <div className="item_select-drop">
-                                                <Link to="#">
-                                                    <MdDarkMode />
-                                                    <span>Dark Mode</span>
-                                                </Link>
-                                            </div>
-                                            <div className="item_select-drop">
-                                                <Link to="#">
-                                                    <IoIosHelpCircle />
-                                                    <span>Help Center</span>
-                                                </Link>
-                                            </div>
-                                            <div className="item_select-drop waring_hover">
-                                                <Link to="#">
-                                                    <RiLogoutCircleRFill />
-                                                    <span>Sign out</span>
-                                                </Link>
-                                            </div>
+                                            {returnListSelectBtn}
                                         </div>
                                     </div>
                                 </div>
@@ -204,4 +230,6 @@ function RenderHeader() {
     )
 }
 
-export default RenderHeader
+export default  withErrorBoundary(RenderHeader,{
+    FallbackComponent : RenderErrorBounDary
+})

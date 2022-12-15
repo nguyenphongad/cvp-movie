@@ -1,13 +1,10 @@
 .wrap__home {
     width: 100%;
-    // position: relative;
     .video_trailer {
         width: 100%;
-        // position: absolute;
         position: relative;
-        top: -60px;
+        top: -20px;
         z-index: 3;
-        // box-shadow: inset #00000082 0px 18px 20px 7px;
         video {
             width: 100%;
         }
@@ -19,92 +16,112 @@
             top: 0px;
             padding: 0px 50px;
             z-index: 4;
-            margin-top: 30px;
+            margin-top: 50px;
             @include styleDisFlexCenter();
             justify-content: left;
             .size-bozing_control {
-                width: 600px;
-                img {
-                    width: 100%;
-                    max-height: 100%;
-                }
-                .row-footer {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    .text_introduce_trailer {
-                        font-size: 16px;
-                        font-weight: 600;
-                        margin-top: 30px;
-                    }
-                }
-                .block-btn__control {
-                    @include styleDisFlexCenter();
-                    justify-content: space-around;
-                    margin-top: 40px;
-                    .button-mixin {
-                        border-radius: 5px;
-                        @include styleDisFlexCenter;
-                        cursor: pointer;
-                        transition: all 0.4s;
-                        color: #fff;
-                        border: 2px solid #ffffff6e;
-                        padding: 8px 17px;
-                        font-weight: 700;
-                        font-size: 19px;
-                        box-shadow: #0000005e 2px 0px 7px 2px;
-                        svg {
-                            margin-right: 10px;
-                        }
-                        &:hover {
-                            transform: translateY(-3px);
-                        }
-                    }
-                    .border__btn_play--list {
-                        background: #ff0000bb;
-                        border: none;
-                        padding: 12px 22px !important;
-                    }
-                    .border__btn_play_info {
-                        background-color: #9b93937c;
-                    }
-                }
-            }
-            .control_btn_trailer-sion {
                 width: 100%;
-                @include styleDisFlexCenter();
-                justify-content: right;
-                margin-top: 250px;
-                .borderPP-trailer {
-                    cursor: pointer;
-                    width: 40px;
-                    height: 40px;
-                    border: 2px solid $main-color-while;
-                    border-radius: 100%;
-                    @include styleDisFlexCenter();
-                    background-color: #ffffff3b;
-                    margin-right: 10px;
-                    .an_icon_pp-trailer {
-                        animation: an_huB 0.5s forwards;
-                        @keyframes an_huB {
-                            from {
-                                transform: translateY(-6px);
+                display: flex;
+                .border__content {
+                    width: 700px;
+                    img {
+                        width: 100%;
+                        max-height: 100%;
+                    }
+                    .row-footer {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        .text_introduce_trailer {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-top: 30px;
+                        }
+                    }
+                    .block-btn__control {
+                        @include styleDisFlexCenter();
+                        justify-content: space-around;
+                        margin-top: 40px;
+                        .button-mixin {
+                            border-radius: 5px;
+                            @include styleDisFlexCenter;
+                            cursor: pointer;
+                            transition: all 0.4s;
+                            color: #fff;
+                            border: 2px solid #ffffff6e;
+                            padding: 8px 17px;
+                            font-weight: 700;
+                            font-size: 19px;
+                            box-shadow: #0000005e 2px 0px 7px 2px;
+                            animation: an_btn_mixin 0.3s;
+                            @keyframes an_btn_mixin {
+                                from{
+                                    transform: scale(0.8);
+                                }
+                                to{
+                                    transform: scale(1);
+                                }
                             }
-                            to {
-                                transform: translateY(0px);
+                            svg {
+                                margin-right: 10px;
                             }
+                            &:hover {
+                                transform: translateY(-3px);
+                            }
+                        }
+                        .border__btn_play--list {
+                            background: #ff0000bb;
+                            border: none;
+                            padding: 12px 22px !important;
+                        }
+                        .border__btn_play_info {
+                            background-color: #9b93937c;
                         }
                     }
                 }
-                .border_old_warning {
-                    width: 43px;
-                    height: 43px;
-                    border: 2px solid $main-color-while;
-                    border-radius: 100%;
-                    font-weight: 600;
-                    @include styleDisFlexCenter();
-                    background-color: #ff0202af;
-                    margin: 0px 10px;
+                .control_btn_trailer-sion {
+                    width: 100%;
+                    justify-content: right;
+                    position: relative;
+                    .tr-control_btn_trailer-sion {
+                        width: 100%;
+                        @include styleDisFlexCenter();
+                        justify-content: right;
+                        position: absolute;
+                        bottom: 0px;
+                        .borderPP-trailer {
+                            cursor: pointer;
+                            width: 40px;
+                            height: 40px;
+                            border: 2px solid $main-color-while;
+                            border-radius: 100%;
+                            @include styleDisFlexCenter();
+                            background-color: #ffffff3b;
+                            margin-right: 10px;
+                            .an_icon_pp-trailer {
+                                animation: an_huB 0.5s forwards;
+                                @keyframes an_huB {
+                                    from {
+                                        transform: translateY(-6px);
+                                    }
+                                    to {
+                                        transform: translateY(0px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .border_old_warning {
+                        width: 43px;
+                        height: 43px;
+                        border: 2px solid $main-color-while;
+                        border-radius: 100%;
+                        font-weight: 600;
+                        @include styleDisFlexCenter();
+                        background-color: #ff0202af;
+                        margin: 0px 0px 0px 15px;
+                    }
                 }
             }
         }
@@ -119,7 +136,7 @@
     }
     .box_slide-review {
         width: 100%;
-        margin-top: -190px;
+        margin-top: -150px;
         position: relative;
         z-index: 8;
         .body_slide-image {
@@ -198,30 +215,31 @@
     }
     .body_home {
         padding: 40px 50px;
+
         .render_view_box_channle {
             width: 100%;
             margin-top: 20px;
-            .row_heading-line{
+            .row_heading-line {
                 width: 100%;
                 margin-bottom: 20px;
-                .text_heading-bold{
+                .text_heading-bold {
                     font-size: 35px;
                     font-weight: 600;
                     @include styleDisFlexCenter;
                     justify-content: left;
-                    svg{
+                    svg {
                         font-size: 50px;
                         margin-right: 10px;
                     }
                 }
             }
 
-
             .body_tr-view {
                 width: 100%;
                 @include styleDisFlexCenter;
+                flex-wrap: wrap;
                 .item_box-view {
-                    width: 100%;
+                    width: 17%;
                     height: 100%;
                     margin: 10px 15px;
                     position: relative;

@@ -49,6 +49,7 @@ function RenderCustomMenu() {
         else setIsActiveHome(false);
     }, [element.current?.classList.value]);
 
+
     const navLinkMenuHome = (e) => { return e.isActive || isActiveHome ? "active" : "" }
     const navLinkMenu = (e) => { return e.isActive ? "active" : "" }
     const handelClickChangemenu = () => { setIsActiveHome(false) }

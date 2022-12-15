@@ -54,7 +54,12 @@ function RenderViewBoxChannle() {
     const renderList = list_view_box_channel.map((index) => {
         return (
             <div className="item_box-view" key={index.id}>
-                <img className="img-bgr_play" src={index.scr_gif} alt="gif_view_box" />
+                <img 
+                className="img-bgr_play" 
+                src={index.scr_gif} 
+                alt="gif_view_box"
+                loading="lazy"
+                />
                 <div className="box_view-chition" >
                     <Link to={index.linkTo}>
                         <img src={index.src_img} alt="image" />

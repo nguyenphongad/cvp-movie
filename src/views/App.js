@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+
 import RenderFooter from '../components/Footer/RenderFooter';
 import RenderHeader from '../components/Header/RenderHeader';
 import RouterBody from '../router/Routes/RouterBody';
@@ -7,9 +8,10 @@ import '../style/styleMain.scss';
 import ScrollToTopRouter from './ScrollToTopRouter';
 
 import { withErrorBoundary } from 'react-error-boundary';
-import RenderErrorBounDary from '../components/error/RenderErrorBounDary';
+import RenderErrorBounDary from '../components/Error/RenderErrorBounDary';
 import { useEffect, useState } from 'react';
 import RenderLoadingStart from './RenderLoadingStart';
+
 
 function App() {
 
@@ -23,19 +25,18 @@ function App() {
       })
   }, []);
 
-
   return (
 
     <>
-      { postLoading ? 
-      <BrowserRouter>
-        <div className="App">
-          <RenderHeader />
-          <RouterBody /> 
-          <ScrollToTopRouter />
-          <RenderFooter />
-        </div>
-      </BrowserRouter> : <RenderLoadingStart/>}
+      {postLoading ?
+          <BrowserRouter>
+            <div className="App">
+              <RenderHeader />
+              <RouterBody />
+              <ScrollToTopRouter />
+              <RenderFooter />
+            </div>
+          </BrowserRouter>: <RenderLoadingStart />}
       {/* <RenderLoadingStart/> */}
     </>
   )

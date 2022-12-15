@@ -57,10 +57,12 @@ function RenderFooter() {
                 <div className="item_box_column--info think_author">
                     <div>
                         DAY LA WEBSITE PHIM DEMO CUA MINH VIET BANG REACTJS.
-                        WEBSITE CON NHIEU TINH NANG CHUA HOAN THIEN VA BUG 
+                        WEBSITE CON NHIEU TINH NANG CHUA HOAN THIEN VA BUG  
                         RAT NHIEU
                         CHO MINH XIN IT NHAN XET, CAM ON MOI NGUOI !<br />
-                        <b style={{float: "right"}}><i>NGUYEN VAN PHONG</i></b>
+                        <b style={{float: "right"}}>
+                            <i>CVP - MOVIE | NGUYEN VAN PHONG</i>
+                        </b>
                     </div>
                 </div>
             </div>
