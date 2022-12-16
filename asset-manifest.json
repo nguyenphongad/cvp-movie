@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "./static/css/main.37fd2b82.css",
+    "main.js": "./static/js/main.2309d522.js",
+    "static/media/wednesday-trailer.mp4": "./static/media/wednesday-trailer.74b0b7a63797e40a5247.mp4",
+    "static/media/gif_viewBox_marvel.gif": "./static/media/gif_viewBox_marvel.21b8e952fb33708397b3.gif",
+    "static/media/gif_viewBox_netflix.gif": "./static/media/gif_viewBox_netflix.72554199197336ff7494.gif",
+    "static/media/gif_viewBox_national-geo.gif": "./static/media/gif_viewBox_national-geo.32b074d0f7ae8178aec5.gif",
+    "static/media/picture_trailer_wednesday.webp": "./static/media/picture_trailer_wednesday.7457539821739b37d0a4.webp",
+    "static/media/picture_notification_2.jpeg": "./static/media/picture_notification_2.b5619f0cee2bc3da164f.jpeg",
+    "static/media/gif_viewBox_disney.gif": "./static/media/gif_viewBox_disney.ac35f843e69320daecdc.gif",
+    "static/media/gif_viewBox_cartoon_network.gif": "./static/media/gif_viewBox_cartoon_network.8b53135f21e99a94746e.gif",
+    "static/media/picture_notification_1.jpeg": "./static/media/picture_notification_1.d7edf7ee05b282db18a7.jpeg",
+    "static/media/backround-loading.jpg": "./static/media/backround-loading.e5a2c4d837f28d0de1d3.jpg",
+    "static/media/img_2.jpg": "./static/media/img_2.172c6eadbd086a14e2b2.jpg",
+    "static/media/img_3.jpg": "./static/media/img_3.36599446c404fd8b5989.jpg",
+    "static/media/img_1.jpg": "./static/media/img_1.b33dd5b6b1aab9795814.jpg",
+    "static/media/picture_name_wednesday.png": "./static/media/picture_name_wednesday.d48bda06a2ba57c46ea2.png",
+    "static/media/netflix.png": "./static/media/netflix.303904f75553a51bbf31.png",
+    "static/media/name_logo_cvp-movie.png": "./static/media/name_logo_cvp-movie.84c5f87582efcea972db.png",
+    "static/media/picture_notification_3.jpeg": "./static/media/picture_notification_3.648a0a74412df084144b.jpeg",
+    "static/media/disney.jpg": "./static/media/disney.eb5bab59e7bf29389dc7.jpg",
+    "static/media/national-geographic.jpg": "./static/media/national-geographic.c50dd65f4a3d07a590f7.jpg",
+    "index.html": "./index.html",
+    "main.37fd2b82.css.map": "./static/css/main.37fd2b82.css.map",
+    "main.2309d522.js.map": "./static/js/main.2309d522.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37fd2b82.css",
+    "static/js/main.2309d522.js"
+  ]
+}
