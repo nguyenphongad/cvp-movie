@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.37fd2b82.css",
-    "main.js": "./static/js/main.2309d522.js",
+    "main.css": "./static/css/main.4d04c43c.css",
+    "main.js": "./static/js/main.118b5291.js",
     "static/media/wednesday-trailer.mp4": "./static/media/wednesday-trailer.74b0b7a63797e40a5247.mp4",
     "static/media/gif_viewBox_marvel.gif": "./static/media/gif_viewBox_marvel.21b8e952fb33708397b3.gif",
     "static/media/gif_viewBox_netflix.gif": "./static/media/gif_viewBox_netflix.72554199197336ff7494.gif",
@@ -22,11 +22,11 @@
     "static/media/disney.jpg": "./static/media/disney.eb5bab59e7bf29389dc7.jpg",
     "static/media/national-geographic.jpg": "./static/media/national-geographic.c50dd65f4a3d07a590f7.jpg",
     "index.html": "./index.html",
-    "main.37fd2b82.css.map": "./static/css/main.37fd2b82.css.map",
-    "main.2309d522.js.map": "./static/js/main.2309d522.js.map"
+    "main.4d04c43c.css.map": "./static/css/main.4d04c43c.css.map",
+    "main.118b5291.js.map": "./static/js/main.118b5291.js.map"
   },
   "entrypoints": [
-    "static/css/main.37fd2b82.css",
-    "static/js/main.2309d522.js"
+    "static/css/main.4d04c43c.css",
+    "static/js/main.118b5291.js"
   ]
 }
