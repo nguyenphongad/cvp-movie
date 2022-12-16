@@ -11,6 +11,7 @@ import { withErrorBoundary } from 'react-error-boundary';
 import RenderErrorBounDary from '../components/Error/RenderErrorBounDary';
 import { useEffect, useState } from 'react';
 import RenderLoadingStart from './RenderLoadingStart';
+import RenderMaintenance from './RenderMaintenance';
 
 
 function App() {
@@ -25,18 +26,27 @@ function App() {
       })
   }, []);
 
+  const MAINTENANCEPAGE = true;
+
   return (
 
     <>
       {postLoading ?
-          <BrowserRouter>
-            <div className="App">
-              <RenderHeader />
-              <RouterBody />
-              <ScrollToTopRouter />
-              <RenderFooter />
-            </div>
-          </BrowserRouter>: <RenderLoadingStart />}
+        <BrowserRouter>
+          <div className="App">
+            {
+            MAINTENANCEPAGE ?
+              <RenderMaintenance />
+              : <>
+                <RenderHeader />
+                <RouterBody />
+                <ScrollToTopRouter />
+                <RenderFooter />
+              </>
+            }
+
+          </div>
+        </BrowserRouter> : <RenderLoadingStart />}
       {/* <RenderLoadingStart/> */}
     </>
   )

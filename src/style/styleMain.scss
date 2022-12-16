@@ -12,7 +12,6 @@
 body {
   margin: 0px;
   background-color: #232435;
-  // background-image: url('../assets/photo-box/photo_looklsm.png');
 }
 .App {
   width: 100%;
@@ -42,3 +41,8 @@ body {
 @import "./style-loading/styleLoading";
 @import "./style-searchMain/style_searchMain";
 @import "./style-setting/styleSettingMain";
+
+
+.wrap_maintenance{
+  width: 100%;
+}

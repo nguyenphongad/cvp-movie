@@ -4,6 +4,7 @@
     position: relative;
     z-index: 1;
     background-image: url("../../assets/image-logo/backround-loading.jpg");
+    text-align: center;
     .wrap_loading-start {
         width: 100%;
         height: 100%;
@@ -98,4 +99,10 @@
             }
         }
     }
+}
+.text_maintenance{
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    margin: 50px;
 }
