@@ -48,13 +48,12 @@ function RenderBoxSearch() {
     });
 
 
-
     const toStateValueBoxSearch = useContext(DropBtnBoxSearch);
 
     return (
         <>
             <div
-                className={`box_search ${toStateValueBoxSearch.dropdownBoxSearch ? "activeBoxSearch" : "inactiveBoxSearch"}`}>
+                className={`box_search ${toStateValueBoxSearch.dropdownBoxSearch ? "activeDropHeader" : "inactiveDropHeader"}`}>
                 <div className="body_trans--search">
                     <div className="border_input">
                         <div className="button_change--input">

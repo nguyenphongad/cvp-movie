@@ -7,6 +7,8 @@ import { withErrorBoundary } from 'react-error-boundary';
 import RenderErrorBounDary from '../Error/RenderErrorBounDary';
 
 import Image_name_logo from "../../assets/image-logo/name_logo_cvp-movie.png";
+import Image_logo_cvp from "../../assets/image-logo/logo_cvp-movie.png";
+
 import RenderCustomMenu from '../Header/CustomMenu/RenderCustomMenu';
 import Picture_avatar_cvp from "../../assets/picture_avatar-cvp/picture_avatar_cvp-movie.png"
 
@@ -146,8 +148,9 @@ function RenderHeader() {
                     <div className={`trow__header--tr ${scroll ? "bgr-opacity-none" : "bgr-opacity"}`}>
                         <div className="box_name-logo">
                             <div className="border-logo">
-                                <NavLink to="#" >
-                                    <img src={Image_name_logo} alt="name" />
+                                <NavLink to="/" >
+                                    <img src={Image_name_logo} alt="name" class="img_name"/>
+                                    <img src={Image_logo_cvp} alt="name" class="img_logo"/>
                                 </NavLink>
                             </div>
                         </div>
@@ -170,7 +173,7 @@ function RenderHeader() {
                                         <IoNotifications />
                                     </button>
 
-                                    <div className={`box_drops-notification ${dropdownBoxNoti ? "active" : "inactive"}`}>
+                                    <div className={`box_drops-notification ${dropdownBoxNoti ? "activeDropHeader" : "inactiveDropHeader"}`}>
                                         <div className="body__drop">
                                             <div className="top_show">
                                                 <div className={`an_border-top ${dropdownBoxNoti ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
@@ -211,7 +214,7 @@ function RenderHeader() {
                                     <button className="border-drop" onClick={handleButtonDrop}>
                                         <img src={Picture_avatar_cvp} />
                                     </button>
-                                    <div className={`box_drops-account ${dropdownBoxSel ? "active" : "inactive"}`}>
+                                    <div className={`box_drops-account ${dropdownBoxSel ? "activeDropHeader" : "inactiveDropHeader"}`}>
                                         <div className="body__drop">
                                             <div className="top_show">
                                                 <div className={`an_border-top ${dropdownBoxSel ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>

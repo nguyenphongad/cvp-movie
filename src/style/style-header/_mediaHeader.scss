@@ -1,0 +1,25 @@
+@media only screen and (max-width: 965px) {
+    .header {
+        .img_name {
+            display: none !important;
+        }
+        .img_logo {
+            display: block !important;
+        }
+    }
+}
+@media only screen and (max-width: 860px) {
+    .box_menu-heading {
+        .border_location-menu {
+            > a {
+                font-size: 14px !important;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 785px){
+    .header{
+        
+    }
+
+}

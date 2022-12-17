@@ -91,6 +91,7 @@ function Home() {
                                 {videoInfoTrailerVideoHome.contentBioTrailer}
                                 </div>
                             </div>
+                            
                             <div className="row block-btn__control">
                                 <button className="button-mixin border__btn_play--list btn btn-5 hover-border-11">
                                     <span>
@@ -103,6 +104,7 @@ function Home() {
                                     MORE INFOMATION
                                 </button>
                             </div>
+
                         </div>
                         <div className="control_btn_trailer-sion">
                             <div className="tr-control_btn_trailer-sion">
@@ -135,21 +137,6 @@ function Home() {
             </div>
             <div className="body_home">
                 <RenderViewBoxChannle />
-
-
-
-                {/* 
-                <FullScreen
-                    handle={handle}
-                >
-                    <div style={{ background: "red" }}>
-                        First
-
-                        <button onClick={handle.active ? handle.exit : handle.enter}>
-                            First
-                        </button>
-                    </div>
-                </FullScreen> */}
 
 
                 home<br></br>

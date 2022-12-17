@@ -16,8 +16,13 @@
             .border-logo {
                 height: 100%;
                 img {
-                    max-width: 100%;
                     height: 100%;
+                }
+                .img_name {
+                    display: block;
+                }
+                .img_logo {
+                    display: none;
                 }
             }
         }
@@ -246,10 +251,11 @@
         left: 0px;
         top: 60px;
         .body_trans--search {
-            width: 100%;
+            width: 88%;
             @include styleDisFlexCenter;
             flex-direction: column;
-            padding: 0px 200px;
+            margin: 0px auto;
+            // padding: 0px 200px;
             .border_input {
                 width: 100%;
                 background-color: $main-color-brg;
@@ -276,7 +282,7 @@
                         @include styleDisFlexCenter;
                         justify-content: right;
                         input {
-                            width: 0%;
+                            width: 100%;
                             height: 100%;
                             padding: 10px 70px;
                             background: none;
@@ -286,7 +292,7 @@
                             font-size: 20px;
                             text-align: center;
                             border-top: 3px solid $main-color-while;
-                            transition: width 0.3s;
+                            transition: all 0.3s;
                             border-radius: 5px;
                         }
 
@@ -315,35 +321,28 @@
                 }
             }
         }
+
     }
-    .activeBoxSearch {
-        opacity: 1;
-        visibility: visible;
-    }
-    .inactiveBoxSearch {
-        opacity: 0;
-        visibility: hidden;
-        transform: scaleX(0);
-        transition: 0.2s;
-    }
-}
-.width_input {
-    width: 100% !important;
+
 }
 .display-none {
     display: none;
 }
-.active {
+.activeDropHeader {
     opacity: 1;
-    visibility: visible;
-    transform: translateX(0px);
-    transition: 0.4s;
-}
-.inactive {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(30px);
+    // visibility: visible;
+    // transform: translateX(0px);
     transition: 0.2s;
+    transform: scale(1);
+    // display: block !important;
+}
+.inactiveDropHeader {
+    opacity: 0;
+    // visibility: hidden;
+    // transform: translateX(200px);
+    transition: 0.2s;
+    transform: scale(0);
+    // display: none !important;
 }
 
 .top_show {
@@ -385,3 +384,8 @@
         }
     }
 }
+
+
+
+// responsive
+@import "./mediaHeader";
