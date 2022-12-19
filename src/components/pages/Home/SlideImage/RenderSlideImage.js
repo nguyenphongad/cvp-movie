@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css"
 
@@ -29,17 +29,17 @@ function RenderSlideImage() {
                 <BsChevronCompactLeft />
             </button>;
         return (
-            <>
-                {char}
-            </>
+            <> {char} </>
         );
     }
+
+
 
     const listSlideContentImage = [
         {
             id: 1,
             titleFilm: "BELOVED SUMMER",
-            productionYearFilm : "2022",
+            productionYearFilm: "2022",
             timeFilm: "1 hour 40 minute",
             limitOld: "18+",
             ptrackContentFilm: "Is the story of how many years after filming a hit documentary in high school, two bickering exes are dragged into the camera together - and entangled again.",
@@ -53,7 +53,7 @@ function RenderSlideImage() {
         {
             id: 2,
             titleFilm: "TROLL HUNTERST",
-            productionYearFilm : "2019",
+            productionYearFilm: "2019",
             timeFilm: "2 hour 20 minute",
             limitOld: "12+",
             ptrackContentFilm: "The story is about a human boy who has been chosen as a goblin hunter, something that has never been passed on to any other species of elves. And since then, the boy and his friends have conquered challenges, confronting evil to bring peace to both worlds.",
@@ -66,11 +66,12 @@ function RenderSlideImage() {
         {
             id: 3,
             titleFilm: "MONTERS UNIVERSITY",
-            productionYearFilm : "2022",
+            productionYearFilm: "2022",
             timeFilm: "1 hour 10 minute",
             limitOld: "16+",
             ptrackContentFilm: "A look at the relationship between Mike Wazowski (Billy Crystal) and James P. Sully Sullivan (John Goodman) during their days at Monsters University, when they weren't necessarily the best of friends.",
             comingSoon: true,
+            hu :"December 30, 2022",
             srcImage: image_slide_monters_university,
             srcImageSticker: anh3,
             onClickPP: "",
@@ -79,7 +80,7 @@ function RenderSlideImage() {
         {
             id: 4,
             titleFilm: "MONEY HEIST",
-            productionYearFilm : "2023",
+            productionYearFilm: "2023",
             timeFilm: "2 season",
             ptrackContentFilm: "When a gang of bandits take control of a unified Korea's money printing factory and hostages are trapped inside, the police must stop them and the shady mastermind behind it all.",
             limitOld: "16+",
@@ -90,6 +91,40 @@ function RenderSlideImage() {
             onClickInfo: ""
         },
     ];
+
+    const [timePremiereDays, setTimePremiereDays] = useState();
+    const [timePremiereHours, setTimePremiereHours] = useState();
+    const [timePremiereMinutes, setTimePremiereMinutes] = useState();
+    const [timePremiereSeconds, setTimePremiereSeconds] = useState();
+
+    let interval;
+    const startTimePremiere = () => {
+            const countDownDate = new Date("December 30, 2022").getTime();
+
+        interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (24 * 60 * 60 * 1000));
+            const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+            const minutes = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000));
+            const seconds = Math.floor((distance % (60 * 1000)) / 1000);
+
+            if (distance < 0) {
+                clearInterval(interval.current);
+            } else {
+                setTimePremiereDays(days);
+                setTimePremiereHours(hours);
+                setTimePremiereMinutes(minutes);
+                setTimePremiereSeconds(seconds);
+            }
+        })
+
+    };
+    useEffect(() => {
+        startTimePremiere();
+    });
+
     const returnSlideImageTrening = listSlideContentImage.map((index) => {
         return (
             <div className="box_location" key={index.id}>
@@ -98,7 +133,7 @@ function RenderSlideImage() {
                     <div className="container_box">
                         <div className="item_slick-td td__info_film">
                             <div className="name__tile-film">
-                                {index.titleFilm} | {index.productionYearFilm}
+                                {index.titleFilm} - {index.productionYearFilm}
                             </div>
                             <div className="td_query">
                                 <div className="style-time-film">
@@ -112,11 +147,15 @@ function RenderSlideImage() {
                                 {index.ptrackContentFilm}
                             </div>
                             <div className="tr_btn__control-PP">
-                                {index.comingSoon ? 
-                                <div className="text_warning_come-soon">
-                                    COMING SOON 
-                                </div>
-                                :
+                                {index.comingSoon ?
+                                    <div className="text_warning_come-soon">
+                                        COMING SOON : 
+                                        {" "+ timePremiereDays + " DAY " +
+                                            timePremiereHours + " HOUR " +
+                                            timePremiereMinutes + " MINUTE " +
+                                            timePremiereSeconds + " SECOND "}
+                                    </div>
+                                    :
                                     <div className="box_control">
                                         <div className="item__btn-pp" >
                                             <FaPlay />

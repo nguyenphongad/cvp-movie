@@ -66,6 +66,11 @@ function RenderFooter() {
                     </div>
                 </div>
             </div>
+            <div className="box_bottom--license">
+                <div className="reading-reserve">
+                    © CVP - MOVIE , lnc. All Rights Reserved
+                </div>
+            </div>
         </footer>
     )
 }
