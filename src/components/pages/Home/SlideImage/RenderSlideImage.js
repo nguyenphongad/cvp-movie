@@ -71,7 +71,7 @@ function RenderSlideImage() {
             limitOld: "16+",
             ptrackContentFilm: "A look at the relationship between Mike Wazowski (Billy Crystal) and James P. Sully Sullivan (John Goodman) during their days at Monsters University, when they weren't necessarily the best of friends.",
             comingSoon: true,
-            hu :"December 30, 2022",
+            hu: "December 30, 2022",
             srcImage: image_slide_monters_university,
             srcImageSticker: anh3,
             onClickPP: "",
@@ -99,7 +99,7 @@ function RenderSlideImage() {
 
     let interval;
     const startTimePremiere = () => {
-            const countDownDate = new Date("December 30, 2022").getTime();
+        const countDownDate = new Date("2023-02-23").getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();
@@ -149,8 +149,8 @@ function RenderSlideImage() {
                             <div className="tr_btn__control-PP">
                                 {index.comingSoon ?
                                     <div className="text_warning_come-soon">
-                                        COMING SOON : 
-                                        {" "+ timePremiereDays + " DAY " +
+                                        COMING SOON :
+                                        {" " + timePremiereDays + " DAY " +
                                             timePremiereHours + " HOUR " +
                                             timePremiereMinutes + " MINUTE " +
                                             timePremiereSeconds + " SECOND "}

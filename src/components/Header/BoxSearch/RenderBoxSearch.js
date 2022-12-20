@@ -20,16 +20,15 @@ function RenderBoxSearch() {
             locationSearch(`/search?q=${e.target.value}`);
             setbtn__reset(true);
         } else {
-            locationSearch("/");
+            locationSearch("/home");
             setbtn__reset(false);
         }
-
 
     }
     const handleResetInputSearch = () => {
         setValue_search("");
         focusValueRef.current.focus();
-        locationSearch("/");
+        locationSearch("/home");
         setbtn__reset(false);
         toStateValueBoxSearch.setdropdownBoxSearch(false)
     }
