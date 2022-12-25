@@ -1,3 +1,93 @@
-.wrap__my-list{
+.wrap__my-list {
     width: 100%;
+
+    .body_my-list {
+        padding: 50px;
+        padding-top: 150px;
+
+        .tr_heading {
+            width: 100%;
+            margin-bottom: 50px;
+
+            .heading_text {
+                font-size: 35px;
+                font-weight: 600;
+                @include styleDisFlexCenter;
+                justify-content: left;
+
+                svg {
+                    margin-right: 20px;
+                    font-size: 50px;
+                }
+            }
+        }
+
+        .body_product-film {
+            display: inline-block;
+        }
+    }
+}
+
+.body_slick--mylist {
+    width: 100%;
+
+    .heading-text {
+        font-size: 30px;
+        font-weight: 600;
+        @include styleDisFlexCenter;
+        justify-content: left;
+
+        svg {
+            margin-right: 10px;
+            font-size: 50px;
+        }
+    }
+    .slick-slider{
+        position: relative;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .item__box-film {
+        padding: 15px;
+        @include styleDisFlexCenter;
+        position: relative;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+    }
+
+    .slick-dots {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: flex !important;
+
+        li {
+            width: 10px;
+            height: 2px;
+            display: block;
+            background-color: #fff;
+            margin:0px 5px;
+        }
+
+        button {
+            display: none;
+        }
+
+        .slick-active {
+            background-color: red;
+        }
+
+    }
+
+    .prev_prev {
+        display: none;
+    }
+    .next_prev{
+        position: absolute;
+        right: 0px;
+    }
 }

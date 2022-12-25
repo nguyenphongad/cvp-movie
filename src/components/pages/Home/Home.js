@@ -19,6 +19,7 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 
 import RenderSlideImage from './SlideImage/RenderSlideImage';
 import RenderViewBoxChannle from './ViewBoxChannel/RenderViewBoxChanle';
+import RenderMylistSlick from './RenderMyList_Slick/RenderMylistSlick';
 
 
 function Home() {
@@ -137,7 +138,7 @@ function Home() {
             </div>
             <div className="body_home">
                 <RenderViewBoxChannle />
-
+                <RenderMylistSlick/>
 
                 home<br></br>
                 home<br></br>
