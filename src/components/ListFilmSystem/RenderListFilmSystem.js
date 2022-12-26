@@ -53,7 +53,7 @@ function RenderListFilmSystem({children}) {
             onClickPP: "",
             onClickInfo: "",
             comingSoon: f,
-            myList : t,
+            myList :t,
             newFilm : f,
         },
         {
@@ -88,7 +88,7 @@ function RenderListFilmSystem({children}) {
             id: 6,
             titleFilm: "LARVAR ISLAND",
             productionYearFilm: "2021",
-            timeFilm: "4h 30m",
+            timeFilm: "4H 30M",
             limitOld: "8+",
             ptrackContentFilm: "content bio",
             srcPosterView : image_poster_6,

@@ -36,41 +36,204 @@
         font-weight: 600;
         @include styleDisFlexCenter;
         justify-content: left;
+        margin-bottom: 10px;
+        color: $main-color-while-fff;
 
         svg {
             margin-right: 10px;
             font-size: 50px;
         }
     }
-    .slick-slider{
+
+    .slick-slider {
         position: relative;
-        padding: 10px;
+        padding: 5px 20px;
         display: flex;
         align-items: center;
-    }
-    .item__box-film {
-        padding: 15px;
-        @include styleDisFlexCenter;
-        position: relative;
 
-        &:hover {
-            transform: scale(1.03);
+        .slick-list {
+            width: 100%;
+            padding: 10px 10px 20px 10px;
+
+            .slick-slide {
+                padding: 10px;
+
+            }
         }
 
     }
 
+    .item__box-film {
+        width: auto !important;
+        @include styleDisFlexCenter;
+        position: relative;
+        border-radius: 10px;
+        border: 1px solid #332e2e;
+        box-shadow: #0000004a 0px 0px 20px 2px, #000000cf 0px 10px 16px -10px;
+
+        // &:hover {
+        //     transform: scale(1.03);
+        // }
+        .borzing_content {
+            width: 100%;
+
+            .border_img--poster {
+                overflow: hidden;
+                border-radius: 10px 10px 0px 0px;
+                position: relative;
+
+                img {
+                    transition: all 0.4s;
+                }
+
+                .box_production {
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    z-index: 2;
+                    top: 0px;
+                    left: 0px;
+                    overflow: hidden;
+
+                    .duction_year {
+                        width: 100px;
+                        background-color: #b12e2e;
+                        padding: 5px 10px;
+                        transform: rotate(-40deg);
+                        text-align: center;
+                        margin-left: -30px;
+                        margin-top: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                }
+
+                .btn_playPP {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    bottom: 0px;
+                    padding: 20px;
+                    transition: all 0.4s;
+                    @include styleDisFlexCenter;
+
+                    .border__PP {
+                        border-radius: 100%;
+                        background-color: #bd1111;
+                        @include styleDisFlexCenter;
+                        transform: translateY(80px);
+                        opacity: 0;
+                        cursor: pointer;
+
+                        svg {
+                            font-size: 22px;
+                            margin: 15px;
+                        }
+
+                        &:hover {
+                            transform: translateY(-4px);
+                        }
+                    }
+                }
+            }
+
+            .box__content--info {
+                padding: 10px 15px;
+                display: flex;
+
+                .flex__nth-left {
+                    .trow-head {
+                        @include styleDisFlexCenter;
+                        justify-content: left;
+                        margin-bottom: 10px;
+
+                        .title-film-st {
+                            width: 270px;
+                            font-size: 22px;
+                            color: #ffffff;
+                            display: -webkit-box;
+                            font-weight: 600;
+                            overflow: hidden;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            text-overflow: ellipsis;
+                        }
+
+
+                    }
+
+                    .trow_body-box {
+                        width: 100%;
+
+                        .td_infomation-auth {
+                            display: flex;
+
+                            .time-film {
+                                margin-right: 10px;
+                                font-size: 15px;
+                                color: #928a8a;
+                                padding: 1px;
+                            }
+
+                            .limit-old {
+                                border: 1px solid #686161;
+                                padding: 0px 5px;
+                                color: #928a8a;
+                            }
+                        }
+                    }
+                }
+
+                .flex__nth-right {
+                    display: flex;
+                    align-items: center;
+
+                    .btn_show_modal {
+                        border-radius: 100%;
+                        @include styleDisFlexCenter;
+                        cursor: pointer;
+
+                        svg {
+                            font-size: 32px;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        &:hover {
+            transform: scale(1.02);
+
+            img {
+                transform: scale(1.06);
+            }
+
+            .btn_playPP {
+                .border__PP {
+                    transform: translateY(0px) !important;
+                    opacity: 1 !important;
+                }
+
+                ;
+            }
+        }
+    }
+
     .slick-dots {
+        width: 100%;
         position: absolute;
-        top: 0px;
-        right: 0px;
+        top: -30px;
         display: flex !important;
+        @include styleDisFlexCenter;
 
         li {
-            width: 10px;
-            height: 2px;
+            width: 8px;
+            height: 1px;
             display: block;
-            background-color: #fff;
-            margin:0px 5px;
+            background-color: #796c6c;
+            margin: 0px 5px;
         }
 
         button {
@@ -86,8 +249,17 @@
     .prev_prev {
         display: none;
     }
-    .next_prev{
+
+    .next_prev {
+        height: 70%;
         position: absolute;
         right: 0px;
+        background: none;
+        cursor: pointer;
+        border: none;
+
+        svg {
+            font-size: 30px;
+        }
     }
 }
