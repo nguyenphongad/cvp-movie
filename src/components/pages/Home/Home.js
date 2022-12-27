@@ -20,6 +20,7 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import RenderSlideImage from './SlideImage/RenderSlideImage';
 import RenderViewBoxChannle from './ViewBoxChannel/RenderViewBoxChanle';
 import RenderMylistSlick from './RenderMyList_Slick/RenderMylistSlick';
+import RenderListTrening from './ListTrening/RenderListTrening';
 
 
 function Home() {
@@ -69,7 +70,7 @@ function Home() {
         srcImageNameInTrail : Picture_name_wednesday,
         contentBioTrailer : <ContentBioTrailer/>,
         ageLimit : "16+",
-        categoryGame : false
+        categoryGame : true
 
     }
 
@@ -139,39 +140,14 @@ function Home() {
             <div className="body_home">
                 <RenderViewBoxChannle />
                 <RenderMylistSlick/>
+                <RenderListTrening/> 
+                
 
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
-                home<br></br>
+
+
+
             </div>
-        </div >
+        </div>
     )
 }
 

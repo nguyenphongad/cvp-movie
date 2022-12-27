@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ListFilmSystem } from '../../ListFilmSystem/RenderListFilmSystem'
-import {GoChecklist} from "react-icons/go"
+import { GoChecklist } from "react-icons/go"
+import RenderItemBoxFilm from '../../ItemBoxFilm/RenderItemBoxFilm'
 
 function RenderMyList() {
 
@@ -8,10 +9,14 @@ function RenderMyList() {
 
     const returnListMyListComponent = indexFromList.listFilmSystem.map((index) => {
         return index.myList ? (
-            <div className="item_box_film">
-                <img src={index.srcPosterView} />
-                {index.titleFilm}
-            </div>
+            <RenderItemBoxFilm
+                key={index.id}
+                srcPosterView={index.srcPosterView}
+                productionYearFilm={index.productionYearFilm}
+                titleFilm={index.titleFilm}
+                timeFilm={index.timeFilm}
+                limitOld={index.limitOld}
+            />
         ) : ""
     })
 
@@ -20,7 +25,7 @@ function RenderMyList() {
             <div className="body_my-list">
                 <div className="tr_heading">
                     <div className="heading_text">
-                        <GoChecklist/> MY LIST
+                        <GoChecklist /> MY LIST
                     </div>
                 </div>
                 <div className="body_product-film">

@@ -1,6 +1,6 @@
 import { UseContextFromFullScreen } from '../../views/RenderFullScreen';
 
-import React, { createContext,useContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 
 import { withErrorBoundary } from 'react-error-boundary';
@@ -105,7 +105,7 @@ function RenderHeader() {
         return (
             <div
                 className={`item_select-drop ${index.warning_hover}`}
-                onClick={()=>setdropdownBoxSel(false)}
+                onClick={() => setdropdownBoxSel(false)}
                 key={index.nameBtnSelect}
             >
                 <Link to={index.linkTo} onClick={index.dataOnClick}>
@@ -149,8 +149,8 @@ function RenderHeader() {
                         <div className="box_name-logo">
                             <div className="border-logo">
                                 <NavLink to="/" >
-                                    <img src={Image_name_logo} alt="name" class="img_name"/>
-                                    <img src={Image_logo_cvp} alt="name" class="img_logo"/>
+                                    <img src={Image_name_logo} alt="name" className="img_name" />
+                                    <img src={Image_logo_cvp} alt="name" className="img_logo" />
                                 </NavLink>
                             </div>
                         </div>
@@ -233,6 +233,6 @@ function RenderHeader() {
     )
 }
 
-export default  withErrorBoundary(RenderHeader,{
-    FallbackComponent : RenderErrorBounDary
+export default withErrorBoundary(RenderHeader, {
+    FallbackComponent: RenderErrorBounDary
 })

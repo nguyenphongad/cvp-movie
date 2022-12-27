@@ -45,7 +45,7 @@ function RenderSettingSystem() {
                     </button> : ""}
                     {index.BtnCheckBox ?
                         <input
-                            class="toggleAutoPlay"
+                            className="toggleAutoPlay"
                             type="checkbox"
                             name="check-autoplay"
                             onChange={handleChecked}
