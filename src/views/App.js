@@ -30,23 +30,24 @@ function App() {
   return (
 
     <>
-      {postLoading ?
+      {/* {postLoading ? */}
         <BrowserRouter>
           <div className="App">
             {
-            MAINTENANCEPAGE ?
-              <RenderMaintenance />
-              : <>
-                <RenderHeader />
-                <RouterBody />
-                <ScrollToTopRouter />
-                <RenderFooter />
-              </>
+              MAINTENANCEPAGE ?
+                <RenderMaintenance />
+                : <>
+                  <RenderHeader />
+                  <RouterBody />
+                  <ScrollToTopRouter />
+                  <RenderFooter />
+                </>
             }
 
           </div>
-        </BrowserRouter> : <RenderLoadingStart />}
-      {/* <RenderLoadingStart/> */}
+        </BrowserRouter> 
+        {/* : <RenderLoadingStart />} */}
+      {/* <RenderLoadingStart /> */}
     </>
 
   )

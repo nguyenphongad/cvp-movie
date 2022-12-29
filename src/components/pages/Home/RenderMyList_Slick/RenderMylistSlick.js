@@ -1,15 +1,12 @@
 import React, { useContext } from 'react'
 import Slider from 'react-slick'
-import { BsChevronCompactLeft } from "react-icons/bs"
-import { IoIosArrowDropright } from "react-icons/io"
-import { AiOutlineInfoCircle } from "react-icons/ai"
-import { ListFilmSystem } from '../../../ListFilmSystem/RenderListFilmSystem';
 import "slick-carousel/slick/slick.css";
 
+import { BsChevronCompactLeft } from "react-icons/bs"
+import { IoIosArrowDropright } from "react-icons/io"
+import { ListFilmSystem } from '../../../ListFilmSystem/RenderListFilmSystem';
 import { GoChecklist } from "react-icons/go"
-import { FaPlay } from 'react-icons/fa';
 import RenderItemBoxFilm from '../../../ItemBoxFilm/RenderItemBoxFilm'
-
 
 function RenderMylistSlick() {
     const Arrow = (props) => {

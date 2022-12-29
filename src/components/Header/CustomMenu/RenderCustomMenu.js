@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -7,52 +7,66 @@ import { MdPlaylistAdd } from 'react-icons/md';
 import { RiMovie2Fill } from 'react-icons/ri';
 import { IoTicketSharp } from 'react-icons/io5';
 
+import { BsStarFill } from 'react-icons/bs';
+import { DropBtnBoxSearch } from '../RenderHeader';
+
 function RenderCustomMenu() {
+
+    const useContextFromHeader = useContext(DropBtnBoxSearch)
+
     const element = useRef();
 
     const listMenuHeader = [
         {
-            id :1,
+            id: 1,
             to: "/",
             ref: element,
             styleDisplay: true
         },
         {
-            id :2,
+            id: 2,
             to: "/home",
             nameMenuHeader: "HOME",
             iconMenuHeader: <AiFillHome />,
             indexMenu: true
         },
         {
-            id : 3,
+            id: 3,
             to: "/my-list",
             nameMenuHeader: "MY LIST",
             iconMenuHeader: <MdPlaylistAdd />,
         },
         {
-            id : 4,
+            id: 4,
             to: "/movies",
             nameMenuHeader: "MOVIES",
             iconMenuHeader: <RiMovie2Fill />,
         },
         {
-            id :5,
+            id: 5,
             to: "/book-tickets",
-            nameMenuHeader: "BOOK TICKES",
+            nameMenuHeader: "BOOK TICKETS",
             iconMenuHeader: <IoTicketSharp />,
+            starNew: true
         }
     ]
     const [isActiveHome, setIsActiveHome] = useState(false);
     useEffect(() => {
         if (element.current?.classList.value === "active") setIsActiveHome(true);
         else setIsActiveHome(false);
-    }, [element.current?.classList.value]);
 
+    }, [element.current?.classList.value]);
 
     const navLinkMenuHome = (e) => { return e.isActive || isActiveHome ? "active" : "" }
     const navLinkMenu = (e) => { return e.isActive ? "active" : "" }
-    const handelClickChangemenu = () => { setIsActiveHome(false) }
+
+    const handelClickChangeHeaderShadow = () => {
+        useContextFromHeader.setScroll(false)
+    }
+    const handelClickChangemenu = () => {
+        setIsActiveHome(false)
+        useContextFromHeader.setScroll(true)
+    }
 
     const navLinkMenuNavigationHome = (e) => {
         return e.isActive || isActiveHome ? "display-none" : "line-hover";
@@ -66,12 +80,18 @@ function RenderCustomMenu() {
             <div className={`border_location-menu ${index.styleDisplay ? "display-none" : ""}`} key={index.id}>
                 <NavLink
                     to={index.to}
-                    onClick={index.indexMenu ? undefined : handelClickChangemenu}
+                    onClick={index.indexMenu ? handelClickChangeHeaderShadow : handelClickChangemenu}
                     className={index.indexMenu ? navLinkMenuHome : navLinkMenu}
                     ref={index.ref}
                 >
                     {index.iconMenuHeader}
                     <div className="text_menu">{index.nameMenuHeader}</div>
+                    {index.starNew ?
+                        <div className="animation_start-new">
+                            <BsStarFill />
+                        </div>
+                        : ""
+                    }
                 </NavLink>
                 <div>
                     <NavLink
@@ -90,4 +110,4 @@ function RenderCustomMenu() {
     )
 }
 
-export default RenderCustomMenu
+export default RenderCustomMenu;

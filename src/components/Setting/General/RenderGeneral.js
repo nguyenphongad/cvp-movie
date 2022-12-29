@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AiTwotoneEdit } from 'react-icons/ai'
 
 function RenderGeneral() {
+    useEffect(()=>{
+        document.title = "Account" + " | CVP-MOVIE"
+    })
 
     const list_setting_general = [
         {
@@ -9,7 +12,6 @@ function RenderGeneral() {
             nameSet: "Name",
             nameUser: "Nguyen Van Phong",
             SetOnClick: true,
-            // hanleOnClick : ,
         },
         {
             id: 2,

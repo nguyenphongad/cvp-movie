@@ -1,16 +1,16 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-// import Video_trailer_lookism from "../../../assets/video-trailers/lookism-trailer.mp4";
-// import Picture_poster_trailer_lookism from "../../../assets/photo-box/lookism/picture_trailer_lookism.webp";
-// import Picture_name_lookism from "../../../assets/photo-box/lookism/picture_name_lookism.png";
+import Video_trailer_lookism from "../../../assets/video-trailers/lookism-trailer.mp4";
+import Picture_poster_trailer_lookism from "../../../assets/photo-box/lookism/picture_trailer_lookism.webp";
+import Picture_name_lookism from "../../../assets/photo-box/lookism/picture_name_lookism.png";
 
 // import Video_trailer_eldenring from "../../../assets/video-trailers/eldenring-trailer.mp4";
 // import Picture_poster_trailer_eldenring from "../../../assets/photo-box/eldenring/picture_trailer_eldenring.webp";
 // import Picture_name_eldenring from "../../../assets/photo-box/eldenring/picture_name_eldenring.png";
 
-import Video_trailer_wednesday from "../../../assets/video-trailers/wednesday-trailer.mp4";
-import Picture_poster_trailer_wednesday from "../../../assets/photo-box/wednesday/picture_trailer_wednesday.webp";
-import Picture_name_wednesday from "../../../assets/photo-box/wednesday/picture_name_wednesday.png";
+// import Video_trailer_wednesday from "../../../assets/video-trailers/wednesday-trailer.mp4";
+// import Picture_poster_trailer_wednesday from "../../../assets/photo-box/wednesday/picture_trailer_wednesday.webp";
+// import Picture_name_wednesday from "../../../assets/photo-box/wednesday/picture_name_wednesday.png";
 
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
@@ -20,10 +20,14 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import RenderSlideImage from './SlideImage/RenderSlideImage';
 import RenderViewBoxChannle from './ViewBoxChannel/RenderViewBoxChanle';
 import RenderMylistSlick from './RenderMyList_Slick/RenderMylistSlick';
-import RenderListTrening from './ListTrening/RenderListTrening';
+import RenderListTrending from './ListTrening/RenderListTrending';
 
 
 function Home() {
+
+    useEffect(()=>{
+        document.title = "Home" + " | CVP-MOVIE"
+    })
 
     const [controlTogglePPVideoTrailer, setcontrolTogglePPVideoTrailer] = useState(false);
     const [scrollPPVideoTrailer, setscrollPPVideoTrailer] = useState(false);
@@ -65,12 +69,12 @@ function Home() {
     }
     const videoInfoTrailerVideoHome = {
         id : 1,
-        srcVideoTrailer : Video_trailer_wednesday,
-        srcPosterTrailer : Picture_poster_trailer_wednesday,
-        srcImageNameInTrail : Picture_name_wednesday,
+        srcVideoTrailer : Video_trailer_lookism,
+        srcPosterTrailer : Picture_poster_trailer_lookism,
+        srcImageNameInTrail : Picture_name_lookism,
         contentBioTrailer : <ContentBioTrailer/>,
         ageLimit : "16+",
-        categoryGame : true
+        categoryGame : false
 
     }
 
@@ -140,7 +144,7 @@ function Home() {
             <div className="body_home">
                 <RenderViewBoxChannle />
                 <RenderMylistSlick/>
-                <RenderListTrening/> 
+                <RenderListTrending/> 
                 
 
 

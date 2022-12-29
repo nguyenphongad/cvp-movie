@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import RenderItemBoxFilm from '../../../ItemBoxFilm/RenderItemBoxFilm'
 import { ListFilmSystem } from '../../../ListFilmSystem/RenderListFilmSystem'
 
-import {RiMovie2Fill} from "react-icons/ri"
+import {RiGitRepositoryCommitsFill} from "react-icons/ri"
 
-function RenderListTrening() {
+function RenderListTrending() {
     const useContextFromListFilm = useContext(ListFilmSystem)
-    const returnListFormMyListComponentTrening = useContextFromListFilm.listFilmSystem.map((index) => {
+    const returnListFormMyListComponentTrending = useContextFromListFilm.listFilmSystem.map((index) => {
         return (
             <RenderItemBoxFilm
                 key={index.id}
@@ -20,16 +20,16 @@ function RenderListTrening() {
 
     })
     return (
-        <div className="wrap__trening-box--film">
-            <di className="heading_text">
-                <RiMovie2Fill/>
-                TRENING
-            </di>
-            <div className="body__trening-film">
-                {returnListFormMyListComponentTrening}
+        <div className="wrap__trending-box--film animation_scale-lg">
+            <div className="heading_text">
+                <RiGitRepositoryCommitsFill/>
+                TRENDING
+            </div>
+            <div className="body__trending-film">
+                {returnListFormMyListComponentTrending}
             </div>
         </div>
     )
 }
 
-export default RenderListTrening
+export default RenderListTrending

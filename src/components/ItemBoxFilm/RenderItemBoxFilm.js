@@ -4,7 +4,7 @@ import { FaPlay } from 'react-icons/fa'
 
 function RenderItemBoxFilm(props) {
     return (
-        <div className="item__box-film" key={props.key}>
+        <div className="item__box-film" key={props.id}>
             <div className="borzing_content">
                 <div className="border_img--poster">
                     <img src={props.srcPosterView} />
@@ -22,7 +22,7 @@ function RenderItemBoxFilm(props) {
                 <div className="box__content--info">
                     <div className="flex__nth-left">
                         <div className="trow-head">
-                            <div className="title-film-st" title={props.timeFilm.toUpperCase()}>
+                            <div className="title-film-st" title={props.titleFilm.toUpperCase()}>
                                 {props.titleFilm.toUpperCase()}
                             </div>
                         </div>

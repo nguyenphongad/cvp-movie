@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { BiSearchAlt2 } from "react-icons/bi";
 import { IoClose } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
@@ -12,8 +12,6 @@ function RenderBoxSearch() {
 
     const focusValueRef = useRef(null);
 
-
-
     const handleLocationSearch = (e) => {
         setValue_search(e.target.value);
         if (e.target.value != "") {
@@ -23,14 +21,13 @@ function RenderBoxSearch() {
             locationSearch("/home");
             setbtn__reset(false);
         }
-
     }
     const handleResetInputSearch = () => {
         setValue_search("");
         focusValueRef.current.focus();
         locationSearch("/home");
         setbtn__reset(false);
-        toStateValueBoxSearch.setdropdownBoxSearch(false)
+        toStateValueBoxSearch.setdropdownBoxSearch(false);
     }
 
     useEffect(() => {
@@ -46,13 +43,12 @@ function RenderBoxSearch() {
         return () => document.removeEventListener("mousedown", hanlder);
     });
 
-
     const toStateValueBoxSearch = useContext(DropBtnBoxSearch);
 
     return (
         <>
             <div
-                className={`box_search ${toStateValueBoxSearch.dropdownBoxSearch ? "activeDropHeader" : "inactiveDropHeader"}`}>
+                className={`box_search ${toStateValueBoxSearch.dropdownBoxSearch ? "activeDropBoxSearch" : "inactiveDropBoxSearch"}`}>
                 <div className="body_trans--search">
                     <div className="border_input">
                         <div className="button_change--input">
@@ -79,7 +75,6 @@ function RenderBoxSearch() {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

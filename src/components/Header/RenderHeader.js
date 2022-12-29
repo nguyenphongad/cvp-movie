@@ -36,13 +36,16 @@ function RenderHeader() {
 
 
     useEffect(() => {
+        if (window.location.pathname !== '/home' && window.location.pathname !== '/') {
+            setScroll(true)
+        }
         const handleScroll = () => {
-            setScroll(window.scrollY > 100);
+            if (window.location.pathname === '/home' || window.location.pathname === '/')
+                setScroll(window.scrollY > 100);
         }
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
+    }, [window.location.pathname]);
 
 
     //search
@@ -50,13 +53,9 @@ function RenderHeader() {
     let dropSearchRef = useRef();
 
 
-
-
     //select
     const handleButtonDrop = () => { setdropdownBoxSel(!dropdownBoxSel); }
-
     let dropRef = useRef();
-
     useEffect(() => {
         let hanlder = (e) => {
             if (!dropRef.current.contains(e.target))
@@ -117,8 +116,7 @@ function RenderHeader() {
     });
 
 
-
-    // noti
+    // notification
     const handleButtonDropNoti = () => {
         setdropdownBoxNoti(!dropdownBoxNoti);
     }
@@ -137,7 +135,9 @@ function RenderHeader() {
     const valueHeaderToBoxSearch = {
         dropdownBoxSearch,
         setdropdownBoxSearch,
-        dropSearchRef
+        dropSearchRef,
+        setScroll,
+        scroll
     }
 
 
@@ -174,11 +174,12 @@ function RenderHeader() {
                                     </button>
 
                                     <div className={`box_drops-notification ${dropdownBoxNoti ? "activeDropHeader" : "inactiveDropHeader"}`}>
-                                        <div className="body__drop">
-                                            <div className="top_show">
-                                                <div className={`an_border-top ${dropdownBoxNoti ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
-                                                </div>
+                                        <div className="top_show">
+                                            <div className={`an_border-top ${dropdownBoxNoti ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
                                             </div>
+                                        </div>
+                                        <div className="body__drop">
+
                                             <div className="item_list--noti">
                                                 <Link to="#">
                                                     <img src={Picture_noti_1} />

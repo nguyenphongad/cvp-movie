@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import RenderSettingSystem from './SettingSystem/RenderSettingSystem'
 
 function RenderSetting() {
+    useEffect(()=>{
+        document.title = "Setting" + " | CVP-MOVIE"
+    })
     return (
         <div className="wrap__setting">
             <div className="body__setting">

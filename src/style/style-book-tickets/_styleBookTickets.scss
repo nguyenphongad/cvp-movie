@@ -1,0 +1,79 @@
+.wrap__book-tickets{
+    width: 100%;
+    .body_tickets{
+        padding: 100px 50px;
+        .wrap_content--work{
+            width: 100%;
+            // height: 500px;
+            .body_select_book-tab{
+                width: 100%;
+                padding:20px 50px ;
+                .head__tab-select-book{
+                    width: 100%;
+                    display: flex;
+                    border-bottom: 1px solid #635f5f;
+                    .tab__select-book{
+                        width: 100%;
+                        display: flex;
+                        .item_select-type-book{
+                            margin-right:2px;
+                            button{
+                                padding: 10px;
+                                @include styleDisFlexCenter;
+                                text-decoration: none;
+                                font-size: 20px;
+                                font-weight: 600;
+                                background: none;
+                                border: none;
+                                user-select: none;
+                                svg{
+                                    margin-right: 10px;
+                                }
+                                &:hover{
+                                    background: #0000003f;
+                                }
+                            }
+                            
+                        }
+                        .active_item_select-type{
+                            background: #ffffff34;
+                            border-bottom: 2px solid ;
+                            button{
+                                color:$main-color-while-fff;
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                    .tab__history-book{
+                        width: 100%;
+                        display: flex;
+                        justify-content: right;
+                        .btn_to_history-book{
+                            background-color: #ffffff1a;
+                            border-bottom: 1px solid;
+                            a{
+                                padding: 10px;
+                                font-size: 20px;
+                                text-decoration: none;
+                                @include styleDisFlexCenter;
+                                svg{
+                                    margin: 0px 5px;
+                                    transition: all 0.4s;
+                                }
+                            }
+                            &:hover{
+                                svg{
+                                    transform:translateX(10px) ;
+                                }
+                            }
+                        }
+                    }
+                }
+                .content_select_book-tab{
+                    padding: 30px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

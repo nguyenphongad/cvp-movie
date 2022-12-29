@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ListFilmSystem } from '../../ListFilmSystem/RenderListFilmSystem'
 import { GoChecklist } from "react-icons/go"
 import RenderItemBoxFilm from '../../ItemBoxFilm/RenderItemBoxFilm'
 
 function RenderMyList() {
+    useEffect(()=>{
+        document.title = "My list" + " | CVP-MOVIE"
+    })
 
     const indexFromList = useContext(ListFilmSystem)
 
@@ -21,12 +24,10 @@ function RenderMyList() {
     })
 
     return (
-        <div className="wrap__my-list">
+        <div className="wrap__my-list animation_scale-lg">
             <div className="body_my-list">
-                <div className="tr_heading">
-                    <div className="heading_text">
-                        <GoChecklist /> MY LIST
-                    </div>
+                <div className="heading_text">
+                    <GoChecklist /> MY LIST
                 </div>
                 <div className="body_product-film">
                     {returnListMyListComponent}

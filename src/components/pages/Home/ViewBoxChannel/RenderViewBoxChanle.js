@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 
 import Gif_view_box_channel_disney from "../../../../assets/gif_viewBox/gif_viewBox_disney.gif";
@@ -72,9 +72,9 @@ function RenderViewBoxChannle() {
     return (
         <div className="render_view_box_channle">
             <div className="row_heading-line">
-                <div className="text_heading-bold">
+                <div className="heading_text">
                     <MdScanner />
-                    Famous TV Channel
+                    FAMOUS TV CHANNEL
                 </div>
             </div>
             <div className="body_tr-view">

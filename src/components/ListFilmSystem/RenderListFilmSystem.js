@@ -12,6 +12,7 @@ import image_poster_10 from "../../assets/LIST-FILM-SYSTEM/image_poster/img10.jp
 import image_poster_11 from "../../assets/LIST-FILM-SYSTEM/image_poster/img11.jpg"
 import image_poster_12 from "../../assets/LIST-FILM-SYSTEM/image_poster/img12.jpg"
 import image_poster_13 from "../../assets/LIST-FILM-SYSTEM/image_poster/img13.jpg"
+import image_poster_14 from "../../assets/LIST-FILM-SYSTEM/image_poster/img14.jpg"
 
 export const ListFilmSystem = createContext()
 
@@ -200,6 +201,20 @@ function RenderListFilmSystem({children}) {
             onClickInfo: "",
             comingSoon: f,
             myList : f,
+            newFilm : f,
+        },
+        {
+            id: 14,
+            titleFilm: "wednessday",
+            productionYearFilm: "2022",
+            timeFilm: "1" + session,
+            limitOld: "16+",
+            ptrackContentFilm: "content bio",
+            srcPosterView : image_poster_14,
+            onClickPP: "",
+            onClickInfo: "",
+            comingSoon: f,
+            myList : t,
             newFilm : f,
         },
     ]
