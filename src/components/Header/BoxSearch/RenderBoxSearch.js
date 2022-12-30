@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { DropBtnBoxSearch } from '../RenderHeader';
 
 function RenderBoxSearch() {
+    
+    const toStateValueBoxSearch = useContext(DropBtnBoxSearch);
 
     const locationSearch = useNavigate();
     const [value_search, setValue_search] = useState("");
@@ -18,14 +20,14 @@ function RenderBoxSearch() {
             locationSearch(`/search?q=${e.target.value}`);
             setbtn__reset(true);
         } else {
-            locationSearch("/home");
+            locationSearch(toStateValueBoxSearch.locationBackSearch);
             setbtn__reset(false);
         }
     }
     const handleResetInputSearch = () => {
         setValue_search("");
         focusValueRef.current.focus();
-        locationSearch("/home");
+        locationSearch(toStateValueBoxSearch.locationBackSearch);
         setbtn__reset(false);
         toStateValueBoxSearch.setdropdownBoxSearch(false);
     }
@@ -43,11 +45,11 @@ function RenderBoxSearch() {
         return () => document.removeEventListener("mousedown", hanlder);
     });
 
-    const toStateValueBoxSearch = useContext(DropBtnBoxSearch);
 
     return (
         <>
             <div
+                ref={toStateValueBoxSearch.dropSearchRef}
                 className={`box_search ${toStateValueBoxSearch.dropdownBoxSearch ? "activeDropBoxSearch" : "inactiveDropBoxSearch"}`}>
                 <div className="body_trans--search">
                     <div className="border_input">

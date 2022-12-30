@@ -57,7 +57,7 @@ function RenderBookTickets() {
                             </div>
                             <div className="tab__history-book">
                                 <div className="btn_to_history-book">
-                                    <Link to="../booking-history">
+                                    <Link to="./booking-history">
                                         BOOKING HISTORY
                                         <AiOutlineDoubleRight/>
                                     </Link>

@@ -39,6 +39,7 @@
             height: 100%;
             display: flex;
             padding-left: 20px;
+
             .border_location-menu {
                 height: 100%;
                 margin-left: 35px;
@@ -74,20 +75,25 @@
                 .animation_start-new {
                     margin-top: -17px;
                     margin-left: 5px;
+
                     svg {
                         font-size: 7px;
                         animation: an_star_new 1.2s ease infinite;
+
                         @keyframes an_star_new {
                             0% {
                                 transform: scale(0);
                             }
-                            50%{
+
+                            50% {
                                 transform: scale(1.5);
                             }
-                            100%{
+
+                            100% {
                                 transform: scale(1);
                             }
                         }
+
                         path {
                             color: yellow;
                         }
@@ -320,96 +326,99 @@
         background-color: #090b13;
     }
 
-    // box search
-    .box_search {
-        width: 100%;
-        margin-top: 20px;
-        position: fixed;
-        left: 0px;
-        top: 60px;
 
-        .body_trans--search {
-            width: 88%;
-            @include styleDisFlexCenter;
-            flex-direction: column;
-            margin: 0px auto;
 
-            // padding: 0px 200px;
-            .border_input {
+}
+
+// box search
+.box_search {
+    width: 100%;
+    margin-top: 20px;
+    position: fixed;
+    z-index: 9;
+    left: 0px;
+    top: 60px;
+
+    .body_trans--search {
+        width: 88%;
+        @include styleDisFlexCenter;
+        flex-direction: column;
+        margin: 0px auto;
+
+        // padding: 0px 200px;
+        .border_input {
+            width: 100%;
+            // background-color: $main-color-brg;
+            background: #000000;
+            position: relative;
+            border-radius: 5px;
+
+            .button_change--input {
                 width: 100%;
-                // background-color: $main-color-brg;
-                background: #000000;
-                position: relative;
-                border-radius: 5px;
+                height: 100%;
+                @include styleDisFlexCenter;
+                justify-content: left;
 
-                .button_change--input {
+                .button__search--size {
+                    width: 40px;
+                    height: 100%;
+                    position: absolute;
+                    @include styleDisFlexCenter;
+                    margin-left: 5px;
+
+                    svg {
+                        font-size: 28px;
+                    }
+                }
+
+                .box__contain-in {
                     width: 100%;
                     height: 100%;
                     @include styleDisFlexCenter;
-                    justify-content: left;
+                    justify-content: right;
 
-                    .button__search--size {
-                        width: 40px;
-                        height: 100%;
-                        position: absolute;
-                        @include styleDisFlexCenter;
-                        margin-left: 5px;
-
-                        svg {
-                            font-size: 28px;
-                        }
-                    }
-
-                    .box__contain-in {
+                    input {
                         width: 100%;
                         height: 100%;
-                        @include styleDisFlexCenter;
-                        justify-content: right;
+                        padding: 10px 70px;
+                        background: none;
+                        border: none;
+                        outline: none;
+                        color: #ffffff;
+                        font-size: 20px;
+                        text-align: center;
+                        border-top: 3px solid $main-color-while;
+                        transition: all 0.3s;
+                        border-radius: 5px;
+                    }
 
-                        input {
+                    .btn__reset-input {
+                        width: 40px;
+                        position: absolute;
+                        margin-right: 5px;
+
+                        .border__btn--reset {
                             width: 100%;
                             height: 100%;
-                            padding: 10px 70px;
-                            background: none;
-                            border: none;
-                            outline: none;
-                            color: #ffffff;
-                            font-size: 20px;
-                            text-align: center;
-                            border-top: 3px solid $main-color-while;
-                            transition: all 0.3s;
-                            border-radius: 5px;
+                            @include styleDisFlexCenter;
+                            cursor: pointer;
+
+                            pointer-events: none;
+                            opacity: 0.3;
+
+                            svg {
+                                font-size: 30px;
+                            }
                         }
 
-                        .btn__reset-input {
-                            width: 40px;
-                            position: absolute;
-                            margin-right: 5px;
-
-                            .border__btn--reset {
-                                width: 100%;
-                                height: 100%;
-                                @include styleDisFlexCenter;
-                                cursor: pointer;
-
-                                pointer-events: none;
-                                opacity: 0.3;
-
-                                svg {
-                                    font-size: 30px;
-                                }
-                            }
-
-                            .enable_btn-reset {
-                                pointer-events: unset;
-                                opacity: 1;
-                            }
+                        .enable_btn-reset {
+                            pointer-events: unset;
+                            opacity: 1;
                         }
                     }
                 }
             }
         }
-
     }
 
 }
@@ -418,15 +427,14 @@
     display: none;
 }
 
-.activeDropBoxSearch{
+.activeDropBoxSearch {
     transform: translateY(0px);
-    transition: 0.3s;
-    opacity: 1;
+    transition: 0.4s;
 }
-.inactiveDropBoxSearch{
+
+.inactiveDropBoxSearch {
     transform: translateY(-200px);
-    transition: 0.3s;
-    opacity: 0;
+    transition: 0.4s;
 }
 
 .activeDropHeader {

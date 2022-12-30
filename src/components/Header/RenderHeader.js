@@ -33,6 +33,7 @@ function RenderHeader() {
     const [dropdownBoxSearch, setdropdownBoxSearch] = useState(false);
     const [dropdownBoxSel, setdropdownBoxSel] = useState(false);
     const [dropdownBoxNoti, setdropdownBoxNoti] = useState(false);
+    const locationBackSearch = window.location.pathname
 
 
     useEffect(() => {
@@ -49,7 +50,9 @@ function RenderHeader() {
 
 
     //search
-    const handleButtonDropSearch = () => { setdropdownBoxSearch(!dropdownBoxSearch) }
+    const handleButtonDropSearch = () => {
+        setdropdownBoxSearch(!dropdownBoxSearch)
+    }
     let dropSearchRef = useRef();
 
 
@@ -137,7 +140,8 @@ function RenderHeader() {
         setdropdownBoxSearch,
         dropSearchRef,
         setScroll,
-        scroll
+        scroll,
+        locationBackSearch
     }
 
 
@@ -161,11 +165,11 @@ function RenderHeader() {
                         <div className="box_navigation">
                             <div className="row-section--nav">
 
-                                <div className="btn_section" ref={dropSearchRef}>
-                                    <button onClick={handleButtonDropSearch}>
+                                <div className="btn_section" >
+                                    <button onClick={handleButtonDropSearch} >
                                         <BiSearchAlt2 />
                                     </button>
-                                    <RenderBoxSearch />
+                                
 
                                 </div>
                                 <div className="btn_section btn_section_notification" ref={dropNotiRef}>
@@ -229,6 +233,7 @@ function RenderHeader() {
                         </div>
                     </div>
                 </div>
+                <RenderBoxSearch />
             </DropBtnBoxSearch.Provider>
         </>
     )

@@ -1,10 +1,168 @@
-.wrap__booking-history{
+.wrap__booking-history {
     width: 100%;
-    .body_book-history-tickets{
+
+    .body_book-history-tickets {
         padding: 100px 50px;
-        .content_booking-hitory-tickets{
-            height: 400px;
+
+        .content_booking-hitory-tickets {
             padding: 50px;
+
+            .head__taskbar-filter {
+                width: 100%;
+                display: flex;
+                border-bottom: 1px solid #635f5f;
+
+                .tbody__taskbar {
+                    width: 100%;
+                    display: flex;
+
+                    .item__tab_type-order {
+                        border-bottom: 2px solid;
+
+                        button {
+                            padding: 10px;
+                            @include styleDisFlexCenter;
+                            text-decoration: none;
+                            font-size: 20px;
+                            font-weight: 600;
+                            background: none;
+                            border: none;
+                            user-select: none;
+                            background: #ffffff34;
+                        }
+                    }
+                }
+
+                .tbox_filter-result {
+                    @include styleDisFlexCenter;
+                    position: relative;
+
+                    input {
+                        width: 250px;
+                        background: none;
+                        padding: 10px 20px;
+                        padding-right: 40px;
+                        border: none;
+                        background: #ffffff21;
+                        font-size: 20px;
+                        outline: none;
+                        border-bottom: 1px solid;
+                        transition: width 0.3s;
+                        user-select: none;
+
+                        &:focus {
+                            width: 400px;
+                        }
+                    }
+
+                    label {
+                        position: absolute;
+                        right: 10px;
+
+                        svg {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+
+            .content_result-filter {
+                width: 100%;
+
+                .body__result_tickets {
+                    width: 100%;
+                    padding: 20px;
+
+                    .item__ticket_booked {
+                        width: 100%;
+                        display: flex;
+                        // margin-bottom: 10px;
+                        transition: all 0.3s;
+                        border-bottom: 1px solid #756f6f;
+                        background-color: #ffffff09;
+
+                        .item_flex_wrap {
+                            padding: 10px 20px;
+
+                        }
+
+                        .border_img {
+                            img {
+                                width: 70px;
+                            }
+                        }
+
+                        .infomation_tickets {
+                            width: 100%;
+                            display: grid;
+
+                            .title_film {
+                                font-size: 22px;
+                                font-weight: 600;
+                                color: $main-color-while-fff;
+                            }
+
+                            .duction-information {
+                                display: flex;
+                            }
+                        }
+
+                        .line_trow-notepad {
+                            width: 80%;
+                            border-left: 2px dashed #615858;
+                            display: grid;
+                            position: relative;
+
+                            .time_tickets {
+                                font-size: 17px;
+                            }
+
+                            .total_unit {
+                                font-size: 25px;
+                                font-weight: 700;
+                            }
+
+                            &::after,
+                            &::before {
+                                content: '';
+                                width: 16px;
+                                height: 16px;
+                                background: $main-color;
+                                position: absolute;
+                                margin-left: -8px;
+                                border-radius: 100%;
+                            }
+                            &::after {
+                                top: -8px;
+                            }
+                            &::before {
+                                bottom: -9px;
+                            }
+                        }
+
+                        .btn_show_detail {
+                            width: 50%;
+                            @include styleDisFlexCenter;
+                            justify-content: right;
+                            button{
+                                border: 1px solid #ffffff34;
+                                padding: 10px;
+                                background: #ffffff36;
+                                cursor: pointer;
+                                font-size: 19px;
+                                @include styleDisFlexCenter;
+                                svg{
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            background: #ffffff17;
+                        }
+                    }
+                }
+            }
         }
     }
 }
