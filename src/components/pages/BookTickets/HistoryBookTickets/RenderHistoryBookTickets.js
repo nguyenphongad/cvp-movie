@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { AiOutlineDoubleRight } from 'react-icons/ai'
-import { FaHistory } from 'react-icons/fa'
-import { IoTicket } from 'react-icons/io5'
+import { AiOutlineDoubleLeft } from 'react-icons/ai'
+import { MdInfoOutline } from 'react-icons/md'
 import { BsSearch } from 'react-icons/bs'
-import { CgDetailsMore} from 'react-icons/cg'
+import { CgDetailsMore } from 'react-icons/cg'
 
 // import Image_Poster_Tickets from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-PLAYING/image_poster-avatar_history.jpg"
 import Image_cinema_cgv from "../../../../assets/image-logo-cinema/logo_cgv.jpg"
 import Image_cinema_beta from "../../../../assets/image-logo-cinema/logo_beta.jpg"
 
+import LoadingRoute from "../../../../views/LoadingRoute"
 
 function RenderHistoryBookTickets() {
 
@@ -24,7 +24,7 @@ function RenderHistoryBookTickets() {
             totalUnitPrice: 130000,
 
             durationFilm: "2H 12P",
-            selectedChair: "I3" | "I4",
+            selectedChair: "I3",
             theaterBooked: "P4",
             ticketsCode: 8253749254836489,
 
@@ -36,12 +36,12 @@ function RenderHistoryBookTickets() {
             cinameBooked: "Beta Quang Trung",
             timeBooked: "08:34",
             dateBooked: "10/12/2022",
-            totalUnitPrice: 120000,
+            totalUnitPrice: 160000,
 
             durationFilm: "2H 12P",
             selectedChair: "I3" + " | " + "I4",
             theaterBooked: "P4",
-            ticketsCode: 8253749254836489,
+            ticketsCode: 4253749234236489,
 
         },
         {
@@ -54,17 +54,26 @@ function RenderHistoryBookTickets() {
             totalUnitPrice: 80000,
 
             durationFilm: "2H 12P",
-            selectedChair: "I3" + " | " + "I4",
+            selectedChair: "I3",
             theaterBooked: "P4",
-            ticketsCode: 8253749254836489,
+            ticketsCode: 392374922343289,
 
         },
     ]
     const vnd = new Intl.NumberFormat("vi-VN", {
-        style: 'currency',
-        currency: 'VND'
+        style: 'currency', currency: 'VND'
+    });
 
-    })
+
+    const [loadingBookingHistory, setloadingBookingHistory] = useState(true);
+    useEffect(() => {
+        if (loadingBookingHistory) {
+            setTimeout(() => {
+                setloadingBookingHistory(false);
+            }, 1500)
+        }
+    }, [loadingBookingHistory]);
+
     const returnListTicketsBooked = listTicketsBooked.map((index) => {
         return (
             <div className="item__ticket_booked" key={index.id}>
@@ -94,7 +103,7 @@ function RenderHistoryBookTickets() {
                 <div className="item_flex_wrap btn_show_detail">
                     <div>
                         <button>
-                            Detail <CgDetailsMore/>
+                            Detail <CgDetailsMore />
                         </button>
                     </div>
 
@@ -110,18 +119,17 @@ function RenderHistoryBookTickets() {
             <div className="body_book-history-tickets">
                 <div className="heading_text">
                     <Link to="/book-tickets">
-                        <IoTicket />
+                        <AiOutlineDoubleLeft />
                         BOOK TICKETS
                     </Link>
-                    <AiOutlineDoubleRight />
-                    <FaHistory /> HISTORY BOKING TICKETS
                 </div>
                 <div className="content_booking-hitory-tickets">
+
                     <div className="head__taskbar-filter">
                         <div className="tbody__taskbar">
                             <div className="item__tab_type-order">
                                 <button>
-                                    BOOKING HISTORY
+                                    BOOKING TICKETS HISTORY
                                 </button>
                             </div>
                         </div>
@@ -129,7 +137,7 @@ function RenderHistoryBookTickets() {
                             <input
                                 type="text"
                                 id="search_booking-history"
-                                placeholder="Title film history"
+                                placeholder="Booked movie titles history"
                             />
                             <label htmlFor="search_booking-history">
                                 <BsSearch />
@@ -137,9 +145,19 @@ function RenderHistoryBookTickets() {
                         </div>
                     </div>
                     <div className='content_result-filter'>
-                        <div className="body__result_tickets">
-                            {returnListTicketsBooked}
+                        <div className="text_warning-store-his">
+                            <MdInfoOutline />
+                            Only store history for 60 days
                         </div>
+                        {
+                            loadingBookingHistory ?
+                                <LoadingRoute /> :
+                                <div className="body__result_tickets animation_scale-lg">
+                                    {returnListTicketsBooked}
+
+                                </div>
+                        }
+
                     </div>
                 </div>
             </div>

@@ -61,9 +61,9 @@ function Home() {
     const ContentBioTrailer= ()=>{
         return (
             <>
-                Smart, sarcastic and a little dead inside, 
-                Wednesday Addams investigates a murder spree while 
-                making new friends — and foes — at Nevermore Academy.
+                In a society that favors good looks,
+                a high school outcast leads a double life switching between
+                his two bodies that are polar opposites in appearance.
             </>
         )
     }

@@ -43,13 +43,13 @@
                         justify-content: space-around;
                         margin-top: 40px;
                         .button-mixin {
-                            border-radius: 5px;
                             @include styleDisFlexCenter;
                             cursor: pointer;
                             transition: all 0.4s;
                             color: #fff;
-                            border: 2px solid #ffffff6e;
-                            padding: 8px 17px;
+                            border: none;
+                            border-bottom: 2px solid #ffffffd4;
+                            padding: 10px 15px;
                             font-weight: 700;
                             font-size: 19px;
                             box-shadow: #0000005e 2px 0px 7px 2px;
@@ -65,14 +65,10 @@
                             svg {
                                 margin-right: 10px;
                             }
-                            &:hover {
-                                transform: translateY(-3px);
-                            }
                         }
                         .border__btn_play--list {
-                            background: #ff0000;
-                            border: none;
-                            padding: 12px 22px !important;
+                            background-color: #ff0000;
+                            // padding: 12px 22px !important;
                         }
                         .border__btn_play_info {
                             background-color: #9b93937c;
@@ -386,7 +382,7 @@
                     height: 100%;
                     margin: 10px 15px;
                     position: relative;
-                    border-radius: 10px;
+                    // border-radius: 10px;
                     box-shadow: $main-color_box_shadow;
                     cursor: pointer;
                     overflow: hidden;

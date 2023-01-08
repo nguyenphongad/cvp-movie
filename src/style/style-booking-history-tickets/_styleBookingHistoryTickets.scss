@@ -2,10 +2,10 @@
     width: 100%;
 
     .body_book-history-tickets {
-        padding: 100px 50px;
+        padding: 100px 50px 50px 50px;
 
         .content_booking-hitory-tickets {
-            padding: 50px;
+            padding: 20px 50px;
 
             .head__taskbar-filter {
                 width: 100%;
@@ -20,7 +20,7 @@
                         border-bottom: 2px solid;
 
                         button {
-                            padding: 10px;
+                            padding: 10px 15px;
                             @include styleDisFlexCenter;
                             text-decoration: none;
                             font-size: 20px;
@@ -38,7 +38,7 @@
                     position: relative;
 
                     input {
-                        width: 250px;
+                        width: 310px;
                         background: none;
                         padding: 10px 20px;
                         padding-right: 40px;
@@ -68,10 +68,19 @@
 
             .content_result-filter {
                 width: 100%;
-
+                .text_warning-store-his{
+                    margin-top: 15px;
+                    font-weight: 600;
+                    font-size: 18px;
+                    @include styleDisFlexCenter;
+                    color: #c5c5c5;
+                    svg{
+                        margin-right: 10px;
+                    }
+                }
                 .body__result_tickets {
                     width: 100%;
-                    padding: 20px;
+                    padding: 40px 20px;
 
                     .item__ticket_booked {
                         width: 100%;
@@ -95,6 +104,7 @@
                         .infomation_tickets {
                             width: 100%;
                             display: grid;
+                            padding-left: 0px;
 
                             .title_film {
                                 font-size: 22px;
@@ -115,10 +125,11 @@
 
                             .time_tickets {
                                 font-size: 17px;
+                                font-weight: 600;
                             }
 
                             .total_unit {
-                                font-size: 25px;
+                                font-size: 26px;
                                 font-weight: 700;
                             }
 
@@ -136,7 +147,7 @@
                                 top: -8px;
                             }
                             &::before {
-                                bottom: -9px;
+                                bottom: -10px;
                             }
                         }
 
@@ -149,6 +160,7 @@
                                 padding: 10px;
                                 background: #ffffff36;
                                 cursor: pointer;
+                                user-select: none;
                                 font-size: 19px;
                                 @include styleDisFlexCenter;
                                 svg{
@@ -165,4 +177,16 @@
             }
         }
     }
+    .wrap_loading_route{
+        height: 100% !important;
+    }
+}
+.modal_detail{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    background-color: #00000062;
+    top:0px;
+    left: 0px;
 }

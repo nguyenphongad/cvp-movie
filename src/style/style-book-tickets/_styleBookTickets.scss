@@ -1,24 +1,33 @@
-.wrap__book-tickets{
+.wrap__book-tickets {
     width: 100%;
-    .body_tickets{
+
+    .body_tickets {
         padding: 100px 50px;
-        .wrap_content--work{
+
+        .wrap_content--work {
             width: 100%;
+
             // height: 500px;
-            .body_select_book-tab{
+            .body_select_book-tab {
                 width: 100%;
-                padding:20px 50px ;
-                .head__tab-select-book{
-                    width: 100%;
+                padding: 20px 50px;
+
+                .head__tab-select-book {
                     display: flex;
                     border-bottom: 1px solid #635f5f;
-                    .tab__select-book{
+                    margin: 0px 10px;
+
+                    .tab__select-book {
                         width: 100%;
                         display: flex;
-                        .item_select-type-book{
-                            margin-right:2px;
-                            button{
-                                padding: 10px;
+                        position: relative;
+
+                        .item_select-type-book {
+                            position: relative;
+                            z-index: 3;
+
+                            button {
+                                padding: 10px 15px;
                                 @include styleDisFlexCenter;
                                 text-decoration: none;
                                 font-size: 20px;
@@ -26,54 +35,260 @@
                                 background: none;
                                 border: none;
                                 user-select: none;
-                                svg{
+
+                                svg {
                                     margin-right: 10px;
                                 }
-                                &:hover{
+
+                                &:hover {
                                     background: #0000003f;
                                 }
                             }
-                            
+
                         }
-                        .active_item_select-type{
-                            background: #ffffff34;
-                            border-bottom: 2px solid ;
-                            button{
-                                color:$main-color-while-fff;
+
+                        .box_nav_sline {
+                            height: 100%;
+                            background-color: #ffffff34;
+                            border-bottom: 2px solid;
+                            position: absolute;
+                            top: 0px;
+                            transition: left 0.25s;
+
+                        }
+
+                        .active_item_select-type {
+                            button {
+                                color: $main-color-while-fff;
                                 pointer-events: none;
                             }
                         }
                     }
-                    .tab__history-book{
+
+                    .tab__history-book {
                         width: 100%;
                         display: flex;
                         justify-content: right;
-                        .btn_to_history-book{
+
+                        .btn_to_history-book {
                             background-color: #ffffff1a;
                             border-bottom: 1px solid;
-                            a{
+
+                            a {
                                 padding: 10px;
                                 font-size: 20px;
                                 text-decoration: none;
                                 @include styleDisFlexCenter;
-                                svg{
+
+                                svg {
                                     margin: 0px 5px;
                                     transition: all 0.4s;
                                 }
                             }
-                            &:hover{
-                                svg{
-                                    transform:translateX(10px) ;
+
+                            &:hover {
+                                svg {
+                                    transform: translateX(10px);
                                 }
                             }
                         }
                     }
                 }
-                .content_select_book-tab{
-                    padding: 30px;
-                    text-align: center;
+
+                .content_select_book-tab {
+                    padding: 25px 10px;
                 }
             }
+        }
+    }
+}
+
+.box-sizing_tab_book {
+    width: 100%;
+
+    .wrap_loading_route {
+        height: 100%;
+    }
+
+    .wrap_border_content-tab-booking {
+        width: 100%;
+
+        .slick-slider {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .slick-list {
+                .slick-track {
+                    display: flex;
+
+                    .slick-slide {
+                        width: 100%;
+                        float: none;
+                        margin: 0px 10px;
+                    }
+                }
+            }
+
+            .slick-dots {
+                width: 100%;
+                position: absolute;
+                bottom: -40px;
+                display: flex !important;
+                justify-content: center;
+
+                li {
+                    width: 8px;
+                    height: 1px;
+                    display: block;
+                    background-color: #796c6c;
+                    margin: 0px 5px;
+                    transition: all 0.4s;
+
+                    button {
+                        display: none;
+                    }
+                }
+
+                .slick-active {
+                    width: 20px;
+                    background-color: red;
+                }
+            }
+
+
+        }
+
+
+    }
+
+    .slick-arrow {
+        width: 45px;
+        height: 45px;
+        padding-left: 12px;
+        position: absolute;
+        z-index: 1;
+        background: #a7a1a198;
+        cursor: pointer;
+        border: none;
+        border-bottom: 2px solid $main-color-while-fff;
+        transition: all 0.15s;
+        font-size: 0px;
+
+        &::after,
+        &::before {
+            content: '';
+            width: 17px;
+            height: 3px;
+            background-color: $main-color-while;
+            display: block;
+        }
+    }
+
+    .slick-prev {
+        left: -13px;
+
+        &::before {
+            margin-bottom: 7px;
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+
+    .slick-next {
+        right: -13px;
+
+        &::before {
+            margin-bottom: 7px;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .slick-disabled {
+        display: none !important;
+    }
+}
+
+.item_box_book-tickets {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+
+    .body_background_book-tickets {
+        text-align: left;
+        position: relative;
+
+        .border_image-poster {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            border: 1px solid #ffffff54;
+            transition: all 0.4s;
+
+            img {
+                width: 100%;
+                height: 100%;
+                transition: all 0.4s;
+            }
+        }
+
+        .title_film {
+            width: 200px;
+            font-size: 19px;
+            color: #ffffff;
+            display: -webkit-box;
+            font-weight: 600;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+
+        .info-film {
+            width: 100%;
+            display: flex;
+            padding: 10px 0px;
+
+            .date_movie {}
+
+            .favorite-degree {
+                width: 100%;
+                @include styleDisFlexCenter;
+                justify-content: right;
+
+                svg {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .border__limit-old {
+            padding: 2px 5px;
+            margin: 8px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px solid;
+            background: #b40c0c;
+        }
+    }
+
+    &:hover {
+        .border_image-poster {
+            border: 1px solid #e6dddd;
+        }
+
+        img {
+            transform: scale(1.08);
         }
     }
 }

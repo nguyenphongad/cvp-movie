@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaUnlink } from 'react-icons/fa'
 
+
 function NotFound() {
     return (
         <div className="wrap_not-found animation_scale-lg">

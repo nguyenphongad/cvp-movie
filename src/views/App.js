@@ -12,6 +12,7 @@ import RenderErrorBounDary from '../components/Error/RenderErrorBounDary';
 import { useEffect, useState } from 'react';
 import RenderLoadingStart from './RenderLoadingStart';
 import RenderMaintenance from './RenderMaintenance';
+import RenderModalDetailHistoryTickets from '../components/pages/BookTickets/ModalDetailHistoryTickets/RenderModalDetailHistoryTickets';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
                 <RenderMaintenance />
                 : <>
                   <RenderHeader />
+                  {/* <RenderModalDetailHistoryTickets/> */}
                   <RouterBody />
                   <ScrollToTopRouter />
                   <RenderFooter />

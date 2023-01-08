@@ -16,13 +16,13 @@ import Picture_noti_1 from "../../assets/photo-box/photo_noti/picture_notificati
 import Picture_noti_2 from "../../assets/photo-box/photo_noti/picture_notification_2.jpeg";
 import Picture_noti_3 from "../../assets/photo-box/photo_noti/picture_notification_3.jpeg";
 
-import { BiSearchAlt2 } from "react-icons/bi";
 import { IoNotifications } from "react-icons/io5";
 import { RiAccountCircleFill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { AiFillSetting } from 'react-icons/ai';
 import { IoIosHelpCircle } from 'react-icons/io';
 import { RiFullscreenFill } from 'react-icons/ri';
 import RenderBoxSearch from './BoxSearch/RenderBoxSearch';
+import { MdSearchOff, MdSearch } from 'react-icons/md';
 
 export const DropBtnBoxSearch = createContext();
 
@@ -50,11 +50,12 @@ function RenderHeader() {
 
 
     //search
-    const handleButtonDropSearch = () => {
-        setdropdownBoxSearch(!dropdownBoxSearch)
+    const handleButtonDropSearchTrue = () => {
+        setdropdownBoxSearch(true)
     }
-    let dropSearchRef = useRef();
-
+    const handleButtonDropSearchFalse = () => {
+        setdropdownBoxSearch(false)
+    }
 
     //select
     const handleButtonDrop = () => { setdropdownBoxSel(!dropdownBoxSel); }
@@ -68,10 +69,8 @@ function RenderHeader() {
         return () => document.removeEventListener("mousedown", hanlder);
     });
 
-
     const dataFromFullSc = useContext(UseContextFromFullScreen);
-
-
+    
     const listItemSelectDrop = [
         {
             nameBtnSelect: "Account",
@@ -138,12 +137,10 @@ function RenderHeader() {
     const valueHeaderToBoxSearch = {
         dropdownBoxSearch,
         setdropdownBoxSearch,
-        dropSearchRef,
         setScroll,
         scroll,
         locationBackSearch
     }
-
 
     return (
         <>
@@ -152,10 +149,10 @@ function RenderHeader() {
                     <div className={`trow__header--tr ${scroll ? "bgr-opacity-none" : "bgr-opacity"}`}>
                         <div className="box_name-logo">
                             <div className="border-logo">
-                                <NavLink to="/" >
+                                <a href="/" >
                                     <img src={Image_name_logo} alt="name" className="img_name" />
                                     <img src={Image_logo_cvp} alt="name" className="img_logo" />
-                                </NavLink>
+                                </a>
                             </div>
                         </div>
 
@@ -165,11 +162,19 @@ function RenderHeader() {
                         <div className="box_navigation">
                             <div className="row-section--nav">
 
-                                <div className="btn_section" >
-                                    <button onClick={handleButtonDropSearch} >
-                                        <BiSearchAlt2 />
-                                    </button>
-                                
+                                <div className="btn_section">
+                                    {
+                                        dropdownBoxSearch ?
+                                            <button onClick={handleButtonDropSearchFalse} >
+                                                <MdSearchOff />
+                                            </button>
+                                            :
+                                            <button onClick={handleButtonDropSearchTrue} >
+                                                <MdSearch />
+                                            </button>
+                                    }
+
+
 
                                 </div>
                                 <div className="btn_section btn_section_notification" ref={dropNotiRef}>

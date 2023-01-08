@@ -2,7 +2,7 @@
     width: 100%;
 
     .body_my-list {
-        padding:100px 50px;
+        padding: 100px 50px;
 
         .body_product-film {
             display: flex;
@@ -75,26 +75,23 @@
             display: block;
             background-color: #796c6c;
             margin: 0px 5px;
-        }
+            transition: all 0.4s;
 
-        button {
-            display: none;
+            button {
+                display: none;
+            }
         }
 
         .slick-active {
+            width: 20px;
             background-color: red;
         }
 
     }
 
-    .prev_prev {
-        display: none;
-    }
-
-    .next_prev {
+    .btn__arrow_prev {
         height: 70%;
         position: absolute;
-        right: 0px;
         background: none;
         cursor: pointer;
         border: none;
@@ -103,6 +100,14 @@
             font-size: 30px;
         }
     }
+
+    .prev_prev {
+        left: 0px;
+    }
+
+    .next_prev {
+        right: 0px;
+    }
 }
 
 .item__box-film {
@@ -110,17 +115,19 @@
     max-width: 260px;
     @include styleDisFlexCenter;
     position: relative;
-    border-radius: 10px;
+    // border-radius: 5px;
     border: 1px solid #332e2e;
-    box-shadow: #0000004a 0px 0px 20px 2px, #000000cf 0px 10px 16px -10px;
+    border-bottom: 2px solid ;
+    box-shadow: #00000031 0px 0px 20px 2px, #000000a0 0px 10px 16px -10px;
     transition: all 0.4s;
+
     .borzing_content {
         width: 100%;
 
         .border_img--poster {
             width: 100%;
             overflow: hidden;
-            border-radius: 10px 10px 0px 0px;
+            // border-radius: 5px 5px 0px 0px;
             position: relative;
 
             img {
@@ -190,7 +197,7 @@
                     margin-bottom: 10px;
 
                     .title-film-st {
-                        width: 170px;
+                        width: 200px;
                         font-size: 21px;
                         color: #ffffff;
                         display: -webkit-box;
@@ -206,6 +213,7 @@
 
                 .trow_body-box {
                     width: 100%;
+                    padding-bottom: 10px;
 
                     .td_infomation-auth {
                         display: flex;
@@ -219,7 +227,9 @@
 
                         .limit-old {
                             border: 1px solid #686161;
+                            border-bottom:2px solid ;
                             padding: 0px 5px;
+                            font-size: 14px;
                             color: #928a8a;
                         }
                     }
@@ -231,6 +241,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: right;
+
                 .btn_show_modal {
                     border-radius: 100%;
                     @include styleDisFlexCenter;
@@ -241,15 +252,16 @@
                     }
                 }
             }
-
-
         }
     }
 
     &:hover {
-        transform: scale(1.02);
+        transform: scale(1.03);
+        border: 1px solid #b5b4b4; 
+        border-bottom: 2px solid #b5b4b4 ;
+
         img {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
         .btn_playPP {
@@ -268,18 +280,26 @@
     font-weight: 600;
     @include styleDisFlexCenter;
     justify-content: left;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     position: sticky;
     top: 60px;
+
     svg {
         margin-right: 20px;
-        margin-left: 20px;
         font-size: 45px;
+        transition: all 0.4s;
     }
-    a{
+
+    a {
         text-decoration: none;
-        &:hover{
+        @include styleDisFlexCenter;
+
+        &:hover {
             text-decoration: underline;
+
+            svg {
+                transform: translateX(-20px);
+            }
         }
     }
 }
@@ -290,6 +310,7 @@
         flex-wrap: wrap;
         overflow: auto;
         justify-content: center;
+
         .item__box-film {
             // max-width: 350px;
             margin: 20px;
@@ -298,13 +319,15 @@
 
 }
 
-.animation_scale-lg{
+.animation_scale-lg {
     animation: an_body_scale 0.4s forwards;
+
     @keyframes an_body_scale {
-        from{
+        from {
             transform: scale(0.95);
         }
-        to{
+
+        to {
             transform: scale(1);
         }
     }
