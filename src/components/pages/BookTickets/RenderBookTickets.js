@@ -1,30 +1,30 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { AiOutlineDoubleRight} from 'react-icons/ai'
+import React, { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { AiOutlineDoubleRight } from 'react-icons/ai'
 import { RiSlideshow3Fill } from 'react-icons/ri'
 import { IoTicket } from "react-icons/io5"
 import { Link } from 'react-router-dom'
 
 import "slick-carousel/slick/slick.css";
+import LoadingRoute from '../../../views/LoadingRoute'
 
-import RenderBookTicketsPlaying from './TabBookTickets/RenderBookTicketsPlaying'
-import RenderBookTicketsUpcoming from './TabBookTickets/RenderBookTicketsUpcoming'
+// import RenderBookTicketsPlaying from './TabBookTickets/RenderBookTicketsPlaying'
+// import RenderBookTicketsUpcoming from './TabBookTickets/RenderBookTicketsUpcoming'
 
-
+const RenderBookTicketsPlaying = React.lazy(() => import('./TabBookTickets/RenderBookTicketsPlaying'))
+const RenderBookTicketsUpcoming = React.lazy(() => import('./TabBookTickets/RenderBookTicketsUpcoming'))
 
 export const BookTicketsPlaying = () => {
-    
     return (
-        <div className="box-sizing_tab_book">
-            <RenderBookTicketsPlaying/>
-        </div>
-
+        <Suspense fallback={<LoadingRoute />}>
+            <RenderBookTicketsPlaying />
+        </Suspense>
     )
 }
 export const BookTicketsUpComing = () => {
     return (
-        <div className="box-sizing_tab_book">
-            <RenderBookTicketsUpcoming/>
-        </div>
+        <Suspense fallback={<LoadingRoute />}>
+            <RenderBookTicketsUpcoming />
+        </Suspense>
     )
 }
 
@@ -46,7 +46,7 @@ function RenderBookTickets() {
     const getWidthBoxNavigationSecondRef = useRef(null);
     const [getWidthBoxNav_firt, setgetWidthBoxNavigation_firt] = useState(0);
     const [getWidthBoxNav_second, setgetWidthBoxNavigation_second] = useState(0);
-    useLayoutEffect(()=>{
+    useLayoutEffect(() => {
         setgetWidthBoxNavigation_firt(getWidthBoxNavigationFirtRef.current.offsetWidth)
         setgetWidthBoxNavigation_second(getWidthBoxNavigationSecondRef.current.offsetWidth)
     })
@@ -69,32 +69,37 @@ function RenderBookTickets() {
                                 </div>
                                 <div className={`item_select-type-book ${tabBookType ? "" : "active_item_select-type"}`} ref={getWidthBoxNavigationSecondRef}>
                                     <button onClick={handleOnSelectTabSecond}>
-                                        UPCOMING MOVIES 
+                                        UPCOMING MOVIES
                                     </button>
                                 </div>
                                 <div className="box_nav_sline" style={{
                                     width: tabBookType ? getWidthBoxNav_firt : getWidthBoxNav_second,
-                                    left : tabBookType ? '0px' : getWidthBoxNav_firt  }}>
-                                    
+                                    left: tabBookType ? '0px' : getWidthBoxNav_firt
+                                }}>
+
                                 </div>
 
 
                             </div>
                             <div className="tab__history-book">
                                 <div className="btn_to_history-book">
-                                    <Link to="./booking-history">
-                                        BOOKING HISTORY
+                                    <Link to="./booking-tickets-history">
+                                        BOOKING TICKETS HISTORY
                                         <AiOutlineDoubleRight />
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="content_select_book-tab">
-                            {
-                                tabBookType ?
-                                    <BookTicketsPlaying />
-                                    : <BookTicketsUpComing />
-                            }
+
+                            <div className="box-sizing_tab_book">
+                                {
+                                    tabBookType ?
+                                        <BookTicketsPlaying />
+                                        :
+                                        <BookTicketsUpComing />}
+                            </div>
+
                         </div>
                     </div>
                 </div>

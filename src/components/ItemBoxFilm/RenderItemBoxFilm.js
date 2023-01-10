@@ -1,5 +1,4 @@
 import React from 'react'
-import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { FaPlay } from 'react-icons/fa'
 
 function RenderItemBoxFilm(props) {
@@ -33,13 +32,6 @@ function RenderItemBoxFilm(props) {
                             </div>
                         </div>
                     </div>
-
-                    <div className="flex__nth-right">
-                        <div className="btn_show_modal">
-                            <AiOutlineInfoCircle />
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

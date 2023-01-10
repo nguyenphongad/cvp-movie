@@ -11,7 +11,7 @@ import Image_cinema_beta from "../../../../assets/image-logo-cinema/logo_beta.jp
 
 import LoadingRoute from "../../../../views/LoadingRoute"
 
-function RenderHistoryBookTickets() {
+function RenderBookTicketsHistory() {
 
     const listTicketsBooked = [
         {
@@ -112,8 +112,6 @@ function RenderHistoryBookTickets() {
         )
     })
 
-
-
     return (
         <div className='wrap__booking-history animation_scale-lg'>
             <div className="body_book-history-tickets">
@@ -165,4 +163,4 @@ function RenderHistoryBookTickets() {
     )
 }
 
-export default RenderHistoryBookTickets
+export default RenderBookTicketsHistory

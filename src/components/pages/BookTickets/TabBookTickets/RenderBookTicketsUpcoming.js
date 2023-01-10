@@ -112,13 +112,6 @@ function RenderBookTicketsUpcoming() {
             </RenderItemBookTickets>
         )
     })
-    const [loadingTabBookUpcoming, setloadingTabBookUpcoming] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setloadingTabBookUpcoming(false)
-        }, 700);
-    })
-
     const [windowSize, setWindowSize] = useState(() => {
         const { innerWidth } = window;
         return { innerWidth };
@@ -150,21 +143,17 @@ function RenderBookTicketsUpcoming() {
 
     return (
         <>
-            {
-                loadingTabBookUpcoming ?
-                    <LoadingRoute /> :
-                    <div className="wrap_border_content-tab-booking animation_scale-lg">
-                        <Slider
-                            dots={true}
-                            slidesToScroll={1}
-                            slidesToShow={numberToSlide}
-                            infinite={false}
-                            swipeToSlide={true}
-                        >
-                            {returnListBookTicketsUpcoming}
-                        </Slider>
-                    </div>
-            }
+            <div className="wrap_border_content-tab-booking animation_scale-lg">
+                <Slider
+                    dots={true}
+                    slidesToScroll={1}
+                    slidesToShow={numberToSlide}
+                    infinite={false}
+                    swipeToSlide={true}
+                >
+                    {returnListBookTicketsUpcoming}
+                </Slider>
+            </div>
         </>
     )
 }

@@ -14,18 +14,16 @@ import Picture_name_lookism from "../../../assets/photo-box/lookism/picture_name
 
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
-
 import { BsFillInfoCircleFill } from "react-icons/bs";
 
-import RenderSlideImage from './SlideImage/RenderSlideImage';
 import RenderViewBoxChannle from './ViewBoxChannel/RenderViewBoxChanle';
 import RenderMylistSlick from './RenderMyList_Slick/RenderMylistSlick';
 import RenderListTrending from './ListTrening/RenderListTrending';
-
+import AppLearn from './learnHook/AppLearn';
 
 function Home() {
 
-    useEffect(()=>{
+    useEffect(() => {
         document.title = "Home" + " | CVP-MOVIE"
     })
 
@@ -33,6 +31,14 @@ function Home() {
     const [scrollPPVideoTrailer, setscrollPPVideoTrailer] = useState(false);
 
     const videoTrailerRef = useRef();
+
+    //auto play video trailer
+
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         setcontrolTogglePPVideoTrailer(true)
+    //     },2000)
+    // })
 
     useEffect(() => {
         if (controlTogglePPVideoTrailer) {
@@ -58,7 +64,7 @@ function Home() {
     const handleToggleVideoTrailer = () => {
         setcontrolTogglePPVideoTrailer(!controlTogglePPVideoTrailer);
     }
-    const ContentBioTrailer= ()=>{
+    const ContentBioTrailer = () => {
         return (
             <>
                 In a society that favors good looks,
@@ -68,13 +74,13 @@ function Home() {
         )
     }
     const videoInfoTrailerVideoHome = {
-        id : 1,
-        srcVideoTrailer : Video_trailer_lookism,
-        srcPosterTrailer : Picture_poster_trailer_lookism,
-        srcImageNameInTrail : Picture_name_lookism,
-        contentBioTrailer : <ContentBioTrailer/>,
-        ageLimit : "16+",
-        categoryGame : false
+        id: 1,
+        srcVideoTrailer: Video_trailer_lookism,
+        srcPosterTrailer: Picture_poster_trailer_lookism,
+        srcImageNameInTrail: Picture_name_lookism,
+        contentBioTrailer: <ContentBioTrailer />,
+        ageLimit: "16+",
+        categoryGame: false
 
     }
 
@@ -94,10 +100,10 @@ function Home() {
                             <img src={videoInfoTrailerVideoHome.srcImageNameInTrail} />
                             <div className="row-footer">
                                 <div className="text_introduce_trailer">
-                                {videoInfoTrailerVideoHome.contentBioTrailer}
+                                    {videoInfoTrailerVideoHome.contentBioTrailer}
                                 </div>
                             </div>
-                            
+
                             <div className="row block-btn__control">
                                 <button className="button-mixin border__btn_play--list btn btn-5 hover-border-11">
                                     <span>
@@ -116,17 +122,17 @@ function Home() {
                             <div className="tr-control_btn_trailer-sion">
                                 <button onClick={handleToggleVideoTrailer} className="borderPP-trailer" >
                                     {controlTogglePPVideoTrailer ?
-                                        <FaPause className="an_icon_pp-trailer" /> :
-                                        <FaPlay className="an_icon_pp-tralier" />}
+                                        <FaPause /> :
+                                        <FaPlay />}
                                 </button>
                                 <div className="border_old_warning">
                                     {videoInfoTrailerVideoHome.ageLimit}
                                 </div>
                                 {
-                                videoInfoTrailerVideoHome.categoryGame ? 
-                                <div className="border_old_warning">
-                                    <IoGameController />
-                                </div> : ""}
+                                    videoInfoTrailerVideoHome.categoryGame ?
+                                        <div className="border_old_warning">
+                                            <IoGameController />
+                                        </div> : ""}
                             </div>
 
                         </div>
@@ -138,15 +144,15 @@ function Home() {
                 <div className="bottom_shadow"></div>
             </div>
 
-            <div className="box_slide-review">
+            {/* <div className="box_slide-review">
                 <RenderSlideImage />
-            </div>
+            </div> */}
             <div className="body_home">
                 <RenderViewBoxChannle />
-                <RenderMylistSlick/>
-                <RenderListTrending/> 
-                
+                <RenderMylistSlick />
+                <RenderListTrending />
 
+                <AppLearn/>
 
 
 

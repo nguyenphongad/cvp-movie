@@ -59,7 +59,6 @@ function RenderBoxSearch() {
                                 </div>
                                 <div className="box__contain-in">
                                     <input
-                                        autoFocus
                                         ref={focusValueRef}
                                         type="text"
                                         placeholder="Titles, people, movies"

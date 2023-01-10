@@ -1,7 +1,7 @@
 import { UseContextFromFullScreen } from '../../views/RenderFullScreen';
 
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import React, { createContext, Suspense, useContext, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 import { withErrorBoundary } from 'react-error-boundary';
 import RenderErrorBounDary from '../Error/RenderErrorBounDary';
@@ -12,10 +12,6 @@ import Image_logo_cvp from "../../assets/image-logo/logo_cvp-movie.png";
 import RenderCustomMenu from '../Header/CustomMenu/RenderCustomMenu';
 import Picture_avatar_cvp from "../../assets/picture_avatar-cvp/picture_avatar_cvp-movie.png"
 
-import Picture_noti_1 from "../../assets/photo-box/photo_noti/picture_notification_1.jpeg";
-import Picture_noti_2 from "../../assets/photo-box/photo_noti/picture_notification_2.jpeg";
-import Picture_noti_3 from "../../assets/photo-box/photo_noti/picture_notification_3.jpeg";
-
 import { IoNotifications } from "react-icons/io5";
 import { RiAccountCircleFill, RiLogoutCircleRFill } from 'react-icons/ri';
 import { AiFillSetting } from 'react-icons/ai';
@@ -24,6 +20,8 @@ import { RiFullscreenFill } from 'react-icons/ri';
 import RenderBoxSearch from './BoxSearch/RenderBoxSearch';
 import { MdSearchOff, MdSearch } from 'react-icons/md';
 
+// import RenderBoxNotification from './BoxNotification/RenderBoxNotification';
+const RenderBoxNotification = React.lazy(() => import('./BoxNotification/RenderBoxNotification'))
 export const DropBtnBoxSearch = createContext();
 
 function RenderHeader() {
@@ -70,7 +68,7 @@ function RenderHeader() {
     });
 
     const dataFromFullSc = useContext(UseContextFromFullScreen);
-    
+
     const listItemSelectDrop = [
         {
             nameBtnSelect: "Account",
@@ -95,8 +93,8 @@ function RenderHeader() {
             icon_before: <IoIosHelpCircle />,
         },
         {
-            nameBtnSelect: "Sign out",
-            linkTo: "#",
+            nameBtnSelect: "Log out",
+            linkTo: "#login-out",
             icon_before: <RiLogoutCircleRFill />,
             warning_hover: "waring_hover",
         },
@@ -116,7 +114,6 @@ function RenderHeader() {
             </div>
         )
     });
-
 
     // notification
     const handleButtonDropNoti = () => {
@@ -183,40 +180,10 @@ function RenderHeader() {
                                     </button>
 
                                     <div className={`box_drops-notification ${dropdownBoxNoti ? "activeDropHeader" : "inactiveDropHeader"}`}>
-                                        <div className="top_show">
-                                            <div className={`an_border-top ${dropdownBoxNoti ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
-                                            </div>
-                                        </div>
-                                        <div className="body__drop">
+                                        <Suspense fallback={<>loading...</>}>
+                                            <RenderBoxNotification />
+                                        </Suspense>
 
-                                            <div className="item_list--noti">
-                                                <Link to="#">
-                                                    <img src={Picture_noti_1} />
-                                                    <div className="heading_noti-public">
-                                                        <div className="title-heading">Wednesday | 2022</div>
-                                                        <div className="font-exp_day">Just released : 10 day ago</div>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                            <div className="item_list--noti">
-                                                <Link to="#">
-                                                    <img src={Picture_noti_2} />
-                                                    <div className="heading_noti-public">
-                                                        <div className="title-heading">Avatar 2 | 2022</div>
-                                                        <div className="font-exp_day">Coming soon : 1 more week</div>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                            <div className="item_list--noti">
-                                                <Link to="#">
-                                                    <img src={Picture_noti_3} />
-                                                    <div className="heading_noti-public">
-                                                        <div className="title-heading">Peaky bliders 3 | 2022</div>
-                                                        <div className="font-exp_day">Coming soon : 2 more week</div>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -226,10 +193,6 @@ function RenderHeader() {
                                     </button>
                                     <div className={`box_drops-account ${dropdownBoxSel ? "activeDropHeader" : "inactiveDropHeader"}`}>
                                         <div className="body__drop">
-                                            <div className="top_show">
-                                                <div className={`an_border-top ${dropdownBoxSel ? "an_border-top-tran-enlarge" : "an_border-top-tran-zoom_out"}`}>
-                                                </div>
-                                            </div>
                                             {returnListSelectBtn}
                                         </div>
                                     </div>

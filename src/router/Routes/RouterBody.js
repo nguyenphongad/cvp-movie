@@ -11,7 +11,7 @@ import RenderSearchMain from '../../components/pages/SearchMain/RenderSearchMain
 import RenderSetting from '../../components/Setting/RenderSetting'
 import RenderYourAccount from '../../components/YourAccount/RenderYourAccount'
 import LoadingRoute from '../../views/LoadingRoute';
-import RenderHistoryBookTickets from '../../components/pages/BookTickets/HistoryBookTickets/RenderHistoryBookTickets';
+import RenderBookTicketsHistory from '../../components/pages/BookTickets/BookTicketsHistory/RenderBookTicketsHistory';
 
 const LazyHome = lazy(() => import('../../components/pages/Home/Home'))
 const LazyMyList = lazy(() => import('../../components/pages/MyList/RenderMyList'))
@@ -54,7 +54,7 @@ function RouterBody() {
 
                 </Route>
                 
-                <Route path="book-tickets/booking-history" element={<RenderHistoryBookTickets/> } />
+                <Route path="book-tickets/booking-tickets-history" element={<RenderBookTicketsHistory/> } />
 
                 <Route path="/search" element={<RenderSearchMain />} />
 

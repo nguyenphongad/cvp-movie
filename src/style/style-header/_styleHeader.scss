@@ -9,10 +9,8 @@
         width: 100%;
         height: 100%;
         padding: 10px 50px;
-        transition: all 0.5s;
         background-image: linear-gradient(180deg, #000000b3 10%, transparent);
         @include styleDisFlexCenter;
-
         .box_name-logo {
             height: 100%;
 
@@ -53,7 +51,7 @@
                     font-weight: 600;
                     user-select: none;
                     transition: all 0.4s;
-                    opacity: 0.85;
+                    opacity: 0.80;
 
                     >svg {
                         margin-right: 8px;
@@ -65,10 +63,11 @@
                 }
 
                 >a.active {
-                    font-style: italic;
+                    // font-style: italic;
                     pointer-events: none;
                     color: $main-color-while-fff;
                     opacity: 1;
+                    font-weight: 700;
                 }
 
                 .animation_start-new {
@@ -171,13 +170,13 @@
                         right: 0px;
                         margin-top: 12px;
                         background: $main-color-brg;
-                        border-radius: 5px;
 
                         .body__drop {
                             width: 100%;
                             height: 100%;
                             overflow: auto;
                             padding: 0px 0px 5px 0px;
+                            border-top: 3px solid;
 
                             .item_list--noti {
                                 border-bottom: 1px solid #ffffff46;
@@ -261,7 +260,7 @@
                             background: $main-color-brg;
                             flex-direction: column;
                             display: flex;
-                            border-radius: 5px;
+                            border-top: 3px solid;
 
                             .item_select-drop {
                                 margin: 5px 0px;
@@ -444,57 +443,6 @@
     transition: 0.2s;
     transform: scale(0);
 }
-
-.top_show {
-    width: 100%;
-    height: 3px;
-    overflow: hidden;
-
-    .an_border-top {
-        width: 100%;
-        height: 100%;
-        background-color: $main-color-while;
-        border-radius: 5px 5px 0px 0px;
-    }
-
-    .an_border-top-tran-enlarge {
-        animation: an_border_top_enlarge 0.3s forwards;
-
-        @keyframes an_border_top_enlarge {
-            0% {
-                transform: scaleX(0);
-            }
-
-            20% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-    }
-
-    .an_border-top-tran-zoom_out {
-        animation: an_border_top_zoom_out 0.3s forwards;
-
-        @keyframes an_border_top_zoom_out {
-            0% {
-                transform: scaleX(1);
-            }
-
-            20% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: scale(0);
-            }
-        }
-    }
-}
-
-
 
 // responsive
 @import "./mediaHeader";

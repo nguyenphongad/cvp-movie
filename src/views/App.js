@@ -16,15 +16,15 @@ import RenderModalDetailHistoryTickets from '../components/pages/BookTickets/Mod
 
 function App() {
 
-  const [postLoading, setPostLoading] = useState(null);
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/1")
-      .then(response => response.json())
-      .then(response => {
-        const { body } = response
-        setPostLoading(body)
-      })
-  }, []);
+  // const [postLoading, setPostLoading] = useState(null);
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/posts/1")
+  //     .then(response => response.json())
+  //     .then(response => {
+  //       const { body } = response
+  //       setPostLoading(body)
+  //     })
+  // }, []);
 
   const MAINTENANCEPAGE = false;
 

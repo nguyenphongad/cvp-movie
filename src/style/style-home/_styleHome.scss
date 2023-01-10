@@ -1,13 +1,25 @@
 .wrap__home {
     width: 100%;
+
     .video_trailer {
         width: 100%;
         position: relative;
-        top: -15px;
-        z-index: 3;
+        top: 0px;
+        z-index: 5;
+
         video {
             width: 100%;
+            animation: an_opacity_video 0.5s forwards;
+            @keyframes an_opacity_video {
+                from {
+                    opacity: 0.5;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
         }
+
         .box_btn_control--work {
             width: 100%;
             height: 100%;
@@ -15,33 +27,40 @@
             left: 0px;
             top: 0px;
             padding: 0px 50px;
-            z-index: 4;
+            z-index: 8;
             margin-top: 50px;
             @include styleDisFlexCenter();
             justify-content: left;
+
             .size-bozing_control {
                 width: 100%;
                 display: flex;
+
                 .border__content {
                     width: 700px;
+
                     img {
                         width: 100%;
                         max-height: 100%;
                     }
+
                     .row-footer {
                         width: 100%;
                         display: flex;
                         flex-direction: column;
+
                         .text_introduce_trailer {
                             font-size: 16px;
                             font-weight: 600;
                             margin-top: 30px;
                         }
                     }
+
                     .block-btn__control {
                         @include styleDisFlexCenter();
                         justify-content: space-around;
                         margin-top: 40px;
+
                         .button-mixin {
                             @include styleDisFlexCenter;
                             cursor: pointer;
@@ -52,39 +71,47 @@
                             padding: 10px 15px;
                             font-weight: 700;
                             font-size: 19px;
-                            box-shadow: #0000005e 2px 0px 7px 2px;
+                            box-shadow: #00000079 2px 0px 7px 2px;
                             animation: an_btn_mixin 0.3s;
+
                             @keyframes an_btn_mixin {
                                 from {
                                     transform: scale(0.8);
                                 }
+
                                 to {
                                     transform: scale(1);
                                 }
                             }
+
                             svg {
                                 margin-right: 10px;
                             }
                         }
+
                         .border__btn_play--list {
                             background-color: #ff0000;
                             // padding: 12px 22px !important;
                         }
+
                         .border__btn_play_info {
-                            background-color: #9b93937c;
+                            background-color: #adadad9d;
                         }
                     }
                 }
+
                 .control_btn_trailer-sion {
                     width: 100%;
                     justify-content: right;
                     position: relative;
+
                     .tr-control_btn_trailer-sion {
                         width: 100%;
                         @include styleDisFlexCenter();
                         justify-content: right;
                         position: absolute;
                         bottom: 0px;
+
                         .borderPP-trailer {
                             cursor: pointer;
                             width: 40px;
@@ -94,17 +121,6 @@
                             @include styleDisFlexCenter();
                             background-color: #ffffff3b;
                             margin-right: 10px;
-                            .an_icon_pp-trailer {
-                                animation: an_huB 0.5s forwards;
-                                @keyframes an_huB {
-                                    from {
-                                        transform: translateY(-6px);
-                                    }
-                                    to {
-                                        transform: translateY(0px);
-                                    }
-                                }
-                            }
                         }
                     }
 
@@ -121,266 +137,45 @@
                 }
             }
         }
+
         .bottom_shadow {
             width: 100%;
-            height: 80px;
+            height: 180px;
             // box-shadow: inset #232435a9 0px -48px 29px 4px;
-            background-image: linear-gradient(360deg,#000000cc 10%,transparent);
+            background-image: linear-gradient(360deg,#232435 10%,transparent);     
+            // background-color: #232435;       
             position: absolute;
             bottom: 4px;
             z-index: 7;
         }
     }
-    .box_slide-review {
-        width: 100%;
-        height: 400px;
-        margin-top: -150px;
-        position: relative;
-        z-index: 8;
-        .body_slide-image {
-            width: 100%;
-            height: 100%;
-            .slick-slider {
-                width: 100%;
-                height: 100%;
-                position: relative;
-                padding: 0px 10px;
-                @include styleDisFlexCenter;
-                .slick-list {
-                    width: 100%;
-                    height: 100%;
-                    overflow: inherit;
-                    .slick-track {
-                        position: relative;
-                        height: 100%;
-                        display: flex;
-                        .slick-slide {
-                            height: 100%;
-                            float: none;
-                            margin: 0px 15px;
-                            > div {
-                                height: 100%;
-                            }
-                            .box_location {
-                                height: 100%;
-                                position: relative;
-                                outline: none;
-                                // overflow: hidden;
-                                border: 2px solid #746f6f91;
-                                border-radius: 10px;
-                                box-shadow: $main-color_box_shadow;
-                                user-select: none;
-                                > img {
-                                    width: 100%;
-                                    height: 100%;
-                                    transition: all 0.4s;
-                                    border-radius: 10px;
-                                }
-                                .box_context-slide {
-                                    width: 100%;
-                                    height: 100%;
-                                    position: absolute;
-                                    top: 0px;
-                                    left: 0px;
-                                    background-color: #00000088;
-                                    backdrop-filter: blur(10px);
-                                    transition: all 0.4s;
-                                    border-radius: 10px;
-                                    .container_box {
-                                        height: 100%;
-                                        position: relative;
-                                        @include styleDisFlexCenter;
-                                        .item_slick-td {
-                                            width: 100%;
-                                            height: 100%;
-                                        }
-                                        .td__info_film {
-                                            flex: 6.5;
-                                            padding: 40px;
-                                            .name__tile-film {
-                                                font-size: 55px;
-                                                font-weight: 700;
-                                                margin-bottom: 20px;
-                                                color: #ffffff
-                                            }
-                                            .td_query {
-                                                @include styleDisFlexCenter;
-                                                justify-content: left;
-                                                >div{
-                                                    margin: 10px ;
-                                                }
-                                                .style-time-film{
-                                                    font-weight: 600;
-                                                    font-size: 25px;
-                                                    padding: 3px 10px;
-                                                    border: 1px solid #5e5959;
-                                                }
-                                                .style-limit-old{
-                                                    width: 40px;
-                                                    height: 40px;
-                                                    font-weight: 600;
-                                                    border: 1px solid ;
-                                                    background-color: rgba(255, 0, 0, 0.678);
-                                                    border-radius: 100%;
-                                                    @include styleDisFlexCenter;
-                                                }
-                                            }
-                                            .tr__ptrack-content_film-to-slide {
-                                                padding: 20px;
-                                            }
-                                            .tr_btn__control-PP {
-                                                height:unset;
-                                                position: absolute;
-                                                bottom: 20px;
-                                                .text_warning_come-soon{
-                                                    padding: 10px;
-                                                    margin: 20px 40px;
-                                                    font-weight: 600;
-                                                    border-radius: 5px;
-                                                    background-color: #ff0000b4;
-                                                }
-                                                .box_control {
-                                                    display: flex;
-                                                    .item__btn-pp{
-                                                        padding: 10px 15px;
-                                                        margin: 10px 20px;
-                                                        border: 1px solid;
-                                                        border-radius: 5px;
-                                                        font-weight: 600;
-                                                        cursor: pointer;
-                                                        background-color: #ffffff34;
-                                                        @include styleDisFlexCenter;
-                                                        svg{
-                                                            margin-right: 10px;
-                                                        }
-                                                        &:hover{
-                                                            transform: scale(1.05);
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        .td_image_sticker {
-                                            flex: 3.5;
-                                            > img {
-                                                height: 100%;
-                                                float: right;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .slick-active {
-                            .name__tile-film {
-                                animation: an_name_title_film 1s forwards;
-                                @keyframes an_name_title_film {
-                                    from {
-                                        transform: translateY(-50px);
-                                    }
-                                    to {
-                                        transform: translateY(0px);
-                                    }
-                                }
-                            }
-                            .td_image_sticker {
-                                img {
-                                    animation: an_img_sticker 1.3s forwards;
-                                    @keyframes an_img_sticker {
-                                        from {
-                                            transform: translateX(200px);
-                                        }
-                                        to {
-                                            transform: translateX(0px);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .btn__arrow_change {
-                    // width: 30px !important;
-                    position: absolute;
-                    cursor: pointer;
-                    z-index: 6;
-                    background: none;
-                    border: none;
-                    text-align: center;
-                    transition: all 0.4s;
-                    svg {
-                        font-size: 50px;
-                    }
-                }
-                .prev__arrow {
-                    left: 0px;
-                    &:hover {
-                        transform: translateX(-15px);
-                    }
-                }
-                .next__arrow {
-                    right: 0px;
-                    &:hover {
-                        transform: translateX(15px);
-                    }
-                }
 
-                .slick-dots {
-                    height: 5px;
-                    position: absolute;
-                    bottom: 15px;
-                    background: none;
-                    @include styleDisFlexCenter;
-                    display: flex !important;
-                    padding: 0px;
-                    li {
-                        width: 5px;
-                        height: 100%;
-                        list-style: none;
-                        margin: 0px 10px;
-                        background-color: #ffffff52;
-                        border-radius: 100%;
-                        button {
-                            display: none;
-                        }
-                    }
-                    .slick-active {
-                        background-color: #ffffff;
-                    }
-                }
-            }
-        }
-    }
+
     .body_home {
         padding: 40px 50px;
 
         .render_view_box_channle {
             width: 100%;
-            margin-top: 20px;
+            margin-top: -180px;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 8;
+
             .row_heading-line {
                 width: 100%;
                 margin-bottom: 20px;
-                .text_heading-bold {
-                    font-size: 35px;
-                    font-weight: 600;
-                    @include styleDisFlexCenter;
-                    justify-content: left;
-                    svg {
-                        font-size: 50px;
-                        margin-right: 10px;
-                    }
-                }
+
             }
 
             .body_tr-view {
                 width: 100%;
                 @include styleDisFlexCenter;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
+
                 .item_box-view {
-                    width: 17%;
+                    // width: 18%;
                     height: 100%;
-                    margin: 10px 15px;
+                    margin: 10px 13px;
                     position: relative;
                     // border-radius: 10px;
                     box-shadow: $main-color_box_shadow;
@@ -388,6 +183,7 @@
                     overflow: hidden;
                     transition: all 0.4s;
                     border: 2px solid #f9f9f91a;
+                    background: #232435;
 
                     .img-bgr_play {
                         width: 100%;
@@ -396,27 +192,32 @@
                         transition: all 0.4s;
                         transform: scale(1.1);
                     }
-                    > .box_view-chition {
+
+                    >.box_view-chition {
                         width: 100%;
                         height: 100%;
                         position: absolute;
                         top: 0px;
                         left: 0px;
                         background-color: #222a442f;
-                        & > a {
+
+                        &>a {
                             width: 100%;
                             height: 100%;
                             @include styleDisFlexCenter;
-                            & > img {
+
+                            &>img {
                                 width: 78%;
                             }
                         }
                     }
                 }
+
                 .item_box-view:hover {
                     transform: scale(1.07);
                     border: 2px solid #776f6f;
                     box-shadow: $main-color_box_shadow-hover;
+
                     .img-bgr_play {
                         opacity: 1;
                     }
@@ -425,10 +226,11 @@
         }
     }
 }
+
 .opacity-0 {
     opacity: 0;
 }
+
 .opacity-1 {
     opacity: 1;
 }
-

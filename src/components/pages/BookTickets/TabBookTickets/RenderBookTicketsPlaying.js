@@ -21,7 +21,7 @@ const listFilmBookPlaying = [
 
         favoriteDegree: "90%",
         dateMovieFilm: "19/01",
-        toPage: "",
+        toPage: "#",
     },
     {
         id: 2,
@@ -31,7 +31,7 @@ const listFilmBookPlaying = [
 
         favoriteDegree: "60%",
         dateMovieFilm: "11/03",
-        toPage: "",
+        toPage: "#",
     },
     {
         id: 3,
@@ -41,7 +41,7 @@ const listFilmBookPlaying = [
 
         favoriteDegree: "45%",
         dateMovieFilm: "27/02",
-        toPage: "",
+        toPage: "#",
     },
     {
         id: 4,
@@ -51,7 +51,7 @@ const listFilmBookPlaying = [
 
         favoriteDegree: "28%",
         dateMovieFilm: "09/08",
-        toPage: "",
+        toPage: "#",
     },
     {
         id: 5,
@@ -61,7 +61,7 @@ const listFilmBookPlaying = [
 
         favoriteDegree: "90%",
         dateMovieFilm: "18/02",
-        toPage: "",
+        toPage: "#",
     },
     {
         id: 6,
@@ -71,7 +71,7 @@ const listFilmBookPlaying = [
 
         favoriteDegree: "39%",
         dateMovieFilm: "11/03",
-        toPage: "",
+        toPage: "#",
     },
     {
         id: 7,
@@ -81,7 +81,7 @@ const listFilmBookPlaying = [
 
         favoriteDegree: "96%",
         dateMovieFilm: "11/03",
-        toPage: "",
+        toPage: "#",
     },
 ]
 
@@ -102,13 +102,6 @@ function RenderBookTicketsPlaying() {
             </RenderItemBookTickets>
         )
     })
-    const [loadingTabBookPlaying, setloadingTabBookPlaying] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setloadingTabBookPlaying(false)
-        }, 250);
-    })
-
     const [windowSize, setWindowSize] = useState(() => {
         const { innerWidth } = window;
         return { innerWidth };
@@ -137,24 +130,20 @@ function RenderBookTicketsPlaying() {
             setnumberToSlide(5)
         }
     }, [windowSize.innerWidth])
-    
+
     return (
         <>
-            {
-                loadingTabBookPlaying ?
-                    <LoadingRoute /> :
-                    <div className="wrap_border_content-tab-booking animation_scale-lg">
-                        <Slider
-                            dots={true}
-                            slidesToScroll={1}
-                            slidesToShow={numberToSlide}
-                            infinite={false}
-                            swipeToSlide={true}
-                        >
-                            {returnListBookTicketsPlaying}
-                        </Slider>
-                    </div>
-            }
+            <div className="wrap_border_content-tab-booking animation_scale-lg">
+                <Slider
+                    dots={true}
+                    slidesToScroll={1}
+                    slidesToShow={numberToSlide}
+                    infinite={false}
+                    swipeToSlide={true}
+                >
+                    {returnListBookTicketsPlaying}
+                </Slider>
+            </div>
         </>
     )
 }
