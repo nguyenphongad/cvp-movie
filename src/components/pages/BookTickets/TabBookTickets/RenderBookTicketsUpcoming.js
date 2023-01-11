@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Slider from 'react-slick'
 
 import Image_poster_upcoming_1 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-UPCOMING/image_chi-chi-em-em.jpg"
@@ -11,6 +11,7 @@ import Image_poster_upcoming_7 from "../../../../assets/LIST-FILM-BOOK-TICKETS/L
 import Image_poster_upcoming_8 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-UPCOMING/image_the-house-of-no-man.jpg"
 import Image_poster_upcoming_9 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-UPCOMING/image_the-super-mario-bros-movie.jpg"
 import LoadingRoute from '../../../../views/LoadingRoute'
+import { ContextFromWindowResize } from '../../../../views/RenderGetWindowResize'
 import RenderItemBookTickets from '../ItemBoxBookTickets/RenderItemBookTickets'
 
 const listFilmBookUpcoming = [
@@ -112,34 +113,18 @@ function RenderBookTicketsUpcoming() {
             </RenderItemBookTickets>
         )
     })
-    const [windowSize, setWindowSize] = useState(() => {
-        const { innerWidth } = window;
-        return { innerWidth };
-    });
-
-    useEffect(() => {
-        function handleWindowResize() {
-            setWindowSize(() => {
-                const { innerWidth } = window;
-                return { innerWidth };
-            });
-        }
-        window.addEventListener('resize', handleWindowResize);
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-
+    const useContextFromWindowSize = useContext(ContextFromWindowResize)
     const [numberToSlide, setnumberToSlide] = useState(5)
     useEffect(() => {
-        if (windowSize.innerWidth <= 1150 && windowSize.innerWidth > 1050) {
+        if (useContextFromWindowSize.getWidthWindow <= 1150 && useContextFromWindowSize.getWidthWindow > 1050) {
             setnumberToSlide(4)
-        } else if (windowSize.innerWidth <= 1050) {
+        } else if (useContextFromWindowSize.getWidthWindow <= 1050) {
             setnumberToSlide(3)
         } else {
             setnumberToSlide(5)
         }
-    }, [windowSize.innerWidth])
+    }, [useContextFromWindowSize.getWidthWindow])
+
 
     return (
         <>

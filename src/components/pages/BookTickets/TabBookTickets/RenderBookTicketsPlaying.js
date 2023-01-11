@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import Image_poster_playing_1 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-PLAYING/image_poster-avatar-the-way-of-water.jpg"
 import Image_poster_playing_2 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-PLAYING/image_poster-big-trip-2-special-delivery.jpg"
@@ -11,6 +11,7 @@ import Image_poster_playing_7 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LI
 import Slider from 'react-slick'
 import RenderItemBookTickets from '../ItemBoxBookTickets/RenderItemBookTickets'
 import LoadingRoute from '../../../../views/LoadingRoute'
+import { ContextFromWindowResize } from '../../../../views/RenderGetWindowResize'
 
 const listFilmBookPlaying = [
     {
@@ -102,34 +103,18 @@ function RenderBookTicketsPlaying() {
             </RenderItemBookTickets>
         )
     })
-    const [windowSize, setWindowSize] = useState(() => {
-        const { innerWidth } = window;
-        return { innerWidth };
-    });
 
-    useEffect(() => {
-        function handleWindowResize() {
-            setWindowSize(() => {
-                const { innerWidth } = window;
-                return { innerWidth };
-            });
-        }
-        window.addEventListener('resize', handleWindowResize);
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-
+    const useContextFromWindowSize = useContext(ContextFromWindowResize)
     const [numberToSlide, setnumberToSlide] = useState(5)
     useEffect(() => {
-        if (windowSize.innerWidth <= 1150 && windowSize.innerWidth > 1050) {
+        if (useContextFromWindowSize.getWidthWindow <= 1150 && useContextFromWindowSize.getWidthWindow > 1050) {
             setnumberToSlide(4)
-        } else if (windowSize.innerWidth <= 1050) {
+        } else if (useContextFromWindowSize.getWidthWindow <= 1050) {
             setnumberToSlide(3)
         } else {
             setnumberToSlide(5)
         }
-    }, [windowSize.innerWidth])
+    }, [useContextFromWindowSize.getWidthWindow])
 
     return (
         <>

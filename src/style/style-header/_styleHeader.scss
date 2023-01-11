@@ -16,9 +16,10 @@
 
             .border-logo {
                 height: 100%;
+                // @include styleDisFlexCenter;
 
                 img {
-                    height: 100%;
+                    max-height: 100%;
                 }
 
                 .img_name {
@@ -35,11 +36,12 @@
             width: 100%;
             height: 100%;
             display: flex;
-            padding-left: 20px;
+            // padding-left: 20px;
 
             .border_location-menu {
                 height: 100%;
                 margin-left: 35px;
+                position: relative;
 
                 >a {
                     width: 100%;
@@ -52,6 +54,7 @@
                     user-select: none;
                     transition: all 0.4s;
                     opacity: 0.80;
+                    white-space: nowrap;
 
                     >svg {
                         margin-right: 8px;
@@ -119,6 +122,28 @@
 
             .border_location-menu:hover .line-hover {
                 display: block;
+            }
+        }
+
+
+        //responsive
+
+        .box_bottom_navbar-respon{
+            width: 100%;height: 50px;
+            background-color: #000;
+            position: fixed;
+            z-index: 19;
+            bottom: 0px ;
+            display: flex;
+            justify-content: center;
+            animation: an_bottom_navbar-repon 0.5s forwards;
+            @keyframes an_bottom_navbar-repon {
+                from {
+                    bottom: -100px;
+                }
+                to{
+                    bottom : 0px
+                }
             }
         }
 
@@ -235,7 +260,7 @@
                     position: relative;
 
                     .border-drop {
-                        width: 46px;
+                        width: 45px;
                         height: 45px;
                         padding: 2px;
                         border: 1px solid #ffffff46;
@@ -446,3 +471,4 @@
 
 // responsive
 @import "./mediaHeader";
+

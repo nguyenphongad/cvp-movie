@@ -9,10 +9,13 @@ import { IoTicketSharp } from 'react-icons/io5';
 
 import { BsStarFill } from 'react-icons/bs';
 import { DropBtnBoxSearch } from '../RenderHeader';
+import { ContextFromWindowResize } from '../../../views/RenderGetWindowResize';
+import { IoIosMenu } from 'react-icons/io';
 
 function RenderCustomMenu() {
 
     const useContextFromHeader = useContext(DropBtnBoxSearch)
+    const useContextFromWindowSize = useContext(ContextFromWindowResize);
 
     const element = useRef();
 
@@ -49,7 +52,19 @@ function RenderCustomMenu() {
             iconMenuHeader: <IoTicketSharp />,
             starNew: true
         }
-    ]
+    ];
+
+    if(useContextFromWindowSize.getWidthWindow < 700){
+        listMenuHeader.push({
+            id: 6, 
+            to : "/menu",
+            nameMenuHeader: "MENU",
+            iconMenuHeader: <IoIosMenu/>,
+        })
+    }
+
+
+
     const [isActiveHome, setIsActiveHome] = useState(false);
     useEffect(() => {
         if (element.current?.classList.value === "active") setIsActiveHome(true);

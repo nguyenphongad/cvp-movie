@@ -19,8 +19,8 @@ import { IoIosHelpCircle } from 'react-icons/io';
 import { RiFullscreenFill } from 'react-icons/ri';
 import RenderBoxSearch from './BoxSearch/RenderBoxSearch';
 import { MdSearchOff, MdSearch } from 'react-icons/md';
+import { ContextFromWindowResize } from '../../views/RenderGetWindowResize';
 
-// import RenderBoxNotification from './BoxNotification/RenderBoxNotification';
 const RenderBoxNotification = React.lazy(() => import('./BoxNotification/RenderBoxNotification'))
 export const DropBtnBoxSearch = createContext();
 
@@ -68,7 +68,9 @@ function RenderHeader() {
     });
 
     const dataFromFullSc = useContext(UseContextFromFullScreen);
+    const useContextFromWindowSize = useContext(ContextFromWindowResize);
 
+    
     const listItemSelectDrop = [
         {
             nameBtnSelect: "Account",
@@ -99,6 +101,11 @@ function RenderHeader() {
             warning_hover: "waring_hover",
         },
     ]
+
+    if(useContextFromWindowSize.getWidthWindow < 700){
+        delete listItemSelectDrop[2]
+        
+    }
 
     const returnListSelectBtn = listItemSelectDrop.map((index) => {
         return (
@@ -153,9 +160,23 @@ function RenderHeader() {
                             </div>
                         </div>
 
-                        <div className="box_menu-heading">
-                            <RenderCustomMenu />
-                        </div>
+                        {
+                            useContextFromWindowSize.getWidthWindow <= 1024 ?
+                                <>
+                                    <div className="box_menu-heading">
+
+                                    </div>
+                                    
+                                    <div className="box_bottom_navbar-respon box_menu-heading">
+                                        <RenderCustomMenu />
+                                    </div>
+                                </>
+                                :
+                                <div className="box_menu-heading">
+                                    <RenderCustomMenu />
+                                </div>
+
+                        }
                         <div className="box_navigation">
                             <div className="row-section--nav">
 
@@ -200,7 +221,11 @@ function RenderHeader() {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
+
+
                 <RenderBoxSearch />
             </DropBtnBoxSearch.Provider>
         </>

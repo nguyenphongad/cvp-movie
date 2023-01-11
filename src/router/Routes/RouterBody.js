@@ -17,7 +17,7 @@ const LazyHome = lazy(() => import('../../components/pages/Home/Home'))
 const LazyMyList = lazy(() => import('../../components/pages/MyList/RenderMyList'))
 const LazyBookTickets = lazy(() => import('../../components/pages/BookTickets/RenderBookTickets'))
 const LazyMovies = lazy(() => import('../../components/pages/Movies/RenderMovies'))
-
+const LazyMenu = lazy(()=> import('../../components/pages/Menu/RenderMenu'))
 
 function RouterBody() {
 
@@ -49,10 +49,13 @@ function RouterBody() {
                     <React.Suspense fallback={<LoadingRoute />}>
                         <LazyBookTickets />
                     </React.Suspense>
-                }
-                >
+                } />
+                <Route path="/menu" element={
+                    <React.Suspense fallback={<LoadingRoute />}>
+                        <LazyMenu />
+                    </React.Suspense>
+                } />
 
-                </Route>
                 
                 <Route path="book-tickets/booking-tickets-history" element={<RenderBookTicketsHistory/> } />
 
