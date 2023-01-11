@@ -26,7 +26,7 @@ function App() {
   //     })
   // }, []);
 
-  const MAINTENANCEPAGE = false;
+  const MAINTENANCEPAGE = true;
 
   return (
 
