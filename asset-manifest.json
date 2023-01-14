@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.ae2270ba.css",
+    "main.css": "./static/css/main.b39db0a4.css",
     "main.js": "./static/js/main.9816615b.js",
     "static/js/827.6d4c7170.chunk.js": "./static/js/827.6d4c7170.chunk.js",
     "static/css/841.aa6f0935.chunk.css": "./static/css/841.aa6f0935.chunk.css",
@@ -67,7 +67,7 @@
     "static/media/national-geographic.jpg": "./static/media/national-geographic.c50dd65f4a3d07a590f7.jpg",
     "static/media/logo_cvp-movie.png": "./static/media/logo_cvp-movie.96b8abe9aa22c2acd2d8.png",
     "index.html": "./index.html",
-    "main.ae2270ba.css.map": "./static/css/main.ae2270ba.css.map",
+    "main.b39db0a4.css.map": "./static/css/main.b39db0a4.css.map",
     "main.9816615b.js.map": "./static/js/main.9816615b.js.map",
     "827.6d4c7170.chunk.js.map": "./static/js/827.6d4c7170.chunk.js.map",
     "841.aa6f0935.chunk.css.map": "./static/css/841.aa6f0935.chunk.css.map",
@@ -86,7 +86,7 @@
     "880.e9a4bdc0.chunk.js.map": "./static/js/880.e9a4bdc0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae2270ba.css",
+    "static/css/main.b39db0a4.css",
     "static/js/main.9816615b.js"
   ]
 }
