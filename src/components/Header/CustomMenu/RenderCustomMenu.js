@@ -54,7 +54,7 @@ function RenderCustomMenu() {
         }
     ];
 
-    if(useContextFromWindowSize.getWidthWindow < 700){
+    if(useContextFromWindowSize.getWidthWindow <= 425){
         listMenuHeader.push({
             id: 6, 
             to : "/menu",

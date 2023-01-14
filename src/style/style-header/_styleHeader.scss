@@ -9,14 +9,16 @@
         width: 100%;
         height: 100%;
         padding: 10px 50px;
+        background-color: #14141402;
         background-image: linear-gradient(180deg, #000000b3 10%, transparent);
+        
         @include styleDisFlexCenter;
         .box_name-logo {
             height: 100%;
 
             .border-logo {
                 height: 100%;
-                // @include styleDisFlexCenter;
+                
 
                 img {
                     max-height: 100%;
@@ -36,11 +38,12 @@
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             // padding-left: 20px;
 
             .border_location-menu {
                 height: 100%;
-                margin-left: 35px;
+                margin:0px 20px;
                 position: relative;
 
                 >a {
@@ -59,10 +62,6 @@
                     >svg {
                         margin-right: 8px;
                     }
-                }
-
-                >a:hover {
-                    transform: translateY(-2px);
                 }
 
                 >a.active {
@@ -136,6 +135,7 @@
             bottom: 0px ;
             display: flex;
             justify-content: center;
+            border-top: 1px solid #818181;
             animation: an_bottom_navbar-repon 0.5s forwards;
             @keyframes an_bottom_navbar-repon {
                 from {
@@ -341,12 +341,9 @@
         }
     }
 
-    .bgr-opacity {
-        background-color: #14141408;
-    }
 
     .bgr-opacity-none {
-        background-color: #0d0f18;
+        background-color: #0F0F0F;
     }
 }
 
@@ -365,13 +362,10 @@
         flex-direction: column;
         margin: 0px auto;
 
-        // padding: 0px 200px;
         .border_input {
             width: 100%;
-            // background-color: $main-color-brg;
             background: #000000;
             position: relative;
-            border-radius: 5px;
 
             .button_change--input {
                 width: 100%;
@@ -409,7 +403,6 @@
                         text-align: center;
                         border-top: 3px solid $main-color-while;
                         transition: all 0.3s;
-                        border-radius: 5px;
                     }
 
                     .btn__reset-input {

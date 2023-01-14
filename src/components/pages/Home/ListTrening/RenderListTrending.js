@@ -23,7 +23,7 @@ function RenderListTrending() {
         <div className="wrap__trending-box--film animation_scale-lg">
             <div className="heading_text">
                 <RiGitRepositoryCommitsFill/>
-                TRENDING
+                TRENDS NOW
             </div>
             <div className="body__trending-film">
                 {returnListFormMyListComponentTrending}

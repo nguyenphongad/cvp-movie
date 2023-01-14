@@ -71,12 +71,10 @@ function RenderViewBoxChannle() {
 
     return (
         <div className="render_view_box_channle">
-            {/* <div className="row_heading-line">
-                <div className="heading_text">
+            <div className="heading_text">
                     <MdScanner />
                     FAMOUS TV CHANNEL
                 </div>
-            </div> */}
             <div className="body_tr-view">
                 {renderList}
             </div>

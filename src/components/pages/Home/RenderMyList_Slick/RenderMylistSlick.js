@@ -8,18 +8,18 @@ import { GoChecklist } from "react-icons/go"
 import RenderItemBoxFilm from '../../../ItemBoxFilm/RenderItemBoxFilm'
 
 function RenderMylistSlick() {
-    const Arrow = (props) => {
-        const char = props.type === "next" ?
-            <button onClick={props.onClick} className="btn__arrow_prev next_prev">
-                <IoIosArrowDropright />
-            </button> :
-            <button onClick={props.onClick} className="btn__arrow_prev prev_prev">
-                <IoIosArrowDropleft />
-            </button>;
-        return (
-            <> {char} </>
-        )
-    }
+    // const Arrow = (props) => {
+    //     const char = props.type === "next" ?
+    //         <button onClick={props.onClick} className="btn__arrow_prev next_prev">
+    //             <IoIosArrowDropright />
+    //         </button> :
+    //         <button onClick={props.onClick} className="btn__arrow_prev prev_prev">
+    //             <IoIosArrowDropleft />
+    //         </button>;
+    //     return (
+    //         <> {char} </>
+    //     )
+    // }
 
     const useContextFromListFilm = useContext(ListFilmSystem)
     const returnListFormMyListComponent = useContextFromListFilm.listFilmSystem.map((index) => {
@@ -44,10 +44,8 @@ function RenderMylistSlick() {
             <Slider
                 dots={true}
                 slidesToScroll={1}
-                slidesToShow={4}
+                slidesToShow={5}
                 infinite={false}
-                nextArrow={<Arrow type="next" />}
-                prevArrow={<Arrow type="prev" />}
                 swipeToSlide={true}
             >
                 {returnListFormMyListComponent}

@@ -70,7 +70,7 @@ function RenderHeader() {
     const dataFromFullSc = useContext(UseContextFromFullScreen);
     const useContextFromWindowSize = useContext(ContextFromWindowResize);
 
-    
+
     const listItemSelectDrop = [
         {
             nameBtnSelect: "Account",
@@ -102,9 +102,9 @@ function RenderHeader() {
         },
     ]
 
-    if(useContextFromWindowSize.getWidthWindow < 700){
+    if (useContextFromWindowSize.getWidthWindow < 700) {
         delete listItemSelectDrop[2]
-        
+
     }
 
     const returnListSelectBtn = listItemSelectDrop.map((index) => {
@@ -150,7 +150,7 @@ function RenderHeader() {
         <>
             <DropBtnBoxSearch.Provider value={valueHeaderToBoxSearch}>
                 <div className="header">
-                    <div className={`trow__header--tr ${scroll ? "bgr-opacity-none" : "bgr-opacity"}`}>
+                    <div className={`trow__header--tr ${scroll ? "bgr-opacity-none" : ""}`}>
                         <div className="box_name-logo">
                             <div className="border-logo">
                                 <a href="/" >
@@ -166,7 +166,7 @@ function RenderHeader() {
                                     <div className="box_menu-heading">
 
                                     </div>
-                                    
+
                                     <div className="box_bottom_navbar-respon box_menu-heading">
                                         <RenderCustomMenu />
                                     </div>
@@ -208,16 +208,22 @@ function RenderHeader() {
                                     </div>
 
                                 </div>
-                                <div className="btn_dropdown-account" ref={dropRef}>
-                                    <button className="border-drop" onClick={handleButtonDrop}>
-                                        <img src={Picture_avatar_cvp} />
-                                    </button>
-                                    <div className={`box_drops-account ${dropdownBoxSel ? "activeDropHeader" : "inactiveDropHeader"}`}>
-                                        <div className="body__drop">
-                                            {returnListSelectBtn}
+                                {
+                                    useContextFromWindowSize.getWidthWindow <= 425 ?
+                                        "" :
+                                        <div className="btn_dropdown-account" ref={dropRef}>
+                                            <button className="border-drop" onClick={handleButtonDrop}>
+                                                <img src={Picture_avatar_cvp} />
+                                            </button>
+                                            <div className={`box_drops-account ${dropdownBoxSel ? "activeDropHeader" : "inactiveDropHeader"}`}>
+                                                <div className="body__drop">
+                                                    {returnListSelectBtn}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                }
+
+
                             </div>
                         </div>
                     </div>

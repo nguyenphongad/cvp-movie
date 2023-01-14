@@ -43,22 +43,76 @@
 
         .slick-list {
             width: 100%;
-            padding: 10px 10px 20px 10px;
+            padding-bottom: 20px;
 
             .slick-track {
                 display: flex !important;
 
                 .slick-slide {
                     padding: 10px;
-                    margin: 0px 20px;
+                    margin: 0px 5px;
                     float: inherit;
-                    margin-left: -5px;
                 }
+
             }
 
         }
 
+        .slick-arrow {
+            width: 45px;
+            height: 45px;
+            padding-left: 12px;
+            position: absolute;
+            z-index: 1;
+            background: #a7a1a1c0;
+            cursor: pointer;
+            border: none;
+            border-radius: 100%;
+            border: 2px solid $main-color-while-fff;
+            transition: all 0.15s;
+            font-size: 0px;
+
+            &::after,
+            &::before {
+                content: '';
+                width: 17px;
+                height: 3px;
+                background-color: $main-color-while;
+                display: block;
+            }
+        }
+
+        .slick-prev {
+            left: 10px;
+
+            &::before {
+                margin-bottom: 7px;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+
+        .slick-next {
+            right: 10px;
+
+            &::before {
+                margin-bottom: 7px;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        .slick-disabled {
+            display: none !important;
+        }
     }
+
     .slick-dots {
         width: 100%;
         position: absolute;
@@ -86,25 +140,6 @@
 
     }
 
-    .btn__arrow_prev {
-        height: 70%;
-        position: absolute;
-        background: none;
-        cursor: pointer;
-        border: none;
-
-        svg {
-            font-size: 30px;
-        }
-    }
-
-    .prev_prev {
-        left: 0px;
-    }
-
-    .next_prev {
-        right: 0px;
-    }
 }
 
 .item__box-film {
@@ -114,7 +149,7 @@
     position: relative;
     // border-radius: 5px;
     border: 1px solid #332e2e;
-    border-bottom: 2px solid ;
+    border-bottom: 2px solid;
     box-shadow: #00000031 0px 0px 20px 2px, #000000a0 0px 10px 16px -10px;
     transition: all 0.4s;
 
@@ -191,6 +226,7 @@
 
             .flex__nth-left {
                 width: 100%;
+
                 .trow-head {
                     @include styleDisFlexCenter;
                     justify-content: left;
@@ -217,6 +253,7 @@
 
                     .td_infomation-auth {
                         display: flex;
+
                         .time-film {
                             width: 100%;
                             margin-right: 10px;
@@ -227,7 +264,7 @@
 
                         .limit-old {
                             border: 1px solid #686161;
-                            border-bottom:2px solid ;
+                            border-bottom: 2px solid;
                             padding: 0px 5px;
                             font-size: 14px;
                             color: #928a8a;
@@ -235,30 +272,13 @@
                     }
                 }
             }
-
-            // .flex__nth-right {
-            //     width: 100%;
-            //     display: flex;
-            //     align-items: center;
-            //     justify-content: right;
-
-            //     .btn_show_modal {
-            //         border-radius: 100%;
-            //         @include styleDisFlexCenter;
-            //         cursor: pointer;
-
-            //         svg {
-            //             font-size: 32px;
-            //         }
-            //     }
-            // }
         }
     }
 
     &:hover {
         transform: scale(1.03);
-        border: 1px solid #b5b4b4; 
-        border-bottom: 2px solid #b5b4b4 ;
+        border: 1px solid #b5b4b4;
+        border-bottom: 2px solid #b5b4b4;
 
         img {
             transform: scale(1.08);
@@ -276,7 +296,7 @@
 }
 
 .heading_text {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
     @include styleDisFlexCenter;
     justify-content: left;
@@ -286,7 +306,7 @@
 
     svg {
         margin-right: 20px;
-        font-size: 45px;
+        font-size: 40px;
         transition: all 0.4s;
     }
 
@@ -309,7 +329,7 @@
         display: flex;
         flex-wrap: wrap;
         overflow: auto;
-        justify-content:space-evenly;
+        justify-content: space-evenly;
 
         .item__box-film {
             margin: 15px;

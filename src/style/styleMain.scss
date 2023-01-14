@@ -48,6 +48,10 @@ body {
   background-color: #232435;
 }
 
+.wrap_maintenance {
+  width: 100%;
+}
+
 @import "./style-header/styleHeader";
 @import "./style-home/styleHome";
 @import "./style-footer/styleFooter";
@@ -59,7 +63,4 @@ body {
 @import "./style-book-tickets/styleBookTickets";
 @import "./style-booking-history-tickets/styleBookingHistoryTickets";
 
-
-.wrap_maintenance {
-  width: 100%;
-}
+@import "./style-menu/styleMenu";

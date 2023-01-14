@@ -1,7 +1,7 @@
 @media only screen and (max-width: 768px) {
     .header {
         .trow__header--tr {
-            padding: 10px 15px;
+            padding: 10px 25px;
 
             .box_menu-heading {
                 .border_location-menu {
@@ -35,6 +35,7 @@
             .box_menu-heading {
                 .border_location-menu {
                     margin: 0px 20px;
+
                     >a {
                         font-size: 14px !important;
                     }
@@ -58,7 +59,7 @@
         .trow__header--tr {
             .box_menu-heading {
                 .border_location-menu {
-                    margin: 0px 15px;
+                    margin: 0px 20px;
 
                     >a {
                         font-weight: 400 !important;
@@ -76,17 +77,22 @@
 
 @media only screen and (max-width: 425px) {
     .header {
+        height: 50px;
+
         .trow__header--tr {
             .box_name-logo {
                 img {
-                    width: 150px;
+                    width: 130px;
                 }
             }
 
             .box_menu-heading {
                 .border_location-menu {
+                    margin: 0px 15px;
+
                     >a {
                         font-size: 13px !important;
+
                         svg {
                             margin-bottom: 5px;
                         }
@@ -126,7 +132,6 @@
             .box_menu-heading {
                 .border_location-menu {
                     margin: 0px 10px !important;
-
                 }
             }
         }
@@ -135,10 +140,13 @@
 
 @media only screen and (max-width: 360px) {
     .header {
+        height: 45px;
+
         .trow__header--tr {
+            padding: 6px !important;
+
             .box_name-logo {
                 img {
-                    margin-top: 5px;
                     width: 130px;
                 }
             }
@@ -182,24 +190,21 @@
         .trow__header--tr {
             .box_menu-heading {
                 .border_location-menu {
-                    margin: 0px 7px !important;
+                    margin: 0px 8px !important;
                 }
             }
         }
     }
 }
+
 @media only screen and (max-width: 290px) {
     .header {
         .trow__header--tr {
             .box_name-logo {
                 .border-logo {
-                    .img_logo {
-                        width: 30px;
-                        display: block !important;
-                    }
-
-                    .img_name {
-                        display: none !important;
+                    img{
+                        margin-top: 5px;
+                        width: 110px;
                     }
                 }
             }
