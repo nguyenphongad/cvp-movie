@@ -5,7 +5,7 @@
         padding: 100px 50px 50px 50px;
 
         .content_booking-hitory-tickets {
-            padding: 20px 50px;
+            padding-top: 20px;
 
             .head__taskbar-filter {
                 width: 100%;
@@ -68,19 +68,22 @@
 
             .content_result-filter {
                 width: 100%;
-                .text_warning-store-his{
+
+                .text_warning-store-his {
                     margin-top: 15px;
                     font-weight: 600;
                     font-size: 18px;
                     @include styleDisFlexCenter;
                     color: #c5c5c5;
-                    svg{
+
+                    svg {
                         margin-right: 10px;
                     }
                 }
+
                 .body__result_tickets {
                     width: 100%;
-                    padding: 40px 20px;
+                    padding: 30px 10px;
 
                     .item__ticket_booked {
                         width: 100%;
@@ -143,9 +146,11 @@
                                 margin-left: -8px;
                                 border-radius: 100%;
                             }
+
                             &::after {
                                 top: -8px;
                             }
+
                             &::before {
                                 bottom: -10px;
                             }
@@ -155,7 +160,8 @@
                             width: 50%;
                             @include styleDisFlexCenter;
                             justify-content: right;
-                            button{
+
+                            button {
                                 border: 1px solid #ffffff34;
                                 padding: 10px;
                                 background: #ffffff36;
@@ -163,7 +169,8 @@
                                 user-select: none;
                                 font-size: 19px;
                                 @include styleDisFlexCenter;
-                                svg{
+
+                                svg {
                                     margin-left: 10px;
                                 }
                             }
@@ -177,16 +184,67 @@
             }
         }
     }
-    .wrap_loading_route{
+
+    .wrap_loading_route {
         height: 100% !important;
     }
 }
-.modal_detail{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 99;
-    background-color: #00000062;
-    top:0px;
-    left: 0px;
+
+// .modal_detail{
+//     width: 100%;
+//     height: 100%;
+//     position: fixed;
+//     z-index: 99;
+//     background-color: #00000062;
+//     top:0px;
+//     left: 0px;
+// }
+
+@media only screen and (max-width: 1024px) {
+    .wrap__booking-history {
+        .body_book-history-tickets {
+            .heading_text {
+                font-size: 25px !important;
+
+                svg {
+                    font-size: 30px !important;
+                }
+            }
+
+            .content_booking-hitory-tickets {
+                padding-top: 10px !important;
+
+
+                .item__tab_type-order {
+                    button {
+                        font-size: 18px !important;
+                    }
+                }
+
+                .tbox_filter-result {
+                    input {
+                        font-size: 18px !important;
+                    }
+                }
+
+                .content_result-filter {
+                    .body__result_tickets {
+                        padding: 30px 0px !important;
+
+                        .border_img {
+                            img {
+                                width: 60px !important;
+                            }
+                        }
+
+                        .title_film {
+                            font-size: 19px !important;
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
 }

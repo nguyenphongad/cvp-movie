@@ -7,7 +7,19 @@
         top: 0px;
         z-index: 5;
 
-        video, img {
+        .video-react-controls-enabled {
+            padding-top: 0px !important;
+
+            .video-react-button {
+                display: none;
+            }
+
+            .video-react-control-bar {
+                display: none;
+            }
+        }
+
+        video {
             width: 100%;
             animation: an_opacity_video 0.5s forwards;
 
@@ -33,15 +45,14 @@
 
         .box_btn_control--work {
             width: 100%;
-            height: 100%;
+            height: 74%;
             position: absolute;
             left: 0px;
             top: 0px;
             padding: 0px 50px;
             z-index: 8;
-            margin-top: 50px;
-            @include styleDisFlexCenter();
-            justify-content: left;
+            display: flex;
+            align-items: flex-end;
 
             .size-bozing_control {
                 width: 100%;
@@ -68,7 +79,11 @@
                             font-weight: 600;
                             line-height: 25px;
                             margin-top: 30px;
-                            text-shadow: #3f3f3f 0.1em 0.1em 0.2em
+                            text-shadow: #3f3f3f 0.1em 0.1em 0.2em;
+                        }
+
+                        .font-size-0 {
+                            transform: scale(0)
                         }
                     }
 
@@ -121,9 +136,6 @@
                 .control_btn_trailer-sion {
                     width: 100%;
                     // justify-content: right;
-                    position: absolute;
-                    right: 0px;
-                    bottom: 0px;
 
                     .tr-control_btn_trailer-sion {
                         width: 100%;
@@ -131,8 +143,9 @@
                         justify-content: right;
                         position: absolute;
                         bottom: 0px;
+                        right: 0px;
 
-                        .minxin_PP-right{
+                        .minxin_PP-right {
                             width: 40px;
                             height: 40px;
                             border: 2px solid $main-color-while;
@@ -251,5 +264,6 @@
 .opacity-1 {
     opacity: 1;
 }
+
 
 @import "./mediaHome";

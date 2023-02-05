@@ -33,8 +33,9 @@ function RenderHeader() {
     const [dropdownBoxNoti, setdropdownBoxNoti] = useState(false);
     const locationBackSearch = window.location.pathname
 
-
     useEffect(() => {
+        
+        console.log(window.location.pathname)
         if (window.location.pathname !== '/home' && window.location.pathname !== '/') {
             setScroll(true)
         }
@@ -45,7 +46,7 @@ function RenderHeader() {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
     }, [window.location.pathname]);
-
+    
 
     //search
     const handleButtonDropSearchTrue = () => {
@@ -102,10 +103,7 @@ function RenderHeader() {
         },
     ]
 
-    if (useContextFromWindowSize.getWidthWindow < 700) {
-        delete listItemSelectDrop[2]
-
-    }
+    if (useContextFromWindowSize.getWidthWindow < 700) delete listItemSelectDrop[2]
 
     const returnListSelectBtn = listItemSelectDrop.map((index) => {
         return (

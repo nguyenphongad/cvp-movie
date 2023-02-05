@@ -54,16 +54,14 @@ function RenderCustomMenu() {
         }
     ];
 
-    if(useContextFromWindowSize.getWidthWindow <= 425){
+    if (useContextFromWindowSize.getWidthWindow <= 425) {
         listMenuHeader.push({
-            id: 6, 
-            to : "/menu",
+            id: 6,
+            to: "/menu",
             nameMenuHeader: "MENU",
-            iconMenuHeader: <IoIosMenu/>,
+            iconMenuHeader: <IoIosMenu />,
         })
     }
-
-
 
     const [isActiveHome, setIsActiveHome] = useState(false);
     useEffect(() => {
@@ -78,24 +76,21 @@ function RenderCustomMenu() {
     const handelClickChangeHeaderShadow = () => {
         useContextFromHeader.setScroll(false)
     }
-    const handelClickChangemenu = () => {
+
+    const handelClickChangeMenu = () => {
         setIsActiveHome(false)
         useContextFromHeader.setScroll(true)
     }
 
-    const navLinkMenuNavigationHome = (e) => {
-        return e.isActive || isActiveHome ? "display-none" : "line-hover";
-    }
-    const navLinkMenuNavigation = (e) => {
-        return e.isActive ? "display-none" : "line-hover";
-    }
+    const navLinkMenuNavigationHome = (e) => e.isActive || isActiveHome ? "display-none" : "line-hover";
+    const navLinkMenuNavigation = (e) => e.isActive ? "display-none" : "line-hover";
 
     const listMenuHeaderMap = listMenuHeader.map((index) => {
         return (
             <div className={`border_location-menu ${index.styleDisplay ? "display-none" : ""}`} key={index.id}>
                 <NavLink
                     to={index.to}
-                    onClick={index.indexMenu ? handelClickChangeHeaderShadow : handelClickChangemenu}
+                    onClick={index.indexMenu ? handelClickChangeHeaderShadow : handelClickChangeMenu}
                     className={index.indexMenu ? navLinkMenuHome : navLinkMenu}
                     ref={index.ref}
                 >
