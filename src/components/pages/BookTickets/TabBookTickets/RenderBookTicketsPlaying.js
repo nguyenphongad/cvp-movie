@@ -12,7 +12,6 @@ import Slider from 'react-slick'
 import RenderItemBookTickets from '../ItemBoxBookTickets/RenderItemBookTickets'
 import LoadingRoute from '../../../../views/LoadingRoute'
 import { ContextFromWindowResize } from '../../../../views/RenderGetWindowResize'
-import { Modal, Skeleton } from 'antd'
 
 const listFilmBookPlaying = [
     {
@@ -87,27 +86,9 @@ const listFilmBookPlaying = [
     },
 ]
 
+
 function RenderBookTicketsPlaying() {
-    const [isModalPreviewMovies, setIsModalPreviewMovies] = useState(false)
-    const [contentModalPreviewInfomation, setContentModalPreviewInfomation] = useState([])
-    const [titleModal_film, setTitleModal_film] = useState('')
-
-    const handleOpenModalPreview = (contentPrevew, titleModal) => {
-        setIsModalPreviewMovies(true)
-        setContentModalPreviewInfomation(contentPrevew)
-        setTitleModal_film(titleModal)
-    }
-    const handleCloseModalPreview = () => {
-        setIsModalPreviewMovies(false)
-    }
-
     const returnListBookTicketsPlaying = listFilmBookPlaying.map((index) => {
-        const handleClickModal = ()=>{
-            handleOpenModalPreview([
-                <div>content {index.titleFilm}</div>
-            ])
-            setTitleModal_film(index.titleFilm)
-        }
         return (
             <RenderItemBookTickets
                 key={index.id}
@@ -117,8 +98,8 @@ function RenderBookTicketsPlaying() {
                 dateMovieFilm={index.dateMovieFilm}
                 favoriteDegree={index.favoriteDegree}
                 limitOld={index.limitOld}
-                handleClickModal={handleClickModal}
             >
+
             </RenderItemBookTickets>
         )
     })
@@ -135,8 +116,6 @@ function RenderBookTicketsPlaying() {
         }
     }, [useContextFromWindowSize.getWidthWindow])
 
-
-
     return (
         <>
             <div className="wrap_border_content-tab-booking animation_scale-lg">
@@ -149,21 +128,6 @@ function RenderBookTicketsPlaying() {
                 >
                     {returnListBookTicketsPlaying}
                 </Slider>
-
-
-                <Modal
-                    title={titleModal_film}
-                    open={isModalPreviewMovies}
-                    onCancel={handleCloseModalPreview}
-                    footer={null}
-                    className="modal-1"
-                    maskStyle={{borderRadius:'30%'}}
-                >
-                    {contentModalPreviewInfomation}
-                    <div className='loading-sek'>
-                        <Skeleton active />
-                    </div>
-                </Modal>
             </div>
         </>
     )

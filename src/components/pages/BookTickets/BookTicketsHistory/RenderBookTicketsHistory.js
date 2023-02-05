@@ -152,6 +152,7 @@ function RenderBookTicketsHistory() {
                                 <LoadingRoute /> :
                                 <div className="body__result_tickets animation_scale-lg">
                                     {returnListTicketsBooked}
+
                                 </div>
                         }
 

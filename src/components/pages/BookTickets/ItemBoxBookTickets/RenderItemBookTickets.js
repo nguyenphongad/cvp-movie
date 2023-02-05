@@ -1,15 +1,10 @@
-import { Button } from 'antd';
-import React from 'react'
+import React, { lazy } from 'react'
 import { AiFillLike } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 function RenderItemBookTickets(props) {
     return (
-        <Link
-            className="item_box_book-tickets"
-            key={props.id}
-            onClick={props.handleClickModal}
-        >
+        <Link className="item_box_book-tickets" key={props.id}>
             <div className="body_background_book-tickets">
                 <div className='border_image-poster'>
                     <img src={props.srcImagePoster} />
@@ -19,8 +14,6 @@ function RenderItemBookTickets(props) {
                 </div>
                 <div className="info-film">
                     <div className="date_movie">{props.dateMovieFilm}</div>
-
-
                     <div className="favorite-degree">
                         <AiFillLike />
                         {props.favoriteDegree}

@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 
 import "slick-carousel/slick/slick.css";
 import LoadingRoute from '../../../views/LoadingRoute'
-import { Button, Modal, Skeleton } from 'antd'
+
+// import RenderBookTicketsPlaying from './TabBookTickets/RenderBookTicketsPlaying'
+// import RenderBookTicketsUpcoming from './TabBookTickets/RenderBookTicketsUpcoming'
 
 const RenderBookTicketsPlaying = React.lazy(() => import('./TabBookTickets/RenderBookTicketsPlaying'))
 const RenderBookTicketsUpcoming = React.lazy(() => import('./TabBookTickets/RenderBookTicketsUpcoming'))
@@ -33,8 +35,12 @@ function RenderBookTickets() {
 
     const [tabBookType, setTabBookType] = useState(true)
 
-    const handleOnSelectTabFirt = () => setTabBookType(true)
-    const handleOnSelectTabSecond = () => setTabBookType(false)
+    const handleOnSelectTabFirt = () => {
+        setTabBookType(true)
+    }
+    const handleOnSelectTabSecond = () => {
+        setTabBookType(false)
+    }
 
     const getWidthBoxNavigationFirtRef = useRef(null);
     const getWidthBoxNavigationSecondRef = useRef(null);
@@ -44,57 +50,6 @@ function RenderBookTickets() {
         setgetWidthBoxNavigation_firt(getWidthBoxNavigationFirtRef.current.offsetWidth)
         setgetWidthBoxNavigation_second(getWidthBoxNavigationSecondRef.current.offsetWidth)
     })
-    const listOnclick = [
-        {
-            id: 1,
-            text: "nut 1",
-            ix: true
-        },
-        {
-            id: 2,
-            text: "nut 2",
-            ix: false
-        },
-        {
-            id: 3,
-            text: "nut 3",
-            ix: true
-        },
-    ]
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [contentModal, setContentModal] = useState([]);
-    const [title, setTitle] = useState('')
-
-    const showModal = (content, title) => {
-        setIsModalOpen(true);
-        setContentModal(content)
-        setTitle(title)
-    };
-
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
-
-
-    const returnList = listOnclick.map((index) => {
-        const hande = () => {
-            showModal(index.ix ? [
-                <div>
-                    <button style={{ color: 'red' }}>nnn {index.text}</button>
-                </div>
-            ] : "no data")
-            setTitle(index.text)
-        }
-
-        return (
-            <>
-                <Button type="primary" onClick={hande} key={index.id}>
-                    Open Modal {index.text}
-                </Button> -
-            </>
-        )
-    })
-
 
     return (
         <div className='wrap__book-tickets animation_scale-lg'>
@@ -144,28 +99,15 @@ function RenderBookTickets() {
                                         :
                                         <BookTicketsUpComing />}
                             </div>
+
                         </div>
                     </div>
                 </div>
 
+
                 <div className="heading_text">
                     <RiSlideshow3Fill />
                     BOOK TICKETS BY CINEMA
-                </div>
-                <div className='test-modal'>
-                    {returnList}
-                    <Modal
-                        title={title}
-                        open={isModalOpen}
-                        onCancel={handleCancel}
-                        footer={null}
-                        className="modal-2"
-                    >
-                        {contentModal}
-                        <div className='loading-sek'>
-                            <Skeleton active />
-                        </div>
-                    </Modal>
                 </div>
             </div>
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { BiSearchAlt2 } from "react-icons/bi";
 import { IoClose } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
@@ -15,7 +15,7 @@ function RenderBoxSearch() {
 
     const focusValueRef = useRef(null);
 
-    const handleLocationSearch = useCallback((e) => {
+    const handleLocationSearch = (e) => {
         setValue_search(e.target.value);
         if (e.target.value != "") {
             locationSearch(`/search?q=${e.target.value}`);
@@ -24,15 +24,14 @@ function RenderBoxSearch() {
             locationSearch(toStateValueBoxSearch.locationBackSearch);
             setbtn__reset(false);
         }
-    }, [toStateValueBoxSearch, locationSearch, setbtn__reset]);
-
-    const handleResetInputSearch = useCallback(() => {
+    }
+    const handleResetInputSearch = () => {
         setValue_search("");
         focusValueRef.current.focus();
         locationSearch(toStateValueBoxSearch.locationBackSearch);
         setbtn__reset(false);
         toStateValueBoxSearch.setdropdownBoxSearch(false);
-    }, [toStateValueBoxSearch, focusValueRef, setValue_search, setbtn__reset]);
+    }
 
     const dropSearchRef = useRef();
     useEffect(() => {
@@ -50,37 +49,37 @@ function RenderBoxSearch() {
 
     return (
         <>
-            <div
-                className={`box_search ${toStateValueBoxSearch.dropdownBoxSearch ? "activeDropBoxSearch" : "inactiveDropBoxSearch"}`}>
-                <div className="body_trans--search" ref={dropSearchRef}>
-                    <div className="border_input">
-                        <div className="button_change--input">
-                            <div className="button__search--size">
-                                <BiSearchAlt2 />
-                            </div>
-                            <div className="box__contain-in">
-                                <input
-                                    ref={focusValueRef}
-                                    type="text"
-                                    placeholder="Titles, people, movies"
-                                    onChange={handleLocationSearch}
-                                    value={value_search}
-                                    className={toStateValueBoxSearch.dropdownBoxSearch ? "width_input" : ""}
-                                />
+                <div
+                    className={`box_search ${toStateValueBoxSearch.dropdownBoxSearch ? "activeDropBoxSearch" : "inactiveDropBoxSearch"}`}>
+                    <div className="body_trans--search" ref={dropSearchRef}>
+                        <div className="border_input">
+                            <div className="button_change--input">
+                                <div className="button__search--size">
+                                    <BiSearchAlt2 />
+                                </div>
+                                <div className="box__contain-in">
+                                    <input
+                                        ref={focusValueRef}
+                                        type="text"
+                                        placeholder="Titles, people, movies"
+                                        onChange={handleLocationSearch}
+                                        value={value_search}
+                                        className={toStateValueBoxSearch.dropdownBoxSearch ? "width_input" : ""}
+                                    />
 
-                                <div className="btn__reset-input">
-                                    <div
-                                        className={`border__btn--reset ${btnReset ? "enable_btn-reset" : ""}`}
-                                        onClick={handleResetInputSearch}
-                                    >
-                                        <IoClose />
+                                    <div className="btn__reset-input">
+                                        <div
+                                            className={`border__btn--reset ${btnReset ? "enable_btn-reset" : ""}`}
+                                            onClick={handleResetInputSearch}
+                                        >
+                                            <IoClose />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </>
     )
 }

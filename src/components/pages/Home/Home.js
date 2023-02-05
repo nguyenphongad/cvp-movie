@@ -12,13 +12,9 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 // import Picture_poster_trailer_wednesday from "../../../assets/photo-box/wednesday/picture_trailer_wednesday.webp";
 // import Picture_name_wednesday from "../../../assets/photo-box/wednesday/picture_name_wednesday.png";
 
-// import Video_trailer_bird_box from "../../../assets/video-trailers/bird_box-trailer.mp4";
-// import Picture_poster_trailer_bird_box from "../../../assets/photo-box/bird_box/picture_trailer_bird_box.webp";
-// import Picture_name_bird_box from "../../../assets/photo-box/bird_box/picture_name_bird_box.png";
-
-import Video_trailer_train_to_busan from "../../../assets/video-trailers/train_to_busan-trailer.mp4";
-import Picture_poster_trailer_train_to_busan from "../../../assets/photo-box/train_to_busan/picture_trailer_train_to_busan.webp";
-import Picture_name_train_to_busan from "../../../assets/photo-box/train_to_busan/picture_name_train_to_busan.png";
+import Video_trailer_bird_box from "../../../assets/video-trailers/bird_box-trailer.mp4";
+import Picture_poster_trailer_bird_box from "../../../assets/photo-box/bird_box/picture_trailer_bird_box.webp";
+import Picture_name_bird_box from "../../../assets/photo-box/bird_box/picture_name_bird_box.png";
 
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
@@ -30,9 +26,6 @@ import RenderListTrending from './ListTrening/RenderListTrending';
 import AppLearn from './learnHook/AppLearn';
 import { ContextFromWindowResize } from '../../../views/RenderGetWindowResize';
 
-import { Player } from 'video-react';
-// import "../../../../node_modules/video-react/dist/video-react.css";
-
 function Home() {
 
     useEffect(() => {
@@ -41,54 +34,48 @@ function Home() {
 
     const [controlTogglePPVideoTrailer, setcontrolTogglePPVideoTrailer] = useState(false);
     const [scrollPPVideoTrailer, setscrollPPVideoTrailer] = useState(false);
-    const videoTrailerRef = useRef();
 
-    // useEffect(() => {
-    //     const hanleTimeOutplayVideo = setTimeout(() => {
-    //         setcontrolTogglePPVideoTrailer(true)
-    //     }, 1000);
-    //     return () => clearTimeout(hanleTimeOutplayVideo)
-    // }, [])
+    const videoTrailerRef = useRef();
 
     useEffect(() => {
         if (controlTogglePPVideoTrailer) {
             videoTrailerRef.current.play();
         } else {
             videoTrailerRef.current.pause();
+
         }
     })
-
     useEffect(() => {
         document.addEventListener("visibilitychange", () => {
             if (document.visibilityState === 'visible') {
-                // setcontrolTogglePPVideoTrailer(true)
+                // setcontrolTogglePPVideoTrailer(false)
             } else {
                 setcontrolTogglePPVideoTrailer(false)
             }
+
         })
-    });
+    })
 
     useEffect(() => {
         const handeleScrollVideo = () => {
-            setscrollPPVideoTrailer(window.scrollY > 400);
+            setscrollPPVideoTrailer(window.scrollY > 200);
         }
         window.addEventListener('scroll', handeleScrollVideo);
         return () => { window.removeEventListener('scroll', handeleScrollVideo) };
-    }, []);
+    });
+
 
     if (scrollPPVideoTrailer) {
-        videoTrailerRef.current.load()
-    }
-
-    const handleEventEndedVideo = () => {
-        setTimeout(() => {
-            videoTrailerRef.current.load()
-        }, 200)
+        videoTrailerRef.current.pause();
     }
 
     const handleToggleVideoTrailer = () => {
         setcontrolTogglePPVideoTrailer(!controlTogglePPVideoTrailer);
     }
+
+
+
+
 
     const ContentBioTrailer = () => {
         return (
@@ -96,61 +83,33 @@ function Home() {
                 {/* In a society that favors good looks,
                 a high school outcast leads a double life switching between
                 his two bodies that are polar opposites in appearance. */}
-
-                {/* Five years after an ominous unseen presence drives
+                Five years after an ominous unseen presence drives
                 most of society to suicide, a survivor and her two children
-                make a desperate bid to reach safety. */}
-                As a zombie outbreak sweeps the country,
-                a dad and his daughter take a harrowing train journey
-                in an attempt to reach the only city that's still safe.
+                make a desperate bid to reach safety.
             </>
         )
     }
     const videoInfoTrailerVideoHome = {
         id: 1,
-        srcVideoTrailer: Video_trailer_train_to_busan,
-        srcPosterTrailer: Picture_poster_trailer_train_to_busan,
-        srcImageNameInTrail: Picture_name_train_to_busan,
+        srcVideoTrailer: Video_trailer_bird_box,
+        srcPosterTrailer: Picture_poster_trailer_bird_box,
+        srcImageNameInTrail: Picture_name_bird_box,
         contentBioTrailer: <ContentBioTrailer />,
         ageLimit: "16+",
         categoryGame: false
+
     }
 
     const useContextFromWindowSide = useContext(ContextFromWindowResize);
 
-    const handlePlayPlayVideoTrailer = () => {
-
-    }
-    const handlePlayPauseVideoTrailer = () => {
-
-    }
-
-
-    
-
-
     return (
         <div className="wrap__home">
             <div className="video_trailer">
-                {/* <video
+                <video
                     ref={videoTrailerRef}
-                    // loop
+                    loop
                     src={videoInfoTrailerVideoHome.srcVideoTrailer}
-                    poster={videoInfoTrailerVideoHome.srcPosterTrailer}
-
-                /> */}
-
-                <Player
-                    onPlay={handlePlayPlayVideoTrailer}
-                    onPause={handlePlayPauseVideoTrailer}
-                    ref={videoTrailerRef}
-                    onEnded={handleEventEndedVideo}
-                    src={videoInfoTrailerVideoHome.srcVideoTrailer}
-                    poster={videoInfoTrailerVideoHome.srcPosterTrailer}
-                    controls={false}
-                    loop={false}
-
-                />
+                    poster={videoInfoTrailerVideoHome.srcPosterTrailer} />
 
                 <div className="background__front-video"></div>
                 <div className="box_btn_control--work">
@@ -210,13 +169,17 @@ function Home() {
                 <div className="bottom_shadow"></div>
             </div>
 
+            {/* <div className="box_slide-review">
+                <RenderSlideImage />
+            </div> */}
             <div className="body_home">
                 <RenderViewBoxChannle />
                 <RenderMylistSlick />
                 <RenderListTrending />
 
                 <AppLearn />
-                
+
+
 
             </div>
         </div>

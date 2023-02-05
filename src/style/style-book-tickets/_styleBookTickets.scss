@@ -9,7 +9,7 @@
 
             .body_select_book-tab {
                 width: 100%;
-                padding: 20px 0px;
+                padding: 20px 50px;
 
                 .head__tab-select-book {
                     display: flex;
@@ -124,7 +124,7 @@
                     .slick-slide {
                         width: 100%;
                         float: none;
-                        margin: 0px 20px;
+                        margin: 0px 10px;
                     }
                 }
             }
@@ -169,9 +169,8 @@
         z-index: 1;
         background: #a7a1a198;
         cursor: pointer;
-        border: 2px solid;
-        border-radius: 100%;
-        // border-bottom: 2px solid $main-color-while-fff;
+        border: none;
+        border-bottom: 2px solid $main-color-while-fff;
         transition: all 0.15s;
         font-size: 0px;
 
@@ -186,7 +185,7 @@
     }
 
     .slick-prev {
-        left: -5px;
+        left: -13px;
 
         &::before {
             margin-bottom: 7px;
@@ -199,7 +198,7 @@
     }
 
     .slick-next {
-        right: -5px;
+        right: -13px;
 
         &::before {
             margin-bottom: 7px;
