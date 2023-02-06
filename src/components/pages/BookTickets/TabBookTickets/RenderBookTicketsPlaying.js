@@ -78,7 +78,7 @@ const listFilmBookPlaying = [
         id: 7,
         titleFilm: "meo di hia : dieu uoc cuoi cung",
         srcImagePoster: Image_poster_playing_7,
-        limitOld: "6+",
+        limitOld: "5+",
 
         favoriteDegree: "96%",
         dateMovieFilm: "11/03",
