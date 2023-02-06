@@ -162,6 +162,7 @@ function RenderBookTicketsPlaying() {
                     {contentModalPreviewInfomation}
                     <div className='loading-sek'>
                         <Skeleton active />
+                        <Skeleton active />
                     </div>
                 </Modal>
             </div>
