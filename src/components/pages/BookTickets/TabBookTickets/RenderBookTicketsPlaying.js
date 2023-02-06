@@ -10,7 +10,7 @@ import Image_poster_playing_7 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LI
 
 import Slider from 'react-slick'
 import RenderItemBookTickets from '../ItemBoxBookTickets/RenderItemBookTickets'
-import LoadingRoute from '../../../../views/LoadingRoute'
+// import LoadingRoute from '../../../../views/LoadingRoute'
 import { ContextFromWindowResize } from '../../../../views/RenderGetWindowResize'
 
 const listFilmBookPlaying = [
