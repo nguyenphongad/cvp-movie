@@ -93,7 +93,7 @@ function RenderListFilmSystem({children}) {
         },
         {
             id: 6,
-            titleFilm: "laver island",
+            titleFilm: "lavar island",
             productionYearFilm: "2021",
             timeFilm: "4H 30M",
             limitOld: "8+",

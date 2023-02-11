@@ -35,7 +35,6 @@ function RenderHeader() {
 
     useEffect(() => {
         
-        console.log(window.location.pathname)
         if (window.location.pathname !== '/home' && window.location.pathname !== '/') {
             setScroll(true)
         }

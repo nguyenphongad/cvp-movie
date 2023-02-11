@@ -20,6 +20,10 @@ import Video_trailer_train_to_busan from "../../../assets/video-trailers/train_t
 import Picture_poster_trailer_train_to_busan from "../../../assets/photo-box/train_to_busan/picture_trailer_train_to_busan.webp";
 import Picture_name_train_to_busan from "../../../assets/photo-box/train_to_busan/picture_name_train_to_busan.png";
 
+import Video_trailer_lavar_island from "../../../assets/video-trailers/lavar_island-trailer.mp4";
+import Picture_poster_trailer_lavar_island from "../../../assets/photo-box/lavar-island/picture_trailer_lavar_island.webp";
+import Picture_name_lavar_island from "../../../assets/photo-box/lavar-island/picture_name_lavar_island.png";
+
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
 import { BsFillInfoCircleFill } from "react-icons/bs";
@@ -100,17 +104,21 @@ function Home() {
                 {/* Five years after an ominous unseen presence drives
                 most of society to suicide, a survivor and her two children
                 make a desperate bid to reach safety. */}
-                As a zombie outbreak sweeps the country,
+                {/* As a zombie outbreak sweeps the country,
                 a dad and his daughter take a harrowing train journey
-                in an attempt to reach the only city that's still safe.
+                in an attempt to reach the only city that's still safe. */}
+                Stranded on a tropical island,
+                two silly larva buddies find slapstick
+                fun in everything from discovering
+                food to meeting new animal friends.
             </>
         )
     }
     const videoInfoTrailerVideoHome = {
         id: 1,
-        srcVideoTrailer: Video_trailer_train_to_busan,
-        srcPosterTrailer: Picture_poster_trailer_train_to_busan,
-        srcImageNameInTrail: Picture_name_train_to_busan,
+        srcVideoTrailer: Video_trailer_lavar_island,
+        srcPosterTrailer: Picture_poster_trailer_lavar_island,
+        srcImageNameInTrail: Picture_name_lavar_island,
         contentBioTrailer: <ContentBioTrailer />,
         ageLimit: "16+",
         categoryGame: false
@@ -126,7 +134,7 @@ function Home() {
     }
 
 
-    
+
 
 
     return (
@@ -215,8 +223,8 @@ function Home() {
                 <RenderMylistSlick />
                 <RenderListTrending />
 
-                <AppLearn />
-                
+                {/* <AppLearn /> */}
+
 
             </div>
         </div>

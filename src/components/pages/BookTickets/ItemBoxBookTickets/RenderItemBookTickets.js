@@ -9,6 +9,7 @@ function RenderItemBookTickets(props) {
             className="item_box_book-tickets"
             key={props.id}
             onClick={props.handleClickModal}
+            to={props.toLink}
         >
             <div className="body_background_book-tickets">
                 <div className='border_image-poster'>

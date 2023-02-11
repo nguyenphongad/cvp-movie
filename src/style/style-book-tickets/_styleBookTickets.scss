@@ -169,7 +169,7 @@
         z-index: 1;
         background: #a7a1a198;
         cursor: pointer;
-        border: 2px solid;
+        border: none;
         border-radius: 100%;
         // border-bottom: 2px solid $main-color-while-fff;
         transition: all 0.15s;
@@ -200,6 +200,7 @@
 
     .slick-next {
         right: -5px;
+        padding-left: 15px;
 
         &::before {
             margin-bottom: 7px;

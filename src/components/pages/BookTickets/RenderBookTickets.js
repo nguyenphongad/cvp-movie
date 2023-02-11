@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'r
 import { AiOutlineDoubleRight } from 'react-icons/ai'
 import { RiSlideshow3Fill } from 'react-icons/ri'
 import { IoTicket } from "react-icons/io5"
-import { Link } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 
 import "slick-carousel/slick/slick.css";
 import LoadingRoute from '../../../views/LoadingRoute'
@@ -166,6 +166,14 @@ function RenderBookTickets() {
                             <Skeleton active />
                         </div>
                     </Modal>
+                </div>
+
+
+
+
+                <div>
+                
+
                 </div>
             </div>
 

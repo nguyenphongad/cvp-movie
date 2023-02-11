@@ -1,9 +1,6 @@
 import React, { lazy } from 'react'
-import { Route, Routes } from 'react-router-dom'
-// import Home from "../../components/"
+import { Route, Routes, } from 'react-router-dom'
 import NotFound from '../../components/pages/NotFound/NotFound'
-// import RenderMyList from '../../components/pages/MyList/RenderMyList'
-// import RenderBookTickets from '../../components/pages/BookTickets/RenderBookTickets'
 
 import { withErrorBoundary } from 'react-error-boundary';
 import RenderErrorBounDary from '../../components/Error/RenderErrorBounDary'
@@ -11,7 +8,10 @@ import RenderSearchMain from '../../components/pages/SearchMain/RenderSearchMain
 import RenderSetting from '../../components/Setting/RenderSetting'
 import RenderYourAccount from '../../components/YourAccount/RenderYourAccount'
 import LoadingRoute from '../../views/LoadingRoute';
-// import RenderBookTicketsHistory from '../../components/pages/BookTickets/BookTicketsHistory/RenderBookTicketsHistory';
+import { useContext } from 'react';
+import { ContextFromTabPlaying } from '../../components/pages/BookTickets/TabBookTickets/ContextTabBookTicketsPlaying';
+import RenderModalPreviewPlaying from '../../components/pages/BookTickets/ModalPreviewFilms/RenderModalPreviewPlaying';
+
 
 const LazyHome = lazy(() => import('../../components/pages/Home/Home'))
 const LazyMyList = lazy(() => import('../../components/pages/MyList/RenderMyList'))
@@ -22,6 +22,16 @@ const LazyBookTicketsHistory = lazy(() => import('../../components/pages/BookTic
 
 
 function RouterBody() {
+    const useOpenModalPreview = useContext(ContextFromTabPlaying);
+
+    const returnRouteListBookTicketsPlaying = useOpenModalPreview.LIST_FILM_BOOK_PLAYING.map(index => {
+        return (
+            <Route
+                key={index.id}
+                path={`${index.titleFilmEnglish.replace(/ /g, '-')}-${index.id}`}
+                element={<RenderModalPreviewPlaying />} />
+        )
+    })
 
     return (
         <div className="stl-routes">
@@ -52,6 +62,7 @@ function RouterBody() {
                         <LazyBookTickets />
                     </React.Suspense>
                 } >
+                    {returnRouteListBookTicketsPlaying}
                 </Route>
 
                 <Route path="/booking-tickets-history" element={
@@ -65,8 +76,6 @@ function RouterBody() {
                         <LazyMenu />
                     </React.Suspense>
                 } />
-
-
 
 
                 <Route path="/search" element={<RenderSearchMain />} />
