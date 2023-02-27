@@ -5,6 +5,7 @@ import { ContextFromTabPlaying } from "../TabBookTickets/ContextTabBookTicketsPl
 import { RxDotFilled } from "react-icons/rx"
 import { AiFillLike } from "react-icons/ai";
 import { useEffect } from "react";
+import { BsCardText } from "react-icons/bs";
 
 
 const RenderModalPreviewPlaying = () => {
@@ -19,10 +20,8 @@ const RenderModalPreviewPlaying = () => {
     )
     const returnListPreviewMovie = LIST_BOOK_TICKETS_PLAYING[getIndexArrayListPlaying]
 
-    useEffect(() => {
-        document.title = `${returnListPreviewMovie.titleFilm.toUpperCase()}` + " | CVP-MOVIE"
-    })
-
+    document.title = `${returnListPreviewMovie.titleFilm.toUpperCase()}` + " | CVP-MOVIE"
+    
     const handleGoBackModal = useNavigate();
     const handleCloseModalPreview = () => {
         useOpenModalPreview.setIsModalPreviewMovies(false)
@@ -58,7 +57,11 @@ const RenderModalPreviewPlaying = () => {
                                 {returnListPreviewMovie.movieDuration} MINUTE
                             </div>
                             <div className="leading_relaxed">
-                                {returnListPreviewMovie.leading_relax.toUpperCase()}
+                                <BsCardText/>
+                                <div className="content_leadding-rel">
+                                    {returnListPreviewMovie.leading_relax.toUpperCase()}
+                                </div>
+                                
                             </div>
                             <div className="state-information">
                                 <div className="item_state">

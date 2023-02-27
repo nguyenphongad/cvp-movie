@@ -8,7 +8,6 @@ import { DropBtnBoxSearch } from '../RenderHeader';
 function RenderBoxSearch() {
 
     const toStateValueBoxSearch = useContext(DropBtnBoxSearch);
-
     const locationSearch = useNavigate();
     const [value_search, setValue_search] = useState("");
     const [btnReset, setbtn__reset] = useState(false);

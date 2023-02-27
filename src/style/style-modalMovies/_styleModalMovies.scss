@@ -39,8 +39,10 @@
 
         .ant-modal-body {
             padding: 0px 10px;
+
             .content__preview {
                 padding-top: 15px;
+
                 .body__information-single--film {
                     width: 100%;
 
@@ -80,33 +82,52 @@
                                     }
                                 }
                             }
-                            .leading_relaxed{
-                                font-size: 15px;
-                                padding-left:15px;
+
+                            .leading_relaxed {
+                                padding-left: 15px;
                                 border-left: 2px solid;
-                                text-align: justify;
                                 color: #e4e4e4;
-                                margin-bottom:20px ;
+                                margin-bottom: 20px;
+
+                                .content_leadding-rel {
+                                    text-align: justify;
+                                    line-height: 25px;
+                                    font-size: 15px;
+                                }
+
+                                svg {
+                                    font-size: 25px;
+                                    margin-left: -20px;
+                                    padding: 2px;
+                                    position: relative;
+                                    z-index: 1;
+                                    background-color: $main-color;
+                                }
                             }
-                            .state-information{
+
+                            .state-information {
                                 display: flex;
-                                .item_state{
+
+                                .item_state {
                                     padding-right: 10px;
                                     text-align: left;
                                     margin-right: 15px;
-                                    .heading_state{
+
+                                    .heading_state {
                                         font-size: 18px;
                                         font-weight: 600;
                                         color: #a7a7a7;
                                     }
-                                    .result_state{
+
+                                    .result_state {
                                         color: $main-color-while-fff;
                                         font-size: 17px;
                                         font-weight: 500;
                                         display: flex;
                                         align-items: center;
-                                        > svg{
-                                            margin-right:5px;
+
+                                        >svg {
+                                            margin-right: 5px;
                                         }
                                     }
                                 }

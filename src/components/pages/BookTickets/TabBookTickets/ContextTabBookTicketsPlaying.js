@@ -20,7 +20,7 @@ const LIST_FILM_BOOK_PLAYING = [
         titleFilmEnglish: "the house of no man",
         srcImagePoster: Image_poster_playing_1,
         limitOld: "16+",
-        leading_relax: "Cau chuyen xoay quanh gia dinh ba nu gom ba the he song cung nhau trong mot ngoi nha Ba Nu mot tay cang dang moi su noi tieng voi quan banh canh cua va cung khet tieng voi viec kiem soat cuoc song cua tat ca moi nguoi tu con gai den con re moi chuyen dien ra binh thuong cho den khi co con gai ut si me anh chang dien trai xuat than tu mot gia dinh giau co truyen phim khac hoa moi quan he phuc tap da chieu xay ra voi cac thanh vien trong gia dinh cau tagline thong diep: Chinh ai cuung co loi nhung ai cung nghi minh la nan nhan. Chua nhieu an y ve noi dung bo phim muon gui gam.",
+        leading_relax: "Cau chuyen xoay quanh gia dinh ba nu gom ba the he song cung nhau trong mot ngoi nha Ba Nu mot tay cang dang moi su noi tieng voi quan banh canh cua va cung khet tieng voi viec kiem soat cuoc song cua tat ca moi nguoi tu con gai den con re moi chuyen dien ra binh thuong cho den khi co con gai ut si me anh chang dien trai xuat than tu mot gia dinh giau co truyen phim khac hoa moi quan he phuc tap da chieu xay ra voi cac thanh vien trong gia dinh cau tagline thong diep: 'Chinh ai cuung co loi nhung ai cung nghi minh la nan nhan'. Chua nhieu an y ve noi dung bo phim muon gui gam.",
         movieDuration: "102",
         favoriteDegree: "83%",
         dateMovieFilm: "22/01/2023",

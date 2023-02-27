@@ -169,10 +169,8 @@ function RenderBookTickets() {
                 </div>
 
 
-
-
                 <div>
-                
+
 
                 </div>
             </div>
