@@ -1,26 +1,30 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
-// import Video_trailer_lookism from "../../../assets/video-trailers/lookism-trailer.mp4";
-// import Picture_poster_trailer_lookism from "../../../assets/photo-box/lookism/picture_trailer_lookism.webp";
-// import Picture_name_lookism from "../../../assets/photo-box/lookism/picture_name_lookism.png";
+import Video_trailer_lookism from "../../../assets/video-trailers/lookism-trailer.mp4";
+import Picture_poster_trailer_lookism from "../../../assets/photo-box/lookism/picture_trailer_lookism.webp";
+import Picture_name_lookism from "../../../assets/photo-box/lookism/picture_name_lookism.png";
 
-// import Video_trailer_eldenring from "../../../assets/video-trailers/eldenring-trailer.mp4";
-// import Picture_poster_trailer_eldenring from "../../../assets/photo-box/eldenring/picture_trailer_eldenring.webp";
-// import Picture_name_eldenring from "../../../assets/photo-box/eldenring/picture_name_eldenring.png";
+import Video_trailer_eldenring from "../../../assets/video-trailers/eldenring-trailer.mp4";
+import Picture_poster_trailer_eldenring from "../../../assets/photo-box/eldenring/picture_trailer_eldenring.webp";
+import Picture_name_eldenring from "../../../assets/photo-box/eldenring/picture_name_eldenring.png";
 
-// import Video_trailer_wednesday from "../../../assets/video-trailers/wednesday-trailer.mp4";
-// import Picture_poster_trailer_wednesday from "../../../assets/photo-box/wednesday/picture_trailer_wednesday.webp";
-// import Picture_name_wednesday from "../../../assets/photo-box/wednesday/picture_name_wednesday.png";
+import Video_trailer_wednesday from "../../../assets/video-trailers/wednesday-trailer.mp4";
+import Picture_poster_trailer_wednesday from "../../../assets/photo-box/wednesday/picture_trailer_wednesday.webp";
+import Picture_name_wednesday from "../../../assets/photo-box/wednesday/picture_name_wednesday.png";
 
-// import Video_trailer_bird_box from "../../../assets/video-trailers/bird_box-trailer.mp4";
-// import Picture_poster_trailer_bird_box from "../../../assets/photo-box/bird_box/picture_trailer_bird_box.webp";
-// import Picture_name_bird_box from "../../../assets/photo-box/bird_box/picture_name_bird_box.png";
+import Video_trailer_bird_box from "../../../assets/video-trailers/bird_box-trailer.mp4";
+import Picture_poster_trailer_bird_box from "../../../assets/photo-box/bird_box/picture_trailer_bird_box.webp";
+import Picture_name_bird_box from "../../../assets/photo-box/bird_box/picture_name_bird_box.png";
 
 import Video_trailer_train_to_busan from "../../../assets/video-trailers/train_to_busan-trailer.mp4";
 import Picture_poster_trailer_train_to_busan from "../../../assets/photo-box/train_to_busan/picture_trailer_train_to_busan.webp";
 import Picture_name_train_to_busan from "../../../assets/photo-box/train_to_busan/picture_name_train_to_busan.png";
 
-import { FaPlay, FaPause } from "react-icons/fa";
+import Video_trailer_lavar_island from "../../../assets/video-trailers/lavar_island-trailer.mp4";
+import Picture_poster_trailer_lavar_island from "../../../assets/photo-box/lavar-island/picture_trailer_lavar_island.webp";
+import Picture_name_lavar_island from "../../../assets/photo-box/lavar-island/picture_name_lavar_island.png";
+
+import { ImPause2, ImPlay3 } from "react-icons/im";
 import { IoGameController } from "react-icons/io5";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 
@@ -31,7 +35,6 @@ import AppLearn from './learnHook/AppLearn';
 import { ContextFromWindowResize } from '../../../views/RenderGetWindowResize';
 
 import { Player } from 'video-react';
-// import "../../../../node_modules/video-react/dist/video-react.css";
 
 function Home() {
 
@@ -61,7 +64,6 @@ function Home() {
     useEffect(() => {
         document.addEventListener("visibilitychange", () => {
             if (document.visibilityState === 'visible') {
-                // setcontrolTogglePPVideoTrailer(true)
             } else {
                 setcontrolTogglePPVideoTrailer(false)
             }
@@ -100,21 +102,75 @@ function Home() {
                 {/* Five years after an ominous unseen presence drives
                 most of society to suicide, a survivor and her two children
                 make a desperate bid to reach safety. */}
-                As a zombie outbreak sweeps the country,
+                {/* As a zombie outbreak sweeps the country,
                 a dad and his daughter take a harrowing train journey
-                in an attempt to reach the only city that's still safe.
+                in an attempt to reach the only city that's still safe. */}
+                Stranded on a tropical island,
+                two silly larva buddies find slapstick
+                fun in everything from discovering
+                food to meeting new animal friends.
             </>
         )
     }
-    const videoInfoTrailerVideoHome = {
-        id: 1,
-        srcVideoTrailer: Video_trailer_train_to_busan,
-        srcPosterTrailer: Picture_poster_trailer_train_to_busan,
-        srcImageNameInTrail: Picture_name_train_to_busan,
-        contentBioTrailer: <ContentBioTrailer />,
-        ageLimit: "16+",
-        categoryGame: false
-    }
+    const videoInfoTrailerVideoHome = [
+        {
+            id: 0,
+            srcVideoTrailer: Video_trailer_lavar_island,
+            srcPosterTrailer: Picture_poster_trailer_lavar_island,
+            srcImageNameInTrail: Picture_name_lavar_island,
+            contentBioTrailer: <ContentBioTrailer />,
+            ageLimit: "16+",
+            categoryGame: false
+        },
+        {
+            id: 1,
+            srcVideoTrailer: Video_trailer_lookism,
+            srcPosterTrailer: Picture_poster_trailer_lookism,
+            srcImageNameInTrail: Picture_name_lookism,
+            contentBioTrailer: <ContentBioTrailer />,
+            ageLimit: "6+",
+            categoryGame: false
+        },
+        {
+            id: 2,
+            srcVideoTrailer: Video_trailer_eldenring,
+            srcPosterTrailer: Picture_poster_trailer_eldenring,
+            srcImageNameInTrail: Picture_name_eldenring,
+            contentBioTrailer: <ContentBioTrailer />,
+            ageLimit: "18+",
+            categoryGame: true
+        },
+        {
+            id: 3,
+            srcVideoTrailer: Video_trailer_wednesday,
+            srcPosterTrailer: Picture_poster_trailer_wednesday,
+            srcImageNameInTrail: Picture_name_wednesday,
+            contentBioTrailer: <ContentBioTrailer />,
+            ageLimit: "18+",
+            categoryGame: false
+        },
+        {
+            id: 4,
+            srcVideoTrailer: Video_trailer_bird_box,
+            srcPosterTrailer: Picture_poster_trailer_bird_box,
+            srcImageNameInTrail: Picture_name_bird_box,
+            contentBioTrailer: <ContentBioTrailer />,
+            ageLimit: "16+",
+            categoryGame: false
+        },
+        {
+            id: 5,
+            srcVideoTrailer: Video_trailer_train_to_busan,
+            srcPosterTrailer: Picture_poster_trailer_train_to_busan,
+            srcImageNameInTrail: Picture_name_train_to_busan,
+            contentBioTrailer: <ContentBioTrailer />,
+            ageLimit: "16+",
+            categoryGame: false
+        },
+    ]
+
+    //get array get information trailer front
+    const getInfoTrailer = videoInfoTrailerVideoHome[0];
 
     const useContextFromWindowSide = useContext(ContextFromWindowResize);
 
@@ -126,27 +182,17 @@ function Home() {
     }
 
 
-    
-
-
     return (
         <div className="wrap__home">
             <div className="video_trailer">
-                {/* <video
-                    ref={videoTrailerRef}
-                    // loop
-                    src={videoInfoTrailerVideoHome.srcVideoTrailer}
-                    poster={videoInfoTrailerVideoHome.srcPosterTrailer}
-
-                /> */}
 
                 <Player
                     onPlay={handlePlayPlayVideoTrailer}
                     onPause={handlePlayPauseVideoTrailer}
                     ref={videoTrailerRef}
                     onEnded={handleEventEndedVideo}
-                    src={videoInfoTrailerVideoHome.srcVideoTrailer}
-                    poster={videoInfoTrailerVideoHome.srcPosterTrailer}
+                    src={getInfoTrailer.srcVideoTrailer}
+                    poster={getInfoTrailer.srcPosterTrailer}
                     controls={false}
                     loop={false}
 
@@ -156,16 +202,16 @@ function Home() {
                 <div className="box_btn_control--work">
                     <div className="size-bozing_control">
                         <div className="border__content">
-                            <img src={videoInfoTrailerVideoHome.srcImageNameInTrail} />
+                            <img src={getInfoTrailer.srcImageNameInTrail} />
                             <div className="row-footer">
                                 <div className="text_introduce_trailer">
-                                    {videoInfoTrailerVideoHome.contentBioTrailer}
+                                    {getInfoTrailer.contentBioTrailer}
                                 </div>
                             </div>
 
                             <div className="block-btn__control">
                                 <button className="button-mixin border__btn_play--list btn btn-5 hover-border-11">
-                                    <FaPlay />
+                                    <ImPlay3 />
                                     <div>
                                         WATCH
                                     </div>
@@ -178,24 +224,15 @@ function Home() {
                                 </button>
                             </div>
                         </div>
+
                         <div className="control_btn_trailer-sion">
                             <div className="tr-control_btn_trailer-sion">
-                                {
-                                    useContextFromWindowSide.getWidthWindow <= 425 ?
-                                        "" :
-                                        <button onClick={handleToggleVideoTrailer} className="minxin_PP-right borderPP-trailer" >
-                                            {controlTogglePPVideoTrailer ?
-                                                <FaPause /> :
-                                                <FaPlay />}
-                                        </button>
-                                }
-
 
                                 <div className="minxin_PP-right border_old_warning">
-                                    {videoInfoTrailerVideoHome.ageLimit}
+                                    {getInfoTrailer.ageLimit}
                                 </div>
                                 {
-                                    videoInfoTrailerVideoHome.categoryGame ?
+                                    getInfoTrailer.categoryGame ?
                                         <div className="minxin_PP-right border_old_warning">
                                             <IoGameController />
                                         </div> : ""}
@@ -204,6 +241,17 @@ function Home() {
                         </div>
 
                     </div>
+                    {
+                        useContextFromWindowSide.getWidthWindow <= 425 ?
+                            "" :
+                            <div className="handle_toggle--PP">
+                                <button onClick={handleToggleVideoTrailer} className="borderPP-trailer" >
+                                    {controlTogglePPVideoTrailer ?
+                                        <ImPause2 /> :
+                                        <ImPlay3 />}
+                                </button>
+                            </div>
+                    }
 
                 </div>
 
@@ -215,8 +263,8 @@ function Home() {
                 <RenderMylistSlick />
                 <RenderListTrending />
 
-                <AppLearn />
-                
+                {/* <AppLearn /> */}
+
 
             </div>
         </div>
