@@ -9,7 +9,7 @@ import Image_poster_upcoming_5 from "../../../../assets/LIST-FILM-BOOK-TICKETS/L
 import Image_poster_upcoming_6 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-UPCOMING/image_men-of-plastic.jpg"
 import Image_poster_upcoming_7 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-UPCOMING/image_midnight-horror.jpg"
 import Image_poster_upcoming_8 from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-UPCOMING/image_the-super-mario-bros-movie.jpg"
-import LoadingRoute from '../../../../views/LoadingRoute'
+
 import { ContextFromWindowResize } from '../../../../views/RenderGetWindowResize'
 import RenderItemBookTickets from '../ItemBoxBookTickets/RenderItemBookTickets'
 
