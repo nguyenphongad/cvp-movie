@@ -284,7 +284,7 @@ function Home() {
                                             <GrLinkPrevious />
                                         </div> : ""
                                 }
-                                {/* ---- */}
+                                {/* --- */}
                                 {
                                     booleanDisabledBtnChange_balance ?
                                         <div
