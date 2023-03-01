@@ -8,11 +8,8 @@ import '../style/styleMain.scss';
 import ScrollToTopRouter from './ScrollToTopRouter';
 
 import { withErrorBoundary } from 'react-error-boundary';
-import RenderErrorBounDary from '../components/Error/RenderErrorBounDary';
-import { useEffect, useState } from 'react';
-import RenderLoadingStart from './RenderLoadingStart';
+import RenderErrorBounDary from '../components/error/RenderErrorBounDary'; 
 import RenderMaintenance from './RenderMaintenance';
-import RenderModalDetailHistoryTickets from '../components/pages/BookTickets/ModalDetailHistoryTickets/RenderModalDetailHistoryTickets';
 
 function App() {
 

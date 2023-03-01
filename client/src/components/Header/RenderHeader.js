@@ -4,7 +4,7 @@ import React, { createContext, Suspense, useContext, useEffect, useRef, useState
 import { Link } from 'react-router-dom';
 
 import { withErrorBoundary } from 'react-error-boundary';
-import RenderErrorBounDary from '../Error/RenderErrorBounDary';
+import RenderErrorBounDary from '../error/RenderErrorBounDary';
 
 import Image_name_logo from "../../assets/image-logo/name_logo_cvp-movie.png";
 import Image_logo_cvp from "../../assets/image-logo/logo_cvp-movie.png";
@@ -31,20 +31,20 @@ function RenderHeader() {
     const [dropdownBoxSearch, setdropdownBoxSearch] = useState(false);
     const [dropdownBoxSel, setdropdownBoxSel] = useState(false);
     const [dropdownBoxNoti, setdropdownBoxNoti] = useState(false);
-    const locationBackSearch = window.location.pathname
+    const getLocation = window.location.pathname
 
     useEffect(() => {
         
-        if (window.location.pathname !== '/home' && window.location.pathname !== '/') {
+        if (getLocation !== '/home' && getLocation !== '/') {
             setScroll(true)
         }
         const handleScroll = () => {
-            if (window.location.pathname === '/home' || window.location.pathname === '/')
+            if (getLocation === '/home' || getLocation === '/')
                 setScroll(window.scrollY > 100);
         }
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [window.location.pathname]);
+    }, [getLocation]);
     
 
     //search
@@ -139,8 +139,8 @@ function RenderHeader() {
         dropdownBoxSearch,
         setdropdownBoxSearch,
         setScroll,
-        scroll,
-        locationBackSearch
+        scroll, 
+        getLocation
     }
 
     return (
@@ -210,7 +210,7 @@ function RenderHeader() {
                                         "" :
                                         <div className="btn_dropdown-account" ref={dropRef}>
                                             <button className="border-drop" onClick={handleButtonDrop}>
-                                                <img src={Picture_avatar_cvp} />
+                                                <img src={Picture_avatar_cvp} alt="avatar"/>
                                             </button>
                                             <div className={`box_drops-account ${dropdownBoxSel ? "activeDropHeader" : "inactiveDropHeader"}`}>
                                                 <div className="body__drop">
@@ -219,8 +219,6 @@ function RenderHeader() {
                                             </div>
                                         </div>
                                 }
-
-
                             </div>
                         </div>
                     </div>

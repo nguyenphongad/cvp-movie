@@ -3,7 +3,7 @@ import { Route, Routes, } from 'react-router-dom'
 import NotFound from '../../components/pages/NotFound/NotFound'
 
 import { withErrorBoundary } from 'react-error-boundary';
-import RenderErrorBounDary from '../../components/Error/RenderErrorBounDary'
+import RenderErrorBounDary from '../../components/error/RenderErrorBounDary'
 import RenderSearchMain from '../../components/pages/SearchMain/RenderSearchMain'
 import RenderSetting from '../../components/Setting/RenderSetting'
 import RenderYourAccount from '../../components/YourAccount/RenderYourAccount'
