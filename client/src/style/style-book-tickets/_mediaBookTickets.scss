@@ -1,0 +1,21 @@
+.wrap__book-tickets {
+    .body_tickets {
+        @media only screen and (max-width: 768px) {
+            padding: 100px 30px !important;
+
+            @media only screen and (max-width: 545px) {
+                padding: 100px 15px !important;
+
+                @media only screen and (max-width: 423px) {
+                    padding: 100px 10px !important;
+
+                    @media only screen and (max-width: 423px) {
+                        padding: 100px 5px !important;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
