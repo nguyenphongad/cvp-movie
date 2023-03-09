@@ -13,7 +13,7 @@ function RenderItemBookTickets(props) {
         >
             <div className="body_background_book-tickets">
                 <div className='border_image-poster'>
-                    <img src={props.srcImagePoster} />
+                    <img src={props.srcImagePoster} alt={props.titleFilm.toLocaleUpperCase()}/>
                 </div>
                 <div className="title_film" title={props.titleFilm.toLocaleUpperCase()}>
                     {props.titleFilm.toLocaleUpperCase()}
