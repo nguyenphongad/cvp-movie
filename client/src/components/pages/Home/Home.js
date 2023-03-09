@@ -289,7 +289,6 @@ function Home() {
                 <RenderViewBoxChannle />
                 <RenderMylistSlick />
                 <RenderListTrending />
-
             </div>
         </div>
     )
