@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 import Video_trailer_lookism from "../../../assets/video-trailers/lookism-trailer.mp4";
 import Picture_poster_trailer_lookism from "../../../assets/photo-box/lookism/picture_trailer_lookism.webp";
@@ -47,16 +47,20 @@ function Home() {
         } else {
             videoTrailerRef.current.pause();
         }
-    })
+    }, [controlTogglePPVideoTrailer])
 
     useEffect(() => {
-        document.addEventListener("visibilitychange", () => {
+        const handleVisibilityChange = () => {
             if (document.visibilityState === 'visible') {
             } else {
                 setcontrolTogglePPVideoTrailer(false)
             }
-        })
-    });
+        };
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        return () => {
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, []);
 
     useEffect(() => {
         const handeleScrollVideo = () => {
@@ -91,10 +95,11 @@ function Home() {
             </>
         )
     }
+
     const VIDEOS_INFOR_TRAILER_VIDEO_HOME = [
         {
             id: 0,
-            titleFilm : "Larvar island",
+            titleFilm: "Larvar island",
             srcVideoTrailer: Video_trailer_lavar_island,
             srcPosterTrailer: Picture_poster_trailer_lavar_island,
             srcImageNameInTrail: Picture_name_lavar_island,
@@ -104,7 +109,7 @@ function Home() {
         },
         {
             id: 1,
-            titleFilm : "lookism",
+            titleFilm: "lookism",
             srcVideoTrailer: Video_trailer_lookism,
             srcPosterTrailer: Picture_poster_trailer_lookism,
             srcImageNameInTrail: Picture_name_lookism,
@@ -113,8 +118,8 @@ function Home() {
             categoryGame: false
         },
         {
-            id: 3,
-            titleFilm : "wednesday",
+            id: 2,
+            titleFilm: "wednesday",
             srcVideoTrailer: Video_trailer_wednesday,
             srcPosterTrailer: Picture_poster_trailer_wednesday,
             srcImageNameInTrail: Picture_name_wednesday,
@@ -122,37 +127,36 @@ function Home() {
             ageLimit: "18+",
             categoryGame: false
         },
-        {
-            id: 4,
-            titleFilm : "bird box",
-            srcVideoTrailer: Video_trailer_bird_box,
-            srcPosterTrailer: Picture_poster_trailer_bird_box,
-            srcImageNameInTrail: Picture_name_bird_box,
-            contentBioTrailer: <ContentBioTrailer />,
-            ageLimit: "16+",
-            categoryGame: false
-        },
-        {
-            id: 5,
-            titleFilm : "train to busan",
-            srcVideoTrailer: Video_trailer_train_to_busan,
-            srcPosterTrailer: Picture_poster_trailer_train_to_busan,
-            srcImageNameInTrail: Picture_name_train_to_busan,
-            contentBioTrailer: <ContentBioTrailer />,
-            ageLimit: "16+",
-            categoryGame: false
-        },
+        // {
+        //     id: 3,
+        //     titleFilm : "bird box",
+        //     srcVideoTrailer: Video_trailer_bird_box,
+        //     srcPosterTrailer: Picture_poster_trailer_bird_box,
+        //     srcImageNameInTrail: Picture_name_bird_box,
+        //     contentBioTrailer: <ContentBioTrailer />,
+        //     ageLimit: "16+",
+        //     categoryGame: false
+        // },
+        // {
+        //     id: 4,
+        //     titleFilm : "train to busan",
+        //     srcVideoTrailer: Video_trailer_train_to_busan,
+        //     srcPosterTrailer: Picture_poster_trailer_train_to_busan,
+        //     srcImageNameInTrail: Picture_name_train_to_busan,
+        //     contentBioTrailer: <ContentBioTrailer />,
+        //     ageLimit: "16+",
+        //     categoryGame: false
+        // },
     ]
 
     //get array get information trailer front
     const [numberArrayDetermine, setNumberArrayDetermine] = useState(0);
-
     const [booleanDisabledBtnChange, setBooleanDisabledBtnChange] = useState(false)
     const [booleanDisabledBtnChange_balance, setBooleanDisabledBtnChange_balance] = useState(true)
 
     let getInfoTrailer = VIDEOS_INFOR_TRAILER_VIDEO_HOME[numberArrayDetermine];
+    const [changeAnimationFrontBgr, setchangeAnimationFrontBgr] = useState(false);
 
-    const [changeAnimationFrontBgr, setchangeAnimationFrontBgr] = useState(false)
     const ChangeAnimationLoadSke = () => {
         setTimeout(() => {
             setchangeAnimationFrontBgr(true)
@@ -165,21 +169,24 @@ function Home() {
     const handleSlickNextChangeTrailer = () => {
         setTimeout(() => {
             setNumberArrayDetermine(numberArrayDetermine + 1)
+            setcontrolTogglePPVideoTrailer(false)
         }, 300)
         ChangeAnimationLoadSke();
-    }
+    };
+
     const handleSlickPrevChangeTrailer = () => {
         setTimeout(() => {
             setNumberArrayDetermine(numberArrayDetermine - 1)
-        },300)
+            setcontrolTogglePPVideoTrailer(false)
+        }, 300)
         ChangeAnimationLoadSke();
-    }
+    };
 
     useEffect(() => {
         if (numberArrayDetermine === 0) {
             setBooleanDisabledBtnChange(false)
             setBooleanDisabledBtnChange_balance(true)
-        } else if (numberArrayDetermine === VIDEOS_INFOR_TRAILER_VIDEO_HOME.length - 1)
+        } else if (numberArrayDetermine === (VIDEOS_INFOR_TRAILER_VIDEO_HOME.length - 1))
             setBooleanDisabledBtnChange_balance(false)
         else {
             setBooleanDisabledBtnChange(true)
@@ -234,7 +241,7 @@ function Home() {
                                     </div>
                                 </button>
                             </div>
-                            
+
                         </div>
 
                         <div className="control_btn_trailer-sion">

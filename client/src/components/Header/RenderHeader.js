@@ -25,16 +25,14 @@ const RenderBoxNotification = React.lazy(() => import('./BoxNotification/RenderB
 export const DropBtnBoxSearch = createContext();
 
 function RenderHeader() {
-
-
     const [scroll, setScroll] = useState(false);
     const [dropdownBoxSearch, setdropdownBoxSearch] = useState(false);
     const [dropdownBoxSel, setdropdownBoxSel] = useState(false);
     const [dropdownBoxNoti, setdropdownBoxNoti] = useState(false);
-    const getLocation = window.location.pathname
+    const getLocation = window.location.pathname;
 
+    //get header !add return scroll
     useEffect(() => {
-        
         if (getLocation !== '/home' && getLocation !== '/') {
             setScroll(true)
         }
@@ -45,7 +43,7 @@ function RenderHeader() {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
     }, [getLocation]);
-    
+
 
     //search
     const handleButtonDropSearchTrue = () => {
@@ -139,7 +137,7 @@ function RenderHeader() {
         dropdownBoxSearch,
         setdropdownBoxSearch,
         setScroll,
-        scroll, 
+        scroll,
         getLocation
     }
 
@@ -206,11 +204,10 @@ function RenderHeader() {
 
                                 </div>
                                 {
-                                    useContextFromWindowSize.getWidthWindow <= 425 ?
-                                        "" :
+                                    useContextFromWindowSize.getWidthWindow <= 425 ? "" :
                                         <div className="btn_dropdown-account" ref={dropRef}>
                                             <button className="border-drop" onClick={handleButtonDrop}>
-                                                <img src={Picture_avatar_cvp} alt="avatar"/>
+                                                <img src={Picture_avatar_cvp} alt="avatar" />
                                             </button>
                                             <div className={`box_drops-account ${dropdownBoxSel ? "activeDropHeader" : "inactiveDropHeader"}`}>
                                                 <div className="body__drop">
@@ -222,11 +219,7 @@ function RenderHeader() {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
-
                 <RenderBoxSearch />
             </DropBtnBoxSearch.Provider>
         </>

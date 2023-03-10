@@ -24,6 +24,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "102",
         favoriteDegree: "83%",
         dateMovieFilm: "22/01/2023",
+        nationFilm : "Vietnam"
     },
     {
         id: 2,
@@ -35,6 +36,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "190",
         favoriteDegree: "90%",
         dateMovieFilm: "13/02/2022",
+        nationFilm : "usa"
     },
     {
         id: 3,
@@ -46,6 +48,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "90",
         favoriteDegree: "60%",
         dateMovieFilm: "11/03/2023",
+        nationFilm: "usa"
     },
     {
         id: 4,
@@ -57,6 +60,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "92",
         favoriteDegree: "45%",
         dateMovieFilm: "27/02/2023",
+        nationFilm: "Thailand"
     },
     {
         id: 5,
@@ -68,6 +72,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "112",
         favoriteDegree: "28%",
         dateMovieFilm: "09/08/2023",
+        nationFilm : "korean"
     },
     {
         id: 6,
@@ -79,6 +84,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "94",
         favoriteDegree: "90%",
         dateMovieFilm: "18/02/2022",
+        nationFilm: "Vietnam"
     },
     {
         id: 7,
@@ -90,6 +96,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "124",
         favoriteDegree: "39%",
         dateMovieFilm: "05/03/2023",
+        nationFilm: "thailand"
     },
     {
         id: 8,
@@ -101,6 +108,7 @@ const LIST_FILM_BOOK_PLAYING = [
         movieDuration: "108",
         favoriteDegree: "96%",
         dateMovieFilm: "11/01/2023",
+        nationFilm : "usa"
     },
 ]
 

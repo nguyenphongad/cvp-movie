@@ -79,6 +79,10 @@ const RenderModalPreviewPlaying = () => {
                                     <div className="heading_state">AGE LIMIT</div>
                                     <div className="result_state">{returnListPreviewMovie.limitOld}</div>
                                 </div>
+                                <div className="item_state">
+                                    <div className="heading_state">NATION</div>
+                                    <div className="result_state">{returnListPreviewMovie.nationFilm.toUpperCase()}</div>
+                                </div>
                             </div>
 
                         </div>

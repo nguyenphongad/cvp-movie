@@ -1,15 +1,15 @@
-import React, { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import axios from "axios"
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { AiOutlineDoubleRight } from 'react-icons/ai'
 import { RiSlideshow3Fill } from 'react-icons/ri'
 import { IoTicket } from "react-icons/io5"
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import "slick-carousel/slick/slick.css";
 import LoadingRoute from '../../../views/LoadingRoute'
-import { Button, Modal, Skeleton } from 'antd'
-
 const RenderBookTicketsPlaying = React.lazy(() => import('./TabBookTickets/RenderBookTicketsPlaying'))
 const RenderBookTicketsUpcoming = React.lazy(() => import('./TabBookTickets/RenderBookTicketsUpcoming'))
+
 
 export const BookTicketsPlaying = () => {
     return (
@@ -28,7 +28,7 @@ export const BookTicketsUpComing = () => {
 
 function RenderBookTickets() {
     useEffect(() => {
-        document.title = "Book tickets" + " | CVP-MOVIE"
+        document.title = "Book tickets | CVP-MOVIE"
     })
 
     const [tabBookType, setTabBookType] = useState(true)
@@ -40,60 +40,34 @@ function RenderBookTickets() {
     const getWidthBoxNavigationSecondRef = useRef(null);
     const [getWidthBoxNav_firt, setgetWidthBoxNavigation_firt] = useState(0);
     const [getWidthBoxNav_second, setgetWidthBoxNavigation_second] = useState(0);
+
     useEffect(() => {
         setgetWidthBoxNavigation_firt(getWidthBoxNavigationFirtRef.current.offsetWidth)
         setgetWidthBoxNavigation_second(getWidthBoxNavigationSecondRef.current.offsetWidth)
-    })
-    const listOnclick = [
-        {
-            id: 1,
-            text: "nut 1",
-            ix: true
-        },
-        {
-            id: 2,
-            text: "nut 2",
-            ix: false
-        },
-        {
-            id: 3,
-            text: "nut 3",
-            ix: true
-        },
-    ]
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [contentModal, setContentModal] = useState([]);
-    const [title, setTitle] = useState('')
+    }, [])
 
-    const showModal = (content, title) => {
-        setIsModalOpen(true);
-        setContentModal(content)
-        setTitle(title)
-    };
 
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
 
-    const returnList = listOnclick.map((index) => {
-        const hande = () => {
-            showModal(index.ix ? [
-                <div>
-                    <button style={{ color: 'red' }}>nnn {index.text}</button>
-                </div>
-            ] : "no data")
-            setTitle(index.text)
+    const [backEndData, setBackEndData] = useState([{}]);
+    const [loadingData, setLoadingData] = useState(true);
+    useEffect(() => {
+        const fetchUser = async () => {
+            const user = await axios.get('http://localhost:5000/api/users');
+            setBackEndData(user.data)
+            setLoadingData(false)
         }
+        fetchUser();
+    }, [])
 
+    console.log(backEndData)
+
+    const returnData = backEndData.map(index => {
         return (
-            <>
-                <Button type="primary" onClick={hande} key={index.id}>
-                    Open Modal {index.text}
-                </Button> -
-            </>
+            <div key={index._id}>
+                <div>{index.name} + {index.age}</div>
+            </div>
         )
     })
-
 
     return (
         <div className='wrap__book-tickets animation_scale-lg'>
@@ -151,26 +125,16 @@ function RenderBookTickets() {
                     <RiSlideshow3Fill />
                     BOOK TICKETS BY CINEMA
                 </div>
-                <div className='test-modal'>
-                    {returnList}
-                    <Modal
-                        title={title}
-                        open={isModalOpen}
-                        onCancel={handleCancel}
-                        footer={null}
-                        className="modal-2"
-                    >
-                        {contentModal}
-                        <div className='loading-sek'>
-                            <Skeleton active />
-                        </div>
-                    </Modal>
-                </div>
-
-
                 <div>
+                    {
+                        loadingData ?
+                            <div>
+                                loading...
+                            </div>
+                            :
+                            returnData
 
-
+                    }
                 </div>
             </div>
 

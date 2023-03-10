@@ -20,7 +20,7 @@ function RenderBoxSearch() {
             locationSearch(`/search?q=${e.target.value}`);
             setbtn__reset(true);
         } else {
-            locationSearch(toStateValueBoxSearch.locationBackSearch);
+            locationSearch(toStateValueBoxSearch.getLocation);
             setbtn__reset(false);
         }
     }, [toStateValueBoxSearch, locationSearch, setbtn__reset]);
@@ -28,7 +28,7 @@ function RenderBoxSearch() {
     const handleResetInputSearch = useCallback(() => {
         setValue_search("");
         focusValueRef.current.focus();
-        locationSearch(toStateValueBoxSearch.locationBackSearch);
+        locationSearch(toStateValueBoxSearch.getLocation);
         setbtn__reset(false);
         toStateValueBoxSearch.setdropdownBoxSearch(false);
     }, [toStateValueBoxSearch, focusValueRef, setValue_search, setbtn__reset]);
@@ -37,7 +37,7 @@ function RenderBoxSearch() {
     useEffect(() => {
         let handle = (e) => {
             if (!dropSearchRef.current.contains(e.target))
-                if (value_search !== "") {
+                if (value_search != "") {
                     toStateValueBoxSearch.setdropdownBoxSearch(true)
                 } else {
                     toStateValueBoxSearch.setdropdownBoxSearch(false)
