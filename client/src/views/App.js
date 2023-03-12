@@ -10,6 +10,7 @@ import ScrollToTopRouter from './ScrollToTopRouter';
 import { withErrorBoundary } from 'react-error-boundary';
 import RenderErrorBounDary from '../components/error/RenderErrorBounDary'; 
 import RenderMaintenance from './RenderMaintenance';
+import RouterAuth from '../router/Routes/RouterAuth';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
   // }, []);
 
   const MAINTENANCEPAGE = false;
+  const AUTH_LOGIN = true;
 
   return (
 
@@ -34,15 +36,17 @@ function App() {
             {
               MAINTENANCEPAGE ?
                 <RenderMaintenance />
-                : <>
-                  <RenderHeader />
-                  {/* <RenderModalDetailHistoryTickets/> */}
-                  <RouterBody />
-                  <ScrollToTopRouter />
-                  <RenderFooter />
-                </>
+                : 
+                  AUTH_LOGIN ? 
+                  <RouterAuth/>
+                  :
+                  <>
+                    <RenderHeader />
+                    <RouterBody />
+                    <ScrollToTopRouter />
+                    <RenderFooter />
+                  </>
             }
-
           </div>
         </BrowserRouter> 
         {/* : <RenderLoadingStart />} */}

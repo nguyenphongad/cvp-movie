@@ -337,17 +337,3 @@
     }
 
 }
-
-.animation_scale-lg {
-    animation: an_body_scale 0.4s forwards;
-
-    @keyframes an_body_scale {
-        from {
-            transform: scale(0.95);
-        }
-
-        to {
-            transform: scale(1);
-        }
-    }
-}

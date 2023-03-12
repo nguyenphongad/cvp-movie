@@ -77,7 +77,6 @@ function RouterBody() {
                     </React.Suspense>
                 } />
 
-
                 <Route path="/search" element={<RenderSearchMain />} />
 
                 <Route path="/your-account" element={<RenderYourAccount />} />
