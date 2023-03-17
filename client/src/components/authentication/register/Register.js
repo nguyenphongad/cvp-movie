@@ -1,15 +1,15 @@
 import React from 'react'
 import RenderInterfaceAuth from '../interfaceAuth/RenderInterfaceAuth'
-import ResgisterForm from './ResgisterForm'
+import RegisterForm from './RegisterForm'
 
-const Resgister = () => {
+const Register = () => {
     return (
         <div>
             <RenderInterfaceAuth>
-                <ResgisterForm/>
+                <RegisterForm/>
             </RenderInterfaceAuth>
         </div>
     )
 }
 
-export default Resgister
+export default Register
