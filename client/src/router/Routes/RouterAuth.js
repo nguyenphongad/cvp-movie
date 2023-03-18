@@ -1,6 +1,5 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-// import RenderInterfaceAuth from '../../components/authentication/interfaceAuth/RenderInterfaceAuth'
 import Login from '../../components/authentication/login/Login'
 import Register from '../../components/authentication/register/Register'
 

@@ -14,23 +14,12 @@ import RouterAuth from '../router/Routes/RouterAuth';
 
 function App() {
 
-  // const [postLoading, setPostLoading] = useState(null);
-  // useEffect(() => {
-  //   fetch("https://jsonplaceholder.typicode.com/posts/1")
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       const { body } = response
-  //       setPostLoading(body)
-  //     })
-  // }, []);
-
   const MAINTENANCEPAGE = false;
-  const AUTH_LOGIN = true;
+  const AUTH_LOGIN = false;
 
   return (
 
     <>
-      {/* {postLoading ? */}
       <BrowserRouter>
         <div className="App">
           {
@@ -51,7 +40,6 @@ function App() {
           }
         </div>
       </BrowserRouter>
-      {/* : <RenderLoadingStart />} */}
       {/* <RenderLoadingStart /> */}
     </>
 

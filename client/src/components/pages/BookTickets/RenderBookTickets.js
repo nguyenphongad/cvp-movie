@@ -3,7 +3,7 @@ import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { AiOutlineDoubleRight } from 'react-icons/ai'
 import { RiSlideshow3Fill } from 'react-icons/ri'
 import { IoTicket } from "react-icons/io5"
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import "slick-carousel/slick/slick.css";
 import LoadingRoute from '../../../views/LoadingRoute'
@@ -27,9 +27,12 @@ export const BookTicketsUpComing = () => {
 }
 
 function RenderBookTickets() {
-    useEffect(() => {
+    const getPathname = useLocation();
+    const getIdMovies = getPathname.pathname.slice(14);
+
+    if (getIdMovies === '') {
         document.title = "Book tickets | CVP-MOVIE"
-    })
+    }
 
     const [tabBookType, setTabBookType] = useState(true)
 
@@ -46,8 +49,6 @@ function RenderBookTickets() {
         setgetWidthBoxNavigation_second(getWidthBoxNavigationSecondRef.current.offsetWidth)
     }, [])
 
-
-
     const [backEndData, setBackEndData] = useState([{}]);
     const [loadingData, setLoadingData] = useState(true);
     useEffect(() => {
@@ -58,8 +59,6 @@ function RenderBookTickets() {
         }
         fetchUser();
     }, [])
-
-    console.log(backEndData)
 
     const returnData = backEndData.map(index => {
         return (

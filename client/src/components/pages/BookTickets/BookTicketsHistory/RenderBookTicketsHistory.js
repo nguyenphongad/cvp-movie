@@ -5,13 +5,14 @@ import { MdInfoOutline } from 'react-icons/md'
 import { BsSearch } from 'react-icons/bs'
 import { CgDetailsMore } from 'react-icons/cg'
 
-// import Image_Poster_Tickets from "../../../../assets/LIST-FILM-BOOK-TICKETS/LIST-FILM-PLAYING/image_poster-avatar_history.jpg"
 import Image_cinema_cgv from "../../../../assets/image-logo-cinema/logo_cgv.jpg"
 import Image_cinema_beta from "../../../../assets/image-logo-cinema/logo_beta.jpg"
 
 import LoadingRoute from "../../../../views/LoadingRoute"
 
 function RenderBookTicketsHistory() {
+
+    document.title = "Book tickets history | CVP-MOVIE"
 
     const listTicketsBooked = [
         {

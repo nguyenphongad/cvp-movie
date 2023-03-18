@@ -30,13 +30,3 @@ app.listen(PORT, () => { console.log("start port " + PORT) })
 
 
 
-
-
-
-
-
-// app.get("/api", (req, res) => {
-//     res.json({
-//         "users": ["a1", "b1", "c2"]
-//     })
-// })
