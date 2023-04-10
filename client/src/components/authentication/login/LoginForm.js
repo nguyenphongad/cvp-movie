@@ -55,7 +55,7 @@ const LoginForm = () => {
                     <div className="group__input option__more">
                         <div>
                             <span>Don't have a CVP-MOVIE account yet? </span>
-                            <Link to="../resgister">Register</Link>
+                            <Link to="../resgister">Resgister</Link>
                         </div>
                     </div>
                 </form>

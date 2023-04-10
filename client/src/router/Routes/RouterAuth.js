@@ -8,7 +8,7 @@ const RouterAuth = () => {
         <>
             <Routes>
                 <Route path="/login" element={<Login/>} />
-                <Route path="/register" element={<Register/>} />
+                <Route path="/resgister" element={<Register/>} />
                 <Route path="*" element={<Navigate to="/login"/>} />
             </Routes>
         </>

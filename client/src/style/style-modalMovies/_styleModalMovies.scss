@@ -84,7 +84,7 @@
                             .size_title-film {
                                 font-size: 40px;
                                 font-weight: 600;
-                                line-height: 24px;
+                                line-height: 25px;
                             }
 
                             .title_film-EL {
@@ -108,6 +108,7 @@
                                 border-left: 2px solid;
                                 color: #e4e4e4;
                                 margin-bottom: 20px;
+                                
 
                                 .content_leadding-rel {
                                     text-align: justify;
@@ -184,6 +185,7 @@
 
 .skeleton__component--modal {
     display: flex;
+    margin-bottom: 30px;
 
     .width__image_intro {
         width: 350px;
@@ -192,7 +194,7 @@
             .ant-skeleton-content {
                 .ant-skeleton-title {
                     width: 100% !important;
-                    height: 400px !important;
+                    height: 390px !important;
                 }
             }
         }
@@ -201,12 +203,33 @@
     .width__title--line {
         width: 100%;
         padding: 0px 30px;
+        padding-top: 0px;
+        & > div{
+            margin-bottom: 30px;
+        }
 
-        .line-skeleton-title {
+        .line-skeleton-title-film {
             .ant-skeleton-content {
                 .ant-skeleton-title {
                     width: 100% !important;
+                    height: 60px !important;
+                }
+            }
+        }
+        .line-skeleton-title {
+            .ant-skeleton-content {
+                .ant-skeleton-title {
+                    width: 70% !important;
                     height: 35px !important;
+                }
+            }
+        }
+
+        .line-skeleton-preview {
+            .ant-skeleton-content {
+                .ant-skeleton-title {
+                    width: 100% !important;
+                    height: 80px !important;
                 }
             }
         }
@@ -221,8 +244,11 @@
         }
     }
 }
-
+.ant-skeleton-title{
+    margin: 0px;
+}
 .line-skeleton-test {
+    margin-bottom: 30px;
     .ant-skeleton-content {
         .ant-skeleton-title {
             width: 100% !important;

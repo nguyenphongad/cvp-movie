@@ -242,7 +242,7 @@
         .title_film {
             width: 100%;
             font-size: 19px;
-            padding:5px ;
+            padding: 5px;
             color: #ffffff;
             display: -webkit-box;
             font-weight: 600;
@@ -288,6 +288,37 @@
 
         img {
             transform: scale(1.08);
+        }
+    }
+}
+
+.container__book_get_date--film {
+    margin: 30px 0px;
+    .wrap_box--b-t {
+        .header__top--GPS {
+            display: flex;
+
+            .heading__text--bt {}
+
+            .s-px_btn-GetMap {}
+
+            m-px_btn__Getmap--recent {}
+        }
+
+        .wrap__item--box_handle--getDate {
+            display: flex;
+            .item__hanle-title-get-date {
+                width: 100px;
+                padding: 10px 15px;
+                background-color: #262735;
+                > div:nth-child(1){
+                    text-align: center;
+                }
+                > div:nth-child(2){
+                    font-weight: 700;
+                }
+            }
+
         }
     }
 }

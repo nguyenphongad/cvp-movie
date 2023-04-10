@@ -1,16 +1,18 @@
 import axios from "axios"
 import React, { Suspense, useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+
 import { AiOutlineDoubleRight } from 'react-icons/ai'
 import { RiSlideshow3Fill } from 'react-icons/ri'
 import { IoTicket } from "react-icons/io5"
-import { Link, useLocation } from 'react-router-dom'
 
 import "slick-carousel/slick/slick.css";
+
+
 import LoadingRoute from '../../../views/LoadingRoute'
+
 const RenderBookTicketsPlaying = React.lazy(() => import('./TabBookTickets/RenderBookTicketsPlaying'))
 const RenderBookTicketsUpcoming = React.lazy(() => import('./TabBookTickets/RenderBookTicketsUpcoming'))
-
-
 export const BookTicketsPlaying = () => {
     return (
         <Suspense fallback={<LoadingRoute />}>
@@ -128,7 +130,7 @@ function RenderBookTickets() {
                     {
                         loadingData ?
                             <div>
-                                loading...
+                                loading API...
                             </div>
                             :
                             returnData
