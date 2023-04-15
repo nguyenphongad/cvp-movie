@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://github.com/nguyenphongad/cvp-movie/client",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "react-scripts build",
@@ -17,5 +18,7 @@
   "bugs": {
     "url": "https://github.com/nguyenphongad/cvp-movie/issues"
   },
-  "homepage": "https://github.com/nguyenphongad/cvp-movie#readme"
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  }
 }
