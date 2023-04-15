@@ -6,8 +6,12 @@
   "homepage": "https://cvp-movie-v2.netlify.app/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "react-scripts build",
-    "deploy": "gh-pages-v2 -d build"
+    "client": "cd client && npm start",
+    "server": "cd server && node app.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "build": "cd client && npm run build",
+    "deploy": "gh-pages-v2 -d client/build",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
