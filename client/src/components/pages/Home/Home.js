@@ -137,16 +137,16 @@ function Home() {
         //     ageLimit: "16+",
         //     categoryGame: false
         // },
-        // {
-        //     id: 4,
-        //     titleFilm : "train to busan",
-        //     srcVideoTrailer: Video_trailer_train_to_busan,
-        //     srcPosterTrailer: Picture_poster_trailer_train_to_busan,
-        //     srcImageNameInTrail: Picture_name_train_to_busan,
-        //     contentBioTrailer: <ContentBioTrailer />,
-        //     ageLimit: "16+",
-        //     categoryGame: false
-        // },
+        {
+            id: 4,
+            titleFilm : "train to busan",
+            srcVideoTrailer: Video_trailer_train_to_busan,
+            srcPosterTrailer: Picture_poster_trailer_train_to_busan,
+            srcImageNameInTrail: Picture_name_train_to_busan,
+            contentBioTrailer: <ContentBioTrailer />,
+            ageLimit: "16+",
+            categoryGame: false
+        },
     ]
 
     //get array get information trailer front

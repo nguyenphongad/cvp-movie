@@ -22,7 +22,7 @@ const LoginForm = () => {
                 <form action="" method="">
                     <RenderInputHandle
                         name_label="Email"
-                        type="text"
+                        type="email"
                         name_method="email"
                         id="email"
                         name="email"
