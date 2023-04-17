@@ -10,7 +10,7 @@ router.get('/users', async(req, res)=>{
         }
         res.json(users);
     }catch (error){
-        res.console.log(error)
+        console.log(error)
         res.status(500).json({message : "error!!!" + error.message})
     }
 })

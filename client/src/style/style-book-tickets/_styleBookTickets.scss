@@ -372,7 +372,7 @@
                         border: 1px solid #979393;
                     }
 
-                    > div{
+                    >div {
                         padding: 3px 0px;
                     }
 
@@ -405,6 +405,73 @@
 
             }
         }
+    }
+}
+
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .tab {
+            background-color: #f7f7f7;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #ddd;
+            }
+
+            &.active {
+                background-color: #ddd;
+
+                span {
+                    color: red !important;
+                }
+            }
+
+            span {
+                display: block;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                color: #131313 !important;
+                margin: 0px 10px;
+
+            }
+        }
+    }
+
+    // .tab-content {
+    //     padding: 20px;
+    //     background-color: #ddd;
+
+    //     &.active {
+    //         display: block;
+    //     }
+
+    //     p {
+    //         font-size: 16px;
+    //         line-height: 1.5;
+    //         margin-bottom: 10px;
+    //     }
+    // }
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
     }
 }
 
