@@ -13,7 +13,7 @@ function RenderMovies() {
                 </div>
                 <div>
                     <div className="noti_unContent">
-                        Unreleased movie content
+                        UNRELEASED MOVIE CONTENT
                     </div>
 
                 </div>

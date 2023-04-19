@@ -39,7 +39,6 @@
             height: 100%;
             display: flex;
             justify-content: center;
-            // padding-left: 20px;
 
             .border_location-menu {
                 height: 100%;
@@ -49,7 +48,6 @@
                 >a {
                     width: 100%;
                     height: 100%;
-                    display: block;
                     @include styleDisFlexCenter();
                     text-decoration: none;
                     font-size: 16px;
@@ -65,7 +63,6 @@
                 }
 
                 >a.active {
-                    // font-style: italic;
                     pointer-events: none;
                     color: $main-color-while-fff;
                     opacity: 1;
@@ -434,10 +431,6 @@
         }
     }
 
-}
-
-.display-none {
-    display: none;
 }
 
 .activeDropBoxSearch {

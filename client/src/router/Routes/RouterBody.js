@@ -34,7 +34,7 @@ function RouterBody() {
     })
 
     return (
-        <div className="stl-routes">
+        <div className="component-routes">
             <Routes>
                 <Route path="/" element={
                     <React.Suspense fallback={<LoadingRoute />}>

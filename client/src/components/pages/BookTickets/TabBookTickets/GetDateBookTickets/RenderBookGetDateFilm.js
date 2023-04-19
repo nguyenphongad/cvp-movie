@@ -49,6 +49,9 @@ const RenderBookGetDateFilm = () => {
     )
   })
 
+
+
+
   // Lấy ngày hiện tại
   const today = new Date();
   const dates = [{ ngay: formatDate(today) }];
@@ -59,6 +62,8 @@ const RenderBookGetDateFilm = () => {
     nextDay.setDate(today.getDate() + i);
     dates.push({ ngay: formatDate(nextDay) });
   }
+
+  const thuTrongTuan = ['CHU NHAT', 'THU 2', 'THU 3', 'THU 4', 'THU 5', 'THU 6', 'THU 7'];
 
   const [activeTab, setActiveTab] = useState(0);
 
@@ -96,7 +101,6 @@ const RenderBookGetDateFilm = () => {
       content: 'Nội dung của tab 8',
     },
   ];
-  const thuTrongTuan = ['CHU NHAT', 'THU 2', 'THU 3', 'THU 4', 'THU 5', 'THU 6', 'THU 7'];
 
   function formatDate(date) {
     const options = { month: 'numeric', day: 'numeric' };
