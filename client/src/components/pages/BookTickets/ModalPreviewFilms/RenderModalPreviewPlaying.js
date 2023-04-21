@@ -154,7 +154,7 @@ const RenderModalPreviewPlaying = () => {
                                                 </div>
                                             </div>
                                             <div className="item_state">
-                                                <div className="heading_state">MOVIE DATE</div>
+                                                <div className="heading_state">SHOW DATE</div>
                                                 <div className="result_state">{returnListPreviewMovie.dateMovieFilm}</div>
                                             </div>
                                             <div className="item_state">
