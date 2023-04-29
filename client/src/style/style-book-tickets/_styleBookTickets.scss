@@ -410,8 +410,66 @@
                 .wrap_tab-content {
                     display: none;
                     padding: 20px 0px;
-                    li {
-                        padding-left: 20px;
+
+                    .item__box_confilm-cinema {
+
+                        .item_box_collapse--line {
+                            border-radius: 0px;
+                            border: none;
+
+                            .line_flex-header {
+                                display: flex;
+                                .border_image_logo-cinema {
+                                    width: 50px;
+                                    height: 50px;
+                                    margin-right: 20px;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+
+                                    }
+                                }
+                            }
+
+                            >.ant-collapse-item {
+                                border-radius: 0px;
+                            }
+
+                            .ant-collapse-header {
+                                height: 80px;
+                                background-color: #2d2e3d;
+                            }
+                            .ant-collapse-content{
+                                background: none;
+                            }
+                            .ant-collapse-content-box{
+                                padding:0px
+                            }
+                            .ant-collapse-item>div:last-child {
+                                border-radius: 0px !important;
+                            }
+
+                            .ant-collapse-header-text {
+                                order: 1;
+                                font-weight: 600;
+                                font-size: 20px;
+                            }
+
+                            .ant-collapse-expand-icon {
+                                order: 2;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                padding-inline-end: 0px;
+                            }
+                            .item_box_collapse--cin-single{
+                                .ant-collapse-header{
+                                    background: none;
+                                }
+                            }
+
+                        }
                     }
                 }
 

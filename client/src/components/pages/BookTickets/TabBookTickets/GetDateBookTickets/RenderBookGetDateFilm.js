@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
-import { BsCalendar2Date, BsChevronDown } from "react-icons/bs"
+import Image_cinema_beta from "../../../../../assets/image-logo-cinema/logo_beta.jpg";
+import Image_cinema_bhd from "../../../../../assets/image-logo-cinema/logo_bhd.jpg";
+import Image_cinema_cgv from "../../../../../assets/image-logo-cinema/logo_cgv.jpg";
+
+import { BsCalendar2Date } from "react-icons/bs"
 import { GoLocation } from "react-icons/go"
 import { MdOutlineMyLocation } from "react-icons/md"
+import { Collapse } from "antd";
+const { Panel } = Collapse;
 
 const RenderBookGetDateFilm = () => {
 
@@ -23,7 +29,8 @@ const RenderBookGetDateFilm = () => {
         "cinema_single": [
           {
             "id_cinema_single": 0,
-            "title_cinema_single": "rap beta",
+            "id_code_cinema": "CINEMA-BETA",
+            "title_cinema_single": "Beta Cinemas",
             "tab_cinema": [
               {
                 "id_cinema_tab": 0,
@@ -60,7 +67,8 @@ const RenderBookGetDateFilm = () => {
           },
           {
             "id_cinema_single": 1,
-            "title_cinema_single": "rap BHD Star",
+            "id_code_cinema": "CINEMA-BHD",
+            "title_cinema_single": "BHD Star",
             "tab_cinema": [
               {
                 "id_cinema_tab": 0,
@@ -81,10 +89,33 @@ const RenderBookGetDateFilm = () => {
 
                 ]
               },
+              {
+                "id_cinema_tab": 1,
+                "title_cinema_single": "BHD Star Pham Hung",
+                "address_cinema": "C6/12 Pham Hung, Quan 9, TP.HCM",
+                "showtime": [
+                  {
+                    "dimensional": "2D subtitles",
+                    "time_premiere": [
+                      {
+                        "run_time": "12:00 ~ 15:20"
+                      },
+                      {
+                        "run_time": "21:00 ~ 23:15"
+                      },
+                      {
+                        "run_time": "00:00 ~ 02:15"
+                      },
+                    ]
+                  },
+
+                ]
+              },
             ]
           },
           {
             "id_cinema_single": 2,
+            "id_code_cinema": "CINEMA-CGV",
             "title_cinema_single": "rap CGV Cinemas",
             "tab_cinema": [
               {
@@ -121,11 +152,12 @@ const RenderBookGetDateFilm = () => {
         "cinema_single": [
           {
             "id_cinema_single": 0,
-            "title_cinema_single": "rap beta",
+            "id_code_cinema": "CINEMA-BETA",
+            "title_cinema_single": "Beta Cinemas",
             "tab_cinema": [
               {
                 "id_cinema_tab": 0,
-                "title_cinema_single": "beta quang trung",
+                "title_cinema_single": "Beta Quang Trung",
                 "address_cinema": "344 quang trung, Quan Go Vap, tp.HCM",
                 "showtime": [
                   {
@@ -155,6 +187,7 @@ const RenderBookGetDateFilm = () => {
           },
           {
             "id_cinema_single": 1,
+            "id_code_cinema": "CINEMA-CGV",
             "title_cinema_single": "rap CGV Cinemas",
             "tab_cinema": [
               {
@@ -179,6 +212,43 @@ const RenderBookGetDateFilm = () => {
 
                 ]
               },
+            ]
+          },
+
+        ],
+      },
+    },
+    {
+      "id": 2,
+      "cinema_primary": {
+        "cinema_single": [
+          {
+            "id_cinema_single": 1,
+            "id_code_cinema": "CINEMA-CGV",
+            "title_cinema_single": "CGV Cinemas",
+            "tab_cinema": [
+              {
+                "id_cinema_tab": 0,
+                "title_cinema_single": "CGV Giga Mall Thu Duc",
+                "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
+                "showtime": [
+                  {
+                    "dimensional": "2D subtitles",
+                    "time_premiere": [
+                      {
+                        "run_time": "18:00 ~ 21:20"
+                      },
+                      {
+                        "run_time": "21:10 ~ 00:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                    ]
+                  },
+
+                ]
+              }
             ]
           },
 
@@ -224,57 +294,84 @@ const RenderBookGetDateFilm = () => {
   });
 
 
-
-
   const returnList_Content_GetDate = ARRAY_GET_TAB_CONTENT_CINEMA.map((content_cinema, index) => {
     return (
       <div
         key={index}
         className={`wrap_tab-content animation_scale-lg
-        ${index === activeTabGetData ? 'active_content_tab-GETDATE' : ''}`}
+                ${index === activeTabGetData ? 'active_content_tab-GETDATE' : ''}`}
       >
         <div className="item__box_confilm-cinema">
-          tab : {content_cinema.id}
           {
-            <ul>
-              {content_cinema.cinema_primary.cinema_single.map((index_single, i) => (
-                <li key={i.id_cinema_single}>
-                  {index_single.title_cinema_single}
+            <>
+              <Collapse
+                // accordion
+                // defaultActiveKey={[0, 1]}
+                className="item_box_collapse--line"
+              >
+                {content_cinema.cinema_primary.cinema_single.map((index_single, i) => {
+                  const Render_cinema_code = () => {
+                    const index_code_cinema = index_single.id_code_cinema;
+                    let src_image_cinema_single = null;
 
-                  <ul>
-                    {index_single.tab_cinema.map((subItem, j) => (
-                      <li key={j.id_cinema_tab}>
-                        {subItem.title_cinema_single} <br/>
-                        address: {subItem.address_cinema}
+                    if (index_code_cinema === "CINEMA-BETA") {
+                      src_image_cinema_single = Image_cinema_beta
+                    } else if (index_code_cinema === "CINEMA-BHD") {
+                      src_image_cinema_single = Image_cinema_bhd
+                    } else if (index_code_cinema === "CINEMA-CGV") {
+                      src_image_cinema_single = Image_cinema_cgv
+                    }
 
-                        <ul>
-                          {subItem.showtime.map((item_show, j) => (
-                            <li key={j}>
-                              {item_show.dimensional}
+                    return <img src={src_image_cinema_single} alt="logo_cinema" />
+                  }
+                  const panelHeader = (
+                    <div className='line_flex-header'>
+                      <div className="border_image_logo-cinema">
+                        <Render_cinema_code />
+                      </div>
+                      <div>
+                        <div>{index_single.title_cinema_single}</div>
+                        <div>{index_single.tab_cinema.length} Cinema</div>
+                      </div>
+                    </div>
+                  );
+                  return (
+                    <Panel header={panelHeader} key={index_single.id_cinema_single}>
 
-                              <ul>
-                                {
-                                  item_show.time_premiere.map((item_run_time, k) => (
-                                    <li key={k}>
+                      <Collapse
+                        accordion
+                        className="item_box_collapse--cin-single"
+                      >
+                        {index_single.tab_cinema.map((subItem, j) => (
+                          <Panel header={subItem.title_cinema_single} key={j.id_cinema_tab}>
+                            <span>address: {subItem.address_cinema}</span>
+
+                            <Collapse accordion>
+                              {subItem.showtime.map((item_show, j) => (
+                                <Panel header={item_show.dimensional} key={j}>
+
+                                  {item_show.time_premiere.map((item_run_time, k) => (
+                                    <button key={k.run_time}>
                                       {item_run_time.run_time}
-                                    </li>
-                                  ))
-                                }
-                              </ul>
+                                    </button>
+                                  ))}
 
-                            </li>
-                          ))}
-                        </ul>
+                                </Panel>
+                              ))}
+                            </Collapse>
 
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
+                          </Panel>
+                        ))}
+                      </Collapse>
+
+                    </Panel>
+                  )
+                })}
+              </Collapse>
+            </>
           }
-        </div>
-      </div>
+        </div >
+      </div >
     )
   })
 
