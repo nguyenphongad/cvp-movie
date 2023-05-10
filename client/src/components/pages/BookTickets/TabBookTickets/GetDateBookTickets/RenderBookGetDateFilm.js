@@ -3,7 +3,7 @@ import Image_cinema_beta from "../../../../../assets/image-logo-cinema/logo_beta
 import Image_cinema_bhd from "../../../../../assets/image-logo-cinema/logo_bhd.jpg";
 import Image_cinema_cgv from "../../../../../assets/image-logo-cinema/logo_cgv.jpg";
 
-import { BsCalendar2Date } from "react-icons/bs"
+import { BsCalendar2Date, BsDot } from "react-icons/bs"
 import { GoLocation } from "react-icons/go"
 import { MdOutlineMyLocation } from "react-icons/md"
 import { Collapse } from "antd";
@@ -34,18 +34,49 @@ const RenderBookGetDateFilm = () => {
             "tab_cinema": [
               {
                 "id_cinema_tab": 0,
-                "title_cinema_single": "beta quang trung",
-                "address_cinema": "344 quang trung, Quan Go Vap, tp.HCM",
+                "title_cinema_single": "Beta Quang Trung",
+                "address_cinema": "645 Quang Trung, Phuong 11, Quan Go Vap, Thanh Pho Ho Chi Minh",
+                "address_map": "https://goo.gl/maps/GXMs67cU6RgYvqLY8",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
-                        "run_time": "20:00 ~ 00:10"
+                        "run_time": "19:00 ~ 21:05"
                       },
                       {
                         "run_time": "23:00 ~ 02:10"
-                      }
+                      },
+                      {
+                        "run_time": "23:00 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:10"
+                      },
                     ]
                   },
                   {
@@ -74,6 +105,7 @@ const RenderBookGetDateFilm = () => {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "BHD Star Thao Dien",
                 "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
+                "address_map":"",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -93,6 +125,7 @@ const RenderBookGetDateFilm = () => {
                 "id_cinema_tab": 1,
                 "title_cinema_single": "BHD Star Pham Hung",
                 "address_cinema": "C6/12 Pham Hung, Quan 9, TP.HCM",
+                "address_map":"",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -116,12 +149,13 @@ const RenderBookGetDateFilm = () => {
           {
             "id_cinema_single": 2,
             "id_code_cinema": "CINEMA-CGV",
-            "title_cinema_single": "rap CGV Cinemas",
+            "title_cinema_single": "CGV Cinemas",
             "tab_cinema": [
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "CGV Giga Mall Thu Duc",
                 "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
+                "address_map":"",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -158,7 +192,8 @@ const RenderBookGetDateFilm = () => {
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "Beta Quang Trung",
-                "address_cinema": "344 quang trung, Quan Go Vap, tp.HCM",
+                "address_cinema": "645 Quang Trung, Phuong 11, Quan Go Vap, Thanh Pho Ho Chi Minh",
+                "address_map":"https://goo.gl/maps/GXMs67cU6RgYvqLY8",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -188,12 +223,13 @@ const RenderBookGetDateFilm = () => {
           {
             "id_cinema_single": 1,
             "id_code_cinema": "CINEMA-CGV",
-            "title_cinema_single": "rap CGV Cinemas",
+            "title_cinema_single": "CGV Cinemas",
             "tab_cinema": [
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "CGV Giga Mall Thu Duc",
                 "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
+                "address_map":"",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -203,6 +239,24 @@ const RenderBookGetDateFilm = () => {
                       },
                       {
                         "run_time": "21:10 ~ 00:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
                       },
                       {
                         "run_time": "00:10 ~ 02:15"
@@ -231,6 +285,87 @@ const RenderBookGetDateFilm = () => {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "CGV Giga Mall Thu Duc",
                 "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
+                "address_map":"",
+                "showtime": [
+                  {
+                    "dimensional": "2D subtitles",
+                    "time_premiere": [
+                      {
+                        "run_time": "18:00 ~ 21:20"
+                      },
+                      {
+                        "run_time": "21:10 ~ 00:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "00:10 ~ 02:15"
+                      },
+                    ]
+                  },
+
+                ]
+              }
+            ]
+          },
+
+        ],
+      },
+    },
+    {
+      "id": 3,
+      "cinema_primary": {
+        "cinema_single": [
+          {
+            "id_cinema_single": 0,
+            "id_code_cinema": "CINEMA-BETA",
+            "title_cinema_single": "Beta Cinemas",
+            "tab_cinema": [
+              {
+                "id_cinema_tab": 0,
+                "title_cinema_single": "Beta Quang Trung",
+                "address_cinema": "645 Quang Trung, Phuong 11, Quan Go Vap, Thanh Pho Ho Chi Minh",
+                "address_map":"https://goo.gl/maps/GXMs67cU6RgYvqLY8",
+                "showtime": [
+                  {
+                    "dimensional": "2D subtitles",
+                    "time_premiere": [
+                      {
+                        "run_time": "20:00 ~ 00:10"
+                      },
+                      {
+                        "run_time": "23:00 ~ 02:10"
+                      }
+                    ]
+                  },
+                  {
+                    "dimensional": "3D subtitles",
+                    "time_premiere": [
+                      {
+                        "run_time": "22:00 ~ 01:10"
+                      },
+                    ]
+                  },
+
+
+                ]
+              },
+            ]
+          },
+          {
+            "id_cinema_single": 1,
+            "id_code_cinema": "CINEMA-CGV",
+            "title_cinema_single": "CGV Cinemas",
+            "tab_cinema": [
+              {
+                "id_cinema_tab": 0,
+                "title_cinema_single": "CGV Giga Mall Thu Duc",
+                "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
+                "address_map":"",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -273,9 +408,6 @@ const RenderBookGetDateFilm = () => {
       alert('CHUA CO LICH CHIEU')
     }
   };
-
-
-
   const returnList_GetDate_show_film = ARRAY_GET_DATE.map((date, index) => {
     return (
       <>
@@ -306,7 +438,7 @@ const RenderBookGetDateFilm = () => {
             <>
               <Collapse
                 // accordion
-                // defaultActiveKey={[0, 1]}
+                defaultActiveKey={[0, 1]}
                 className="item_box_collapse--line"
               >
                 {content_cinema.cinema_primary.cinema_single.map((index_single, i) => {
@@ -331,7 +463,7 @@ const RenderBookGetDateFilm = () => {
                       </div>
                       <div>
                         <div>{index_single.title_cinema_single}</div>
-                        <div>{index_single.tab_cinema.length} Cinema</div>
+                        <div className="total_cinema_sing-length">{index_single.tab_cinema.length} Cinema</div>
                       </div>
                     </div>
                   );
@@ -344,22 +476,26 @@ const RenderBookGetDateFilm = () => {
                       >
                         {index_single.tab_cinema.map((subItem, j) => (
                           <Panel header={subItem.title_cinema_single} key={j.id_cinema_tab}>
-                            <span>address: {subItem.address_cinema}</span>
-
-                            <Collapse accordion>
-                              {subItem.showtime.map((item_show, j) => (
-                                <Panel header={item_show.dimensional} key={j}>
-
+                            <div className="info_address_cinema_sing">
+                              {subItem.address_cinema} <BsDot/>
+                              <a href={subItem.address_map} target='_blank' className="target_map"> 
+                                [ Address maps ]
+                              </a>
+                            </div>
+                            {subItem.showtime.map((item_show, j) => (
+                              <div className="box_dimen_show-time" key={j}>
+                                <div className="dimen_heading_text">
+                                  {item_show.dimensional}
+                                </div>
+                                <div className="tr_wrap_show-time">
                                   {item_show.time_premiere.map((item_run_time, k) => (
-                                    <button key={k.run_time}>
+                                    <a href="#" className="handle_show_time" key={k.run_time}>
                                       {item_run_time.run_time}
-                                    </button>
+                                    </a>
                                   ))}
-
-                                </Panel>
-                              ))}
-                            </Collapse>
-
+                                </div>
+                              </div>
+                            ))}
                           </Panel>
                         ))}
                       </Collapse>
