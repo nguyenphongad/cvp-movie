@@ -5,8 +5,8 @@ import { ContextFromTabPlaying } from "../TabBookTickets/ContextTabBookTicketsPl
 import { RxDotFilled } from "react-icons/rx"
 import { AiFillLike, AiOutlineClose } from "react-icons/ai";
 import { BsCardText } from "react-icons/bs";
-import RenderGetDateBookTickets from "../TabBookTickets/GetDateBookTickets/RenderGetDateBookTickets";
 import RenderBookGetDateFilm from "../TabBookTickets/GetDateBookTickets/RenderBookGetDateFilm";
+import RenderCommentReviewFilm from "../MovieReviewComment/RenderCommentReviewFilm";
 
 const RenderModalPreviewPlaying = () => {
     const useOpenModalPreview = useContext(ContextFromTabPlaying);
@@ -97,7 +97,7 @@ const RenderModalPreviewPlaying = () => {
                                             className="image_preview_size"
                                         />
                                         <div className="border__postiton_btn--trailer">
-                                            <button class="btn__trailer" onClick={handleOpenModalTrailer}>
+                                            <button className="btn__trailer" onClick={handleOpenModalTrailer}>
                                                 TRAILER
                                             </button>
                                             <div
@@ -169,10 +169,11 @@ const RenderModalPreviewPlaying = () => {
 
                                     </div>
                                 </div>
-                                {/* <RenderGetDateBookTickets /> */}
                                 {<RenderBookGetDateFilm/>}
                             </>
                     }
+
+                    {/* <RenderCommentReviewFilm/> */}
 
                     <Skeleton
                         active

@@ -7,7 +7,7 @@
         text-decoration: none;
 
         &:hover {
-            text-decoration: underline
+            text-decoration: underline;
         }
     }
 
@@ -22,8 +22,6 @@
 
             .item_box_column--info {
                 width: 100%;
-                @include styleDisFlexCenter;
-                flex-direction: column;
                 margin: 0px 20px;
             }
 
@@ -57,7 +55,8 @@
                 a {
                     width: 100%;
                     margin: 10px;
-                    @include styleDisFlexCenter;
+                    display: flex;
+                    align-items: center;
                     justify-content: left;
 
                     svg {
@@ -78,7 +77,8 @@
                 a {
                     margin: 10px;
                     display: block;
-                    @include styleDisFlexCenter;
+                    display: flex;
+                    align-items: center;
                     justify-content: left;
 
                     svg {
@@ -106,7 +106,9 @@
         .reading-reserve {
             width: 100%;
             padding: 3px;
-            @include styleDisFlexCenter;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }

@@ -6,6 +6,7 @@ import Image_cinema_cgv from "../../../../../assets/image-logo-cinema/logo_cgv.j
 import { BsCalendar2Date, BsDot } from "react-icons/bs"
 import { GoLocation } from "react-icons/go"
 import { MdOutlineMyLocation } from "react-icons/md"
+import { BiChevronRight } from "react-icons/bi"
 import { Collapse } from "antd";
 const { Panel } = Collapse;
 
@@ -42,41 +43,44 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
-                        "run_time": "19:00 ~ 21:05"
+                        "run_time": "15:00 ~ 17:12"
                       },
                       {
-                        "run_time": "23:00 ~ 02:10"
+                        "run_time": "15:30 ~ 17:42"
                       },
                       {
-                        "run_time": "23:00 ~ 02:10"
+                        "run_time": "16:30 ~ 18:42"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "17:00 ~ 19:12"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "17:30 ~ 19:42"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "18:00 ~ 20:12"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "19:00 ~ 21:12"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "19:30 ~ 21:42"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "20:00 ~ 22:12"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "20:30 ~ 22:42"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "21:30 ~ 23:42"
                       },
                       {
-                        "run_time": "00:10 ~ 02:10"
+                        "run_time": "22:30 ~ 00:42"
                       },
+                      {
+                        "run_time": "23:00 ~ 01:12"
+                      }
                     ]
                   },
                   {
@@ -485,7 +489,7 @@ const RenderBookGetDateFilm = () => {
                             {subItem.showtime.map((item_show, j) => (
                               <div className="box_dimen_show-time" key={j}>
                                 <div className="dimen_heading_text">
-                                  {item_show.dimensional}
+                                  {item_show.dimensional}  
                                 </div>
                                 <div className="tr_wrap_show-time">
                                   {item_show.time_premiere.map((item_run_time, k) => (
@@ -512,9 +516,6 @@ const RenderBookGetDateFilm = () => {
   })
 
 
-
-
-
   return (
     <>
       <div className="container__book_get_date--film">
@@ -528,7 +529,8 @@ const RenderBookGetDateFilm = () => {
               <div className="s-px_btn-GetMap">
                 <button className="handle__select--option pding-border">
                   <GoLocation />
-                  GET AREA
+                  TP.HCM
+                  <BiChevronRight/>
                 </button>
               </div>
               <div className='m-px_btn__Getmap--recent'>
@@ -556,4 +558,4 @@ const RenderBookGetDateFilm = () => {
   )
 }
 
-export default RenderBookGetDateFilm
+export default RenderBookGetDateFilm;

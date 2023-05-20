@@ -13,8 +13,6 @@ const LoginForm = () => {
         setActiveToggleShowPass(!activeToggleShowPass)
     }
 
-
-
     return (
         <div className="form_ifame_authentication form__login-ifame">
             <div className='form__groups'>
@@ -48,7 +46,7 @@ const LoginForm = () => {
                         <Link to="../forgot-password">Forgot password</Link>
                     </div>
 
-                    <button type="submit" className="btn__login--handle">
+                    <button type="button" className="btn__login--handle">
                         <AiOutlineLogin />
                         Login
                     </button>

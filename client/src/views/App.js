@@ -15,7 +15,7 @@ import RouterAuth from '../router/Routes/RouterAuth';
 function App() {
 
   const MAINTENANCEPAGE = false;
-  const AUTH_LOGIN = false;
+  const AUTH_LOGIN = true;
 
   return (
 
@@ -36,6 +36,8 @@ function App() {
                   <RouterBody />
                   <ScrollToTopRouter />
                   <RenderFooter />
+
+
                 </>
           }
         </div>

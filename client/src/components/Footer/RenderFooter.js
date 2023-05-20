@@ -5,7 +5,6 @@ import { IoLogoYoutube } from 'react-icons/io5';
 import { RiInstagramFill } from 'react-icons/ri';
 import { FiHelpCircle } from 'react-icons/fi';
 import { IoIosGitNetwork } from 'react-icons/io';
-import { FaTeamspeak } from 'react-icons/fa';
 import { SiTeamspeak } from 'react-icons/si';
 
 function RenderFooter() {
@@ -47,10 +46,6 @@ function RenderFooter() {
                                 Jobs
                             </a>
                             <a href="#1">
-                                <FaTeamspeak />
-                                Term Of Use
-                            </a>
-                            <a href="#1">
                                 <SiTeamspeak />
                                 Contact Us
                             </a>
@@ -63,7 +58,7 @@ function RenderFooter() {
                         DAY LA WEBSITE PHIM DEMO CUA MINH VIET BANG REACTJS.
                         WEBSITE CON NHIEU TINH NANG CHUA HOAN THIEN VA BUG
                         RAT NHIEU
-                        CHO MINH XIN IT NHAN XET, CAM ON MOI NGUOI !<br />
+                        CHO MINH XIN IT NHAN XET, CAM ON MOI NGUOI ❤️<br />
                         <b style={{ float: "right" }}>
                             <i>CVP - MOVIE | NGUYEN VAN PHONG</i>
                         </b>

@@ -30,7 +30,6 @@ function RenderBookTicketsPlaying() {
 
     const useContextFromWindowSize = useContext(ContextFromWindowResize)
     const setWidthUseEffect = useContextFromWindowSize.getWidthWindow;
-    // const [numberToSlide, setnumberToSlide] = useState(5);
 
     let numberToSlideBookTickets = 5
     if (setWidthUseEffect > 1150) numberToSlideBookTickets = 5

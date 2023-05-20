@@ -33,6 +33,7 @@
                                 background: none;
                                 border: none;
                                 user-select: none;
+                                white-space: nowrap;
 
                                 svg {
                                     margin-right: 10px;
@@ -42,7 +43,6 @@
                                     background: #0000003f;
                                 }
                             }
-
                         }
 
                         .box_nav_sline {
@@ -52,7 +52,6 @@
                             position: absolute;
                             top: 0px;
                             transition: left 0.25s;
-
                         }
 
                         .active_item_select-type {
@@ -77,6 +76,7 @@
                                 font-size: 20px;
                                 text-decoration: none;
                                 @include styleDisFlexCenter;
+                                white-space: nowrap;
 
                                 svg {
                                     margin: 0px 5px;
@@ -153,11 +153,7 @@
                     background-color: red;
                 }
             }
-
-
         }
-
-
     }
 
     .slick-arrow {
@@ -176,7 +172,7 @@
 
         &::after,
         &::before {
-            content: '';
+            content: "";
             width: 17px;
             height: 3px;
             background-color: $main-color-while;
@@ -336,17 +332,20 @@
                         font-size: 20px;
                         margin-right: 10px;
                     }
+                    svg:nth-child(2) {
+                        margin-right: 5px;
+                        margin-left: 20px;
+                    }
                 }
 
                 .s-px_btn-GetMap {
                     margin-right: 20px;
                 }
 
-                m-px_btn__Getmap--recent button {
+                .m-px_btn__Getmap--recent button {
                     font-weight: 600px;
                 }
             }
-
         }
 
         .content__wrap_slt--Showtime {
@@ -357,7 +356,6 @@
             .wrap__item--box_handle--getDate {
                 display: flex;
                 justify-content: space-around;
-
 
                 .item__hanle-title-get-date {
                     width: 140px;
@@ -381,8 +379,6 @@
                         font-size: 14px;
                         text-align: center;
                     }
-
-
                 }
 
                 .active_tab--GETDATE {
@@ -391,7 +387,7 @@
                     transform: translateY(-4px);
 
                     &::after {
-                        content: '';
+                        content: "";
                         width: 60%;
                         height: 3px;
                         display: block;
@@ -409,7 +405,7 @@
 
                 .wrap_tab-content {
                     display: none;
-                    padding: 20px 0px;
+                    padding-top: 20px;
 
                     .item__box_confilm-cinema {
                         border: 1px solid #4e4e4e;
@@ -438,7 +434,6 @@
                                     img {
                                         width: 100%;
                                         height: 100%;
-
                                     }
                                 }
 
@@ -448,9 +443,6 @@
                                 }
                             }
 
-                            // >.ant-collapse-item {
-                            //     border-radius: 0px;
-                            // }
 
                             .ant-collapse-header {
                                 height: 80px !important;
@@ -462,10 +454,10 @@
                             }
 
                             .ant-collapse-content-box {
-                                padding: 0px
+                                padding: 0px;
                             }
 
-                            .ant-collapse-item>div:last-child {
+                            .ant-collapse-item > div:last-child {
                                 border-radius: 0px !important;
                             }
 
@@ -513,7 +505,7 @@
                                     display: flex;
                                     align-items: center;
 
-                                    >svg {
+                                    > svg {
                                         margin: 0px 10px;
                                     }
 
@@ -565,14 +557,12 @@
                                             }
 
                                             &:hover {
-                                                background-color: #4f505c;
+                                                background-color: #41424d;
                                             }
                                         }
                                     }
                                 }
-
                             }
-
                         }
                     }
                 }
@@ -581,11 +571,8 @@
                     display: block;
                 }
             }
-
         }
     }
 }
 
-
-
-@import "./mediaBookTickets"
+@import "./mediaBookTickets";

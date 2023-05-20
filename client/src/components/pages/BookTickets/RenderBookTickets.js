@@ -47,9 +47,17 @@ function RenderBookTickets() {
     const [getWidthBoxNav_second, setgetWidthBoxNavigation_second] = useState(0);
 
     useEffect(() => {
-        setgetWidthBoxNavigation_firt(getWidthBoxNavigationFirtRef.current.offsetWidth)
-        setgetWidthBoxNavigation_second(getWidthBoxNavigationSecondRef.current.offsetWidth)
-    }, [])
+        const handleResize = () => {
+            setgetWidthBoxNavigation_firt(getWidthBoxNavigationFirtRef.current.offsetWidth)
+            setgetWidthBoxNavigation_second(getWidthBoxNavigationSecondRef.current.offsetWidth)
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+
+    }, [window.innerWidth])
 
     const [backEndData, setBackEndData] = useState([{}]);
     const [loadingData, setLoadingData] = useState(true);
