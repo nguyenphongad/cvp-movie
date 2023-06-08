@@ -25,7 +25,6 @@
                             text-decoration: none;
                             font-size: 20px;
                             font-weight: 600;
-                            background: none;
                             border: none;
                             user-select: none;
                             background: #ffffff34;
@@ -34,33 +33,25 @@
                 }
 
                 .tbox_filter-result {
-                    @include styleDisFlexCenter;
                     position: relative;
 
-                    input {
-                        width: 310px;
-                        background: none;
-                        padding: 10px 20px;
-                        padding-right: 40px;
-                        border: none;
-                        background: #ffffff21;
-                        font-size: 20px;
-                        outline: none;
-                        border-bottom: 1px solid;
-                        transition: width 0.3s;
-                        user-select: none;
-
-                        &:focus {
-                            width: 400px;
-                        }
-                    }
-
-                    label {
+                    .btn__filter-history {
                         position: absolute;
-                        right: 10px;
+                        right: 0px;
+                        background: #ffffff1a;
+                        border: none;
+                        user-select: none;
+                        bottom: none;
+                        display: flex;
+                        @include styleDisFlexCenter;
+                        padding: 11px 15px;
+                        border-bottom: 1px solid;
+                        font-size: 20px;
+                        cursor: pointer;
 
                         svg {
-                            font-size: 22px;
+                            font-size: 25px;
+                            margin-right: 10px;
                         }
                     }
                 }
@@ -88,14 +79,13 @@
                     .item__ticket_booked {
                         width: 100%;
                         display: flex;
-                        // margin-bottom: 10px;
+                        margin-bottom: 25px;
                         transition: all 0.3s;
-                        border-bottom: 1px solid #756f6f;
+                        cursor: pointer;
                         background-color: #ffffff09;
 
                         .item_flex_wrap {
-                            padding: 10px 20px;
-
+                            padding: 15px 20px;
                         }
 
                         .border_img {
@@ -110,13 +100,17 @@
                             padding-left: 0px;
 
                             .title_film {
-                                font-size: 22px;
+                                font-size: 23px;
                                 font-weight: 600;
                                 color: $main-color-while-fff;
                             }
 
                             .duction-information {
                                 display: flex;
+                                align-items: end;
+                                .cinema_style {
+                                    font-size: 18px;
+                                }
                             }
                         }
 
@@ -138,7 +132,7 @@
 
                             &::after,
                             &::before {
-                                content: '';
+                                content: "";
                                 width: 16px;
                                 height: 16px;
                                 background: $main-color;
@@ -156,23 +150,17 @@
                             }
                         }
 
-                        .btn_show_detail {
+                        .status_used {
                             width: 50%;
                             @include styleDisFlexCenter;
                             justify-content: right;
-
-                            button {
-                                border: 1px solid #ffffff34;
-                                padding: 10px;
-                                background: #ffffff36;
-                                cursor: pointer;
-                                user-select: none;
-                                font-size: 19px;
-                                @include styleDisFlexCenter;
-
-                                svg {
-                                    margin-left: 10px;
-                                }
+                            span{
+                                font-size: 18px;
+                                font-weight: 700;
+                                color: #c05454;
+                                border:3px solid ;
+                                padding: 5px;
+                                transform: rotate(-12deg);
                             }
                         }
 
@@ -204,7 +192,6 @@
             .content_booking-hitory-tickets {
                 padding-top: 10px !important;
 
-
                 .item__tab_type-order {
                     button {
                         font-size: 18px !important;
@@ -231,10 +218,8 @@
                             font-size: 19px !important;
                         }
                     }
-
                 }
             }
-
         }
     }
 }

@@ -443,7 +443,6 @@
                                 }
                             }
 
-
                             .ant-collapse-header {
                                 height: 80px !important;
                                 background-color: #2d2e3d;
@@ -543,6 +542,10 @@
                                             text-align: center;
                                             animation: an_handle_show_time 0.7s forwards;
                                             user-select: none;
+                                            transform: translateY(0px);
+                                            &:hover {
+                                                background-color: #41424d;
+                                            }
 
                                             @keyframes an_handle_show_time {
                                                 from {
@@ -554,10 +557,6 @@
                                                     transform: translateY(0px);
                                                     opacity: 1;
                                                 }
-                                            }
-
-                                            &:hover {
-                                                background-color: #41424d;
                                             }
                                         }
                                     }
@@ -573,6 +572,62 @@
             }
         }
     }
+}
+.wrap {
+    display: flex;
+}
+.seat-container {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr); /* 10 cột trong 1 hàng */
+    grid-gap: 15px; /* Khoảng cách giữa các ghế */
+    // justify-items: center;
+}
+
+.seat {
+    padding: 3px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eb4476;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.4s;
+    color: #ffffff;
+    user-select: none;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.btn_reset_seats {
+    margin-left: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    path {
+        color: red;
+    }
+}
+.selected {
+    background-color: #d67e0a;
+    color: white;
+    border: 2px solid;
+}
+
+.disabled {
+    background-color: #242424;
+    color: white;
+    cursor: not-allowed;
+}
+
+.total-info {
+    padding: 0px 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.couple {
+    background-color: #2980b9;
+    color: white;
+    font-weight: bold;
 }
 
 @import "./mediaBookTickets";

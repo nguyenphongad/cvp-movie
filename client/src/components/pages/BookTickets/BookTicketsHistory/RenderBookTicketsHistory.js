@@ -9,6 +9,7 @@ import Image_cinema_cgv from "../../../../assets/image-logo-cinema/logo_cgv.jpg"
 import Image_cinema_beta from "../../../../assets/image-logo-cinema/logo_beta.jpg"
 
 import LoadingRoute from "../../../../views/LoadingRoute"
+import { BiFilterAlt } from 'react-icons/bi'
 
 function RenderBookTicketsHistory() {
 
@@ -21,8 +22,9 @@ function RenderBookTicketsHistory() {
             srcImageCinema: Image_cinema_cgv,
             cinameBooked: "CGV GÒ VẤP",
             timeBooked: "19:34",
-            dateBooked: "13/12/2022",
+            dateBooked: "16/05/2023",
             totalUnitPrice: 130000,
+            status_used: false,
 
             durationFilm: "2H 12P",
             selectedChair: "I3",
@@ -38,6 +40,7 @@ function RenderBookTicketsHistory() {
             timeBooked: "08:34",
             dateBooked: "10/12/2022",
             totalUnitPrice: 160000,
+            status_used: true,
 
             durationFilm: "2H 12P",
             selectedChair: "I3" + " | " + "I4",
@@ -53,6 +56,7 @@ function RenderBookTicketsHistory() {
             timeBooked: "23:12",
             dateBooked: "10/11/2022",
             totalUnitPrice: 80000,
+            status_used: true,
 
             durationFilm: "2H 12P",
             selectedChair: "I3",
@@ -101,12 +105,16 @@ function RenderBookTicketsHistory() {
                     </div>
 
                 </div>
-                <div className="item_flex_wrap btn_show_detail">
-                    <div>
-                        <button>
-                            Detail <CgDetailsMore />
-                        </button>
-                    </div>
+                <div className="item_flex_wrap status_used">
+                    {
+                        index.status_used ?
+                            <span>
+                                USED TICKETS
+                            </span>
+                            :
+                            <></>
+                    }
+
 
                 </div>
             </div>
@@ -133,20 +141,16 @@ function RenderBookTicketsHistory() {
                             </div>
                         </div>
                         <div className="tbox_filter-result">
-                            <input
-                                type="text"
-                                id="search_booking-history"
-                                placeholder="Booked movie titles history"
-                            />
-                            <label htmlFor="search_booking-history">
-                                <BsSearch />
-                            </label>
+                            <button className='btn__filter-history'>
+                                <BiFilterAlt />
+                                Filter
+                            </button>
                         </div>
                     </div>
                     <div className='content_result-filter'>
                         <div className="text_warning-store-his">
                             <MdInfoOutline />
-                            Only store history for 60 days
+                            Only store history for 60 day
                         </div>
                         {
                             loadingBookingHistory ?

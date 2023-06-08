@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom'
 
 const RegisterForm = () => {
     return (
-        <div>RegisterForm <Link to="../login">login</Link></div>
+        <div className="form_ifame_authentication form__register-ifame">
+            <div className='form__groups'>
+                <div className="heading__text--wg">REGISTER</div>
+                <div>RegisterForm <Link to="../login">login</Link></div>
+            </div>
+        </div>
     )
 }
 

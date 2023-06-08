@@ -20,6 +20,7 @@ import { RiFullscreenFill } from 'react-icons/ri';
 import RenderBoxSearch from './BoxSearch/RenderBoxSearch';
 import { MdSearchOff, MdSearch } from 'react-icons/md';
 import { ContextFromWindowResize } from '../../views/RenderGetWindowResize';
+import RenderUseKeyBoard from '../useKeyBoard/RenderUseKeyBoard';
 
 const RenderBoxNotification = React.lazy(() => import('./BoxNotification/RenderBoxNotification'))
 export const DropBtnBoxSearch = createContext();
@@ -31,7 +32,7 @@ function RenderHeader() {
     const [dropdownBoxNoti, setdropdownBoxNoti] = useState(false);
     const getLocation = window.location.pathname;
 
-    //get header !add return scroll
+    //get header add return scroll
     useEffect(() => {
         if (getLocation !== '/home' && getLocation !== '/') {
             setScroll(true)
@@ -53,8 +54,21 @@ function RenderHeader() {
         setdropdownBoxSearch(false)
     }
 
+    const d = () => {
+        console.log("ddd")
+    }
+
+    RenderUseKeyBoard("Escape", handleButtonDropSearchFalse);
+
     //select
     const handleButtonDrop = () => { setdropdownBoxSel(!dropdownBoxSel); }
+    const handleButtonDropFalse = () => { setdropdownBoxSel(false); }
+
+
+
+    RenderUseKeyBoard("Escape", handleButtonDropFalse);
+
+
     let dropRef = useRef();
     useEffect(() => {
         let hanlder = (e) => {
@@ -121,6 +135,9 @@ function RenderHeader() {
     const handleButtonDropNoti = () => {
         setdropdownBoxNoti(!dropdownBoxNoti);
     }
+    const handleButtonDropNotiFalse = () => {
+        setdropdownBoxNoti(false);
+    }
 
     let dropNotiRef = useRef();
     useEffect(() => {
@@ -131,6 +148,8 @@ function RenderHeader() {
         document.addEventListener("mousedown", hanlder);
         return () => document.removeEventListener("mousedown", hanlder);
     });
+
+    RenderUseKeyBoard("Escape", handleButtonDropNotiFalse);
 
 
     const valueHeaderToBoxSearch = {

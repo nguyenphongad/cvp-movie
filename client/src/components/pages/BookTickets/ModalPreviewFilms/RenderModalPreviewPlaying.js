@@ -7,6 +7,7 @@ import { AiFillLike, AiOutlineClose } from "react-icons/ai";
 import { BsCardText } from "react-icons/bs";
 import RenderBookGetDateFilm from "../TabBookTickets/GetDateBookTickets/RenderBookGetDateFilm";
 import RenderCommentReviewFilm from "../MovieReviewComment/RenderCommentReviewFilm";
+import RenderUseKeyBoard from "../../../useKeyBoard/RenderUseKeyBoard";
 
 const RenderModalPreviewPlaying = () => {
     const useOpenModalPreview = useContext(ContextFromTabPlaying);
@@ -36,6 +37,7 @@ const RenderModalPreviewPlaying = () => {
     const handleCloseModalTrailer = () => {
         setisOpenModalInTrailer(false)
     }
+    RenderUseKeyBoard("Escape", handleCloseModalTrailer)
 
     const [isTimeSkeleton, setIsTimeSkeleton] = useState(true)
 
@@ -52,6 +54,7 @@ const RenderModalPreviewPlaying = () => {
             footer={null}
             className="modal__preview--movies"
             onCancel={handleCloseModalPreview}
+            keyboard={!isOpenModalInTrailer}
         >
             <div className="content__preview">
                 <div className="body__information-single--film">
@@ -169,11 +172,11 @@ const RenderModalPreviewPlaying = () => {
 
                                     </div>
                                 </div>
-                                {<RenderBookGetDateFilm/>}
+                                {<RenderBookGetDateFilm />}
                             </>
                     }
 
-                    {/* <RenderCommentReviewFilm/> */}
+                    <RenderCommentReviewFilm/>
 
                     <Skeleton
                         active

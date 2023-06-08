@@ -11,11 +11,12 @@ import { withErrorBoundary } from 'react-error-boundary';
 import RenderErrorBounDary from '../components/error/RenderErrorBounDary';
 import RenderMaintenance from './RenderMaintenance';
 import RouterAuth from '../router/Routes/RouterAuth';
+// import RenderLoadingStart from "./RenderLoadingStart"
 
 function App() {
 
   const MAINTENANCEPAGE = false;
-  const AUTH_LOGIN = true;
+  const AUTH_LOGIN = false;
 
   return (
 

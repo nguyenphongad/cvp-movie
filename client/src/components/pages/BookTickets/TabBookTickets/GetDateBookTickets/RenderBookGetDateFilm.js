@@ -108,8 +108,8 @@ const RenderBookGetDateFilm = () => {
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "BHD Star Thao Dien",
-                "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
-                "address_map":"",
+                "address_cinema": "Tang 5, TTTM Vincom Centre, 159 Xa Lo Ha Noi, Quan 2, Thanh Pho Ho Chi Minh",
+                "address_map": "https://goo.gl/maps/efLHyoeUstQm243u7",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -128,8 +128,8 @@ const RenderBookGetDateFilm = () => {
               {
                 "id_cinema_tab": 1,
                 "title_cinema_single": "BHD Star Pham Hung",
-                "address_cinema": "C6/12 Pham Hung, Quan 9, TP.HCM",
-                "address_map":"",
+                "address_cinema": "Lau 4, Centre Mall, C6/27 Pham Hung, Binh Chanh, Thanh Pho Ho Chi Minh",
+                "address_map": "https://goo.gl/maps/zsKUUbXx2sEBoB9Y9",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -158,8 +158,8 @@ const RenderBookGetDateFilm = () => {
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "CGV Giga Mall Thu Duc",
-                "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
-                "address_map":"",
+                "address_cinema": "Tang 6 TTTM GIGAMALL, 240-242 Pham Van Dong, Hiep Binh Chanh, Thanh Pho Ho Chi Minh",
+                "address_map": "https://goo.gl/maps/r3ZovQM1E5a4Y5PWA",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -197,11 +197,23 @@ const RenderBookGetDateFilm = () => {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "Beta Quang Trung",
                 "address_cinema": "645 Quang Trung, Phuong 11, Quan Go Vap, Thanh Pho Ho Chi Minh",
-                "address_map":"https://goo.gl/maps/GXMs67cU6RgYvqLY8",
+                "address_map": "https://goo.gl/maps/GXMs67cU6RgYvqLY8",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
+                      {
+                        "run_time": "09:00 ~ 11:10"
+                      },
+                      {
+                        "run_time": "13:00 ~ 15:10"
+                      },
+                      {
+                        "run_time": "14:00 ~ 16:10"
+                      },
+                      {
+                        "run_time": "18:00 ~ 20:10"
+                      },
                       {
                         "run_time": "20:00 ~ 00:10"
                       },
@@ -232,8 +244,8 @@ const RenderBookGetDateFilm = () => {
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "CGV Giga Mall Thu Duc",
-                "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
-                "address_map":"",
+                "address_cinema": "Tang 6 TTTM GIGAMALL, 240-242 Pham Van Dong, Hiep Binh Chanh, Thanh Pho Ho Chi Minh",
+                "address_map": "https://goo.gl/maps/r3ZovQM1E5a4Y5PWA",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -288,8 +300,8 @@ const RenderBookGetDateFilm = () => {
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "CGV Giga Mall Thu Duc",
-                "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
-                "address_map":"",
+                "address_cinema": "Tang 6 TTTM GIGAMALL, 240-242 Pham Van Dong, Hiep Binh Chanh, Thanh Pho Ho Chi Minh",
+                "address_map": "https://goo.gl/maps/r3ZovQM1E5a4Y5PWA",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -333,7 +345,7 @@ const RenderBookGetDateFilm = () => {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "Beta Quang Trung",
                 "address_cinema": "645 Quang Trung, Phuong 11, Quan Go Vap, Thanh Pho Ho Chi Minh",
-                "address_map":"https://goo.gl/maps/GXMs67cU6RgYvqLY8",
+                "address_map": "https://goo.gl/maps/GXMs67cU6RgYvqLY8",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -368,8 +380,8 @@ const RenderBookGetDateFilm = () => {
               {
                 "id_cinema_tab": 0,
                 "title_cinema_single": "CGV Giga Mall Thu Duc",
-                "address_cinema": "244 Thao Dien, Quan 2, TP.HCM",
-                "address_map":"",
+                "address_cinema": "Tang 6 TTTM GIGAMALL, 240-242 Pham Van Dong, Hiep Binh Chanh, Thanh Pho Ho Chi Minh",
+                "address_map": "https://goo.gl/maps/r3ZovQM1E5a4Y5PWA",
                 "showtime": [
                   {
                     "dimensional": "2D subtitles",
@@ -382,6 +394,9 @@ const RenderBookGetDateFilm = () => {
                       },
                       {
                         "run_time": "00:10 ~ 02:15"
+                      },
+                      {
+                        "run_time": "02:20 ~ 04:05"
                       },
                     ]
                   },
@@ -481,15 +496,15 @@ const RenderBookGetDateFilm = () => {
                         {index_single.tab_cinema.map((subItem, j) => (
                           <Panel header={subItem.title_cinema_single} key={j.id_cinema_tab}>
                             <div className="info_address_cinema_sing">
-                              {subItem.address_cinema} <BsDot/>
-                              <a href={subItem.address_map} target='_blank' className="target_map"> 
+                              {subItem.address_cinema} <BsDot />
+                              <a href={subItem.address_map} target='_blank' className="target_map">
                                 [ Address maps ]
                               </a>
                             </div>
                             {subItem.showtime.map((item_show, j) => (
                               <div className="box_dimen_show-time" key={j}>
                                 <div className="dimen_heading_text">
-                                  {item_show.dimensional}  
+                                  {item_show.dimensional}
                                 </div>
                                 <div className="tr_wrap_show-time">
                                   {item_show.time_premiere.map((item_run_time, k) => (
@@ -530,7 +545,7 @@ const RenderBookGetDateFilm = () => {
                 <button className="handle__select--option pding-border">
                   <GoLocation />
                   TP.HCM
-                  <BiChevronRight/>
+                  <BiChevronRight />
                 </button>
               </div>
               <div className='m-px_btn__Getmap--recent'>
@@ -546,9 +561,7 @@ const RenderBookGetDateFilm = () => {
               {returnList_GetDate_show_film}
             </div>
 
-            <div
-              className="tab__content--GETDATE "
-            >
+            <div className="tab__content--GETDATE" >
               {returnList_Content_GetDate}
             </div>
           </div>
