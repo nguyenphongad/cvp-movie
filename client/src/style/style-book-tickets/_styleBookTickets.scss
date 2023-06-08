@@ -580,7 +580,6 @@
     display: grid;
     grid-template-columns: repeat(14, 1fr); /* 10 cột trong 1 hàng */
     grid-gap: 15px; /* Khoảng cách giữa các ghế */
-    // justify-items: center;
 }
 
 .seat {
@@ -624,10 +623,12 @@
     font-weight: bold;
     font-size: 20px;
 }
-.couple {
-    background-color: #2980b9;
-    color: white;
-    font-weight: bold;
+
+
+
+
+.couple_set{
+    background-color: blue;
 }
 
 @import "./mediaBookTickets";

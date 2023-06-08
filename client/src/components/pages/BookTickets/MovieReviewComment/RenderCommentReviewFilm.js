@@ -4,6 +4,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 const ROWS = 12;
 const COLS = 15;
 const SEAT_PRICE = 55000;
+const SEAT_PRICE_LAST_ROW = 120000;
 const DISABLED_SEATS = ['A3', 'A4', 'C10', 'I3', 'I4', 'I5', 'G4', 'G8', 'H13', 'H14'];
 
 
@@ -19,16 +20,13 @@ const RenderCommentReviewFilm = () => {
         const isSeatSelected = selectedSeats.includes(seatId);
 
         if (isSeatSelected) {
-            // Bỏ chọn ghế nếu đã được chọn trước đó
             setSelectedSeats((prevSelectedSeats) =>
                 prevSelectedSeats.filter((selectedSeat) => selectedSeat !== seatId)
             );
         } else {
-            // Kiểm tra nếu đã chọn tối đa 5 ghế
             if (selectedSeats.length < 5) {
                 setSelectedSeats((prevSelectedSeats) => [...prevSelectedSeats, seatId]);
             } else {
-                // Xử lý khi đã chọn tối đa 5 ghế
                 alert("Bạn chỉ được chọn tối đa 5 ghế.");
             }
         }
@@ -44,7 +42,18 @@ const RenderCommentReviewFilm = () => {
     };
 
     const calculateTotalPrice = () => {
-        const price = selectedSeats.length * SEAT_PRICE;
+        let price = 0;
+
+        selectedSeats.forEach((seatId) => {
+            const seatRow = seatId.charCodeAt(0) - 65; // Chuyển đổi chữ cái thành số thứ tự hàng
+
+            if (seatRow === ROWS - 1) {
+                price += SEAT_PRICE_LAST_ROW;
+            } else {
+                price += SEAT_PRICE;
+            }
+        });
+
         setTotalPrice(price);
     };
 
@@ -52,27 +61,39 @@ const RenderCommentReviewFilm = () => {
         const seats = [];
 
         for (let row = 0; row < ROWS; row++) {
-            for (let col = 1; col < COLS; col++) {
+            const isLastRow = row === ROWS - 1;
+            const seatCount = isLastRow ? 6 : COLS - 1;
 
-
+            for (let col = 1; col <= seatCount; col++) {
                 const seatId = `${String.fromCharCode(65 + row)}${col}`;
-
                 const isSeatReserved = isSeatSelected(seatId);
                 const isSeatDisabled1 = isSeatDisabled(seatId);
+
+                let seatPrice = SEAT_PRICE;
+
+                if (isLastRow) {
+                    seatPrice = SEAT_PRICE_LAST_ROW;
+                }
+                if (row === ROWS - 1) {
+                    seatPrice = SEAT_PRICE_LAST_ROW;
+                }
+
+                let seatContent = seatId;
+                if (isLastRow) {
+                    seatContent = `CP${col}`;
+                }
 
                 seats.push(
                     <div
                         key={seatId}
-                        className={`seat ${isSeatReserved ? 'selected' : ''} ${isSeatDisabled1 ? 'disabled' : ''}`}
+                        className={`seat ${isSeatReserved ? 'selected' : ''} ${isSeatDisabled1 ? 'disabled' : ''
+                            } ${isLastRow ? 'couple_set' : ''}`}
                         onClick={isSeatDisabled1 ? undefined : () => handleSeatClick(seatId)}
                     >
-                        {seatId}
+                        {seatContent}
                     </div>
                 );
-
             }
-
-            
         }
 
         return seats;
@@ -83,7 +104,13 @@ const RenderCommentReviewFilm = () => {
             return "";
         }
 
-        const selectedSeatsString = selectedSeats.join(", ");
+        const selectedSeatsString = selectedSeats.map((seatId) => {
+            const row = seatId.charCodeAt(0) - 65;
+            const isLastRow = row === ROWS - 1;
+            const seatNumber = seatId.substring(1);
+            const seatLabel = isLastRow ? `CP${seatNumber}` : seatId;
+            return seatLabel;
+        }).join(", ");
 
         return (
             <span>
