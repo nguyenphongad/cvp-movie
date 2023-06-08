@@ -573,17 +573,34 @@
         }
     }
 }
+
 .wrap {
     display: flex;
 }
+.row_seat {
+    display: flex;
+}
+
+.row_seat:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.couple_set {
+    width: 105px !important;
+    background-color: #b11644 !important;
+}
+
+.row_seat > div {
+    width: 40px;
+    margin: 6px;
+}
 .seat-container {
-    display: grid;
-    grid-template-columns: repeat(14, 1fr); /* 10 cột trong 1 hàng */
-    grid-gap: 15px; /* Khoảng cách giữa các ghế */
+    width: auto;
 }
 
 .seat {
-    padding: 3px 5px;
+    padding: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -613,9 +630,9 @@
 }
 
 .disabled {
-    background-color: #242424;
-    color: white;
-    cursor: not-allowed;
+    background-color: #353232 !important;
+    color: white !important;
+    cursor: not-allowed !important;
 }
 
 .total-info {
@@ -623,12 +640,15 @@
     font-weight: bold;
     font-size: 20px;
 }
-
-
-
-
-.couple_set{
-    background-color: blue;
+.before_screen_line {
+    text-align: center;
+    margin-bottom: 50px;
+    .border__line-screen {
+        margin: 0px auto;
+        width: 85%;
+        height: 5px;
+        background-color: $main-color-while-fff;
+    }
 }
 
 @import "./mediaBookTickets";

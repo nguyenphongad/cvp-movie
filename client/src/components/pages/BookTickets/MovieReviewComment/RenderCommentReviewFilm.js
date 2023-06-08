@@ -5,8 +5,8 @@ const ROWS = 12;
 const COLS = 15;
 const SEAT_PRICE = 55000;
 const SEAT_PRICE_LAST_ROW = 120000;
-const DISABLED_SEATS = ['A3', 'A4', 'C10', 'I3', 'I4', 'I5', 'G4', 'G8', 'H13', 'H14'];
-
+const DISABLED_SEATS = ['H10', 'B4', 'C10', 'I3', 'I4', 'I5', 
+'G5', 'G8', 'H13', 'H14', 'L2','E10','E11','J10','J11','J12','J13','J14'];
 
 const RenderCommentReviewFilm = () => {
     const [selectedSeats, setSelectedSeats] = useState([]);
@@ -24,10 +24,10 @@ const RenderCommentReviewFilm = () => {
                 prevSelectedSeats.filter((selectedSeat) => selectedSeat !== seatId)
             );
         } else {
-            if (selectedSeats.length < 5) {
+            if (selectedSeats.length < 6) {
                 setSelectedSeats((prevSelectedSeats) => [...prevSelectedSeats, seatId]);
             } else {
-                alert("Bạn chỉ được chọn tối đa 5 ghế.");
+                alert("Bạn chỉ được chọn tối đa 6 ghế.");
             }
         }
 
@@ -39,13 +39,14 @@ const RenderCommentReviewFilm = () => {
 
     const isSeatDisabled = (seatId) => {
         return DISABLED_SEATS.includes(seatId);
+
     };
 
     const calculateTotalPrice = () => {
         let price = 0;
 
         selectedSeats.forEach((seatId) => {
-            const seatRow = seatId.charCodeAt(0) - 65; // Chuyển đổi chữ cái thành số thứ tự hàng
+            const seatRow = seatId.charCodeAt(0) - 65;
 
             if (seatRow === ROWS - 1) {
                 price += SEAT_PRICE_LAST_ROW;
@@ -58,45 +59,39 @@ const RenderCommentReviewFilm = () => {
     };
 
     const renderSeats = () => {
-        const seats = [];
+        const rows = [];
 
         for (let row = 0; row < ROWS; row++) {
             const isLastRow = row === ROWS - 1;
-            const seatCount = isLastRow ? 6 : COLS - 1;
+            const seatCount = isLastRow ? 4 : COLS - 1;
+            const seats = [];
 
             for (let col = 1; col <= seatCount; col++) {
                 const seatId = `${String.fromCharCode(65 + row)}${col}`;
                 const isSeatReserved = isSeatSelected(seatId);
-                const isSeatDisabled1 = isSeatDisabled(seatId);
-
-                let seatPrice = SEAT_PRICE;
-
-                if (isLastRow) {
-                    seatPrice = SEAT_PRICE_LAST_ROW;
-                }
-                if (row === ROWS - 1) {
-                    seatPrice = SEAT_PRICE_LAST_ROW;
-                }
+                const isSeatDisabledGet = isSeatDisabled(seatId);
 
                 let seatContent = seatId;
                 if (isLastRow) {
                     seatContent = `CP${col}`;
                 }
-
+                console.log(seatId)
                 seats.push(
                     <div
                         key={seatId}
-                        className={`seat ${isSeatReserved ? 'selected' : ''} ${isSeatDisabled1 ? 'disabled' : ''
+                        className={`seat ${isSeatReserved ? 'selected' : ''} ${isSeatDisabledGet ? 'disabled' : ''
                             } ${isLastRow ? 'couple_set' : ''}`}
-                        onClick={isSeatDisabled1 ? undefined : () => handleSeatClick(seatId)}
+                        onClick={isSeatDisabledGet ? undefined : () => handleSeatClick(seatId)}
                     >
                         {seatContent}
                     </div>
                 );
             }
+
+            rows.push(<div key={`row-${row}`} className="row_seat">{seats}</div>);
         }
 
-        return seats;
+        return rows;
     };
 
     const renderSelectedSeats = () => {
@@ -125,9 +120,11 @@ const RenderCommentReviewFilm = () => {
     return (
         <div className="wrap">
             <div>
-                <div>
-                    <h1>SCREEN</h1>
-                    ---
+                <div className='before_screen_line'>
+                    <h2>SCREEN</h2>
+                    <div className='border__line-screen'>
+
+                    </div>
                 </div>
                 <div className="seat-container">{renderSeats()}</div>
             </div>
