@@ -8,24 +8,21 @@ import { BsCardText } from "react-icons/bs";
 import RenderBookGetDateFilm from "../TabBookTickets/GetDateBookTickets/RenderBookGetDateFilm";
 import RenderCommentReviewFilm from "../MovieReviewComment/RenderCommentReviewFilm";
 import RenderUseKeyBoard from "../../../useKeyBoard/RenderUseKeyBoard";
+import RenderFuncGetIdMovies from "../FunctionGetIdMovies/RenderFuncGetIdMovies";
 
 const RenderModalPreviewPlaying = () => {
-    const useOpenModalPreview = useContext(ContextFromTabPlaying);
 
-    const LIST_BOOK_TICKETS_PLAYING = useOpenModalPreview.LIST_FILM_BOOK_PLAYING
+    const returnFuncListPreviewMovie = RenderFuncGetIdMovies(14);
 
-    const getPathname = useLocation();
-    const getIdMovies = getPathname.pathname.slice(14)
-    const getIndexArrayListPlaying = LIST_BOOK_TICKETS_PLAYING.findIndex(
-        item => item.titleFilmEnglish.replace(/ /g, '-') + "-" + item.id === getIdMovies
-    )
-    const returnListPreviewMovie = LIST_BOOK_TICKETS_PLAYING[getIndexArrayListPlaying]
+    const listArrOjectMovies = returnFuncListPreviewMovie.LIST_ARRAY_MOVIE;
 
-    document.title = `${returnListPreviewMovie.titleFilm.toUpperCase()}` + " | CVP-MOVIE"
+    const getUseContextFromTabplaying = returnFuncListPreviewMovie.useDataBook;
+
+    document.title = `${listArrOjectMovies.titleFilm.toUpperCase()}` + " | CVP-MOVIE";
 
     const handleGoBackModal = useNavigate();
     const handleCloseModalPreview = () => {
-        useOpenModalPreview.setIsModalPreviewMovies(false)
+        getUseContextFromTabplaying.setIsModalPreviewMovies(false)
         setTimeout(() => handleGoBackModal("/book-tickets"), 300)
     }
 
@@ -50,7 +47,7 @@ const RenderModalPreviewPlaying = () => {
     return (
         <Modal
             title="MOVIES INFORMATION"
-            open={useOpenModalPreview.isModalPreviewMovies}
+            open={getUseContextFromTabplaying.isModalPreviewMovies}
             footer={null}
             className="modal__preview--movies"
             onCancel={handleCloseModalPreview}
@@ -94,9 +91,9 @@ const RenderModalPreviewPlaying = () => {
                                 <div className="flex__nth-firts">
                                     <div className="box_image_poster">
                                         <img
-                                            src={returnListPreviewMovie.srcImagePoster}
-                                            alt={returnListPreviewMovie.titleFilm.toUpperCase()}
-                                            title={returnListPreviewMovie.titleFilm.toUpperCase()}
+                                            src={listArrOjectMovies.srcImagePoster}
+                                            alt={listArrOjectMovies.titleFilm.toUpperCase()}
+                                            title={listArrOjectMovies.titleFilm.toUpperCase()}
                                             className="image_preview_size"
                                         />
                                         <div className="border__postiton_btn--trailer">
@@ -119,8 +116,8 @@ const RenderModalPreviewPlaying = () => {
                                                         isOpenModalInTrailer
                                                             ?
                                                             <iframe
-                                                                src={returnListPreviewMovie.srcYoutubeTrailer}
-                                                                title={returnListPreviewMovie.titleFilm.toUpperCase()}
+                                                                src={listArrOjectMovies.srcYoutubeTrailer}
+                                                                title={listArrOjectMovies.titleFilm.toUpperCase()}
                                                                 rameborder="0"
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 allowfullscreen="1"
@@ -134,17 +131,17 @@ const RenderModalPreviewPlaying = () => {
                                     </div>
                                     <div className="line_information-film">
                                         <div className="size_title-film">
-                                            {returnListPreviewMovie.titleFilm.toUpperCase()}
+                                            {listArrOjectMovies.titleFilm.toUpperCase()}
                                         </div>
                                         <div className="title_film-EL">
-                                            {returnListPreviewMovie.titleFilmEnglish.toUpperCase()}
+                                            {listArrOjectMovies.titleFilmEnglish.toUpperCase()}
                                             <RxDotFilled />
-                                            {returnListPreviewMovie.movieDuration} MINUTE
+                                            {listArrOjectMovies.movieDuration} MINUTE
                                         </div>
                                         <div className="leading_relaxed">
                                             <BsCardText />
                                             <div className="content_leadding-rel">
-                                                {returnListPreviewMovie.leading_relax.toUpperCase()}
+                                                {listArrOjectMovies.leading_relax.toUpperCase()}
                                             </div>
 
                                         </div>
@@ -153,20 +150,20 @@ const RenderModalPreviewPlaying = () => {
                                                 <div className="heading_state">FAVORITE</div>
                                                 <div className="result_state">
                                                     <AiFillLike />
-                                                    {returnListPreviewMovie.favoriteDegree}
+                                                    {listArrOjectMovies.favoriteDegree}
                                                 </div>
                                             </div>
                                             <div className="item_state">
                                                 <div className="heading_state">SHOW DATE</div>
-                                                <div className="result_state">{returnListPreviewMovie.dateMovieFilm}</div>
+                                                <div className="result_state">{listArrOjectMovies.dateMovieFilm}</div>
                                             </div>
                                             <div className="item_state">
                                                 <div className="heading_state">AGE LIMIT</div>
-                                                <div className="result_state">{returnListPreviewMovie.limitOld}</div>
+                                                <div className="result_state">{listArrOjectMovies.limitOld}</div>
                                             </div>
                                             <div className="item_state">
                                                 <div className="heading_state">NATION</div>
-                                                <div className="result_state">{returnListPreviewMovie.nationFilm.toUpperCase()}</div>
+                                                <div className="result_state">{listArrOjectMovies.nationFilm.toUpperCase()}</div>
                                             </div>
                                         </div>
 

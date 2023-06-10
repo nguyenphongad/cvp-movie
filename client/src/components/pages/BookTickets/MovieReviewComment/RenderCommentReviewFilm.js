@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { AiFillCloseCircle } from 'react-icons/ai';
 
 const ROWS = 12;
-const COLS = 15;
+const COLS = 14;
+const MAXIMUM_SELECT_SEAT = 6;
+const SEAT_PRICE_REGULAR = 45000;
 const SEAT_PRICE = 55000;
-const SEAT_PRICE_LAST_ROW = 120000;
-const DISABLED_SEATS = ['H10', 'B4', 'C10', 'I3', 'I4', 'I5', 
-'G5', 'G8', 'H13', 'H14', 'L2','E10','E11','J10','J11','J12','J13','J14'];
+const SEAT_PRICE_COUPLE_ROW = 120000;
+const SEAT_REGULAR_ROW = 3;
+
+const DISABLED_SEATS = ['H10', 'C4', 'C10', 'I5', 'I6', 'I7', 'I1', 'I2',
+    'G5', 'G8', 'H13', 'H14', 'L2', 'L3', 'E10', 'E11', 'J10', 'J11', 'J12',
+    'J13', 'J14', 'C5', 'G6', 'G7', 'H6', 'H7', 'F7', 'F8'];
 
 const RenderCommentReviewFilm = () => {
     const [selectedSeats, setSelectedSeats] = useState([]);
@@ -24,10 +29,10 @@ const RenderCommentReviewFilm = () => {
                 prevSelectedSeats.filter((selectedSeat) => selectedSeat !== seatId)
             );
         } else {
-            if (selectedSeats.length < 6) {
+            if (selectedSeats.length < MAXIMUM_SELECT_SEAT) {
                 setSelectedSeats((prevSelectedSeats) => [...prevSelectedSeats, seatId]);
             } else {
-                alert("Bạn chỉ được chọn tối đa 6 ghế.");
+                alert(`CHON TOI DA ${MAXIMUM_SELECT_SEAT} GHE 1 LAN `);
             }
         }
 
@@ -49,7 +54,9 @@ const RenderCommentReviewFilm = () => {
             const seatRow = seatId.charCodeAt(0) - 65;
 
             if (seatRow === ROWS - 1) {
-                price += SEAT_PRICE_LAST_ROW;
+                price += SEAT_PRICE_COUPLE_ROW;
+            } else if (seatRow < SEAT_REGULAR_ROW) {
+                price += SEAT_PRICE_REGULAR;
             } else {
                 price += SEAT_PRICE;
             }
@@ -63,7 +70,8 @@ const RenderCommentReviewFilm = () => {
 
         for (let row = 0; row < ROWS; row++) {
             const isLastRow = row === ROWS - 1;
-            const seatCount = isLastRow ? 4 : COLS - 1;
+            const isFirstRegularRows = row < SEAT_REGULAR_ROW;
+            const seatCount = isLastRow ? 5 : COLS;
             const seats = [];
 
             for (let col = 1; col <= seatCount; col++) {
@@ -75,12 +83,13 @@ const RenderCommentReviewFilm = () => {
                 if (isLastRow) {
                     seatContent = `CP${col}`;
                 }
-                console.log(seatId)
+
+
+                const seatClasses = `seat ${isSeatReserved ? 'selected' : ''} ${isSeatDisabledGet ? 'disabled' : ''} ${isLastRow ? 'couple_set' : ''} ${isFirstRegularRows ? 'pc-first' : ''}`;
                 seats.push(
                     <div
                         key={seatId}
-                        className={`seat ${isSeatReserved ? 'selected' : ''} ${isSeatDisabledGet ? 'disabled' : ''
-                            } ${isLastRow ? 'couple_set' : ''}`}
+                        className={seatClasses}
                         onClick={isSeatDisabledGet ? undefined : () => handleSeatClick(seatId)}
                     >
                         {seatContent}
@@ -123,6 +132,7 @@ const RenderCommentReviewFilm = () => {
                 <div className='before_screen_line'>
                     <h2>SCREEN</h2>
                     <div className='border__line-screen'>
+                        <div className='border__line-screen line_2_index'> </div>
 
                     </div>
                 </div>

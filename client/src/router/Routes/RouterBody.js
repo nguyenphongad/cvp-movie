@@ -16,6 +16,7 @@ import RenderModalPreviewPlaying from '../../components/pages/BookTickets/ModalP
 const LazyHome = lazy(() => import('../../components/pages/Home/Home'))
 const LazyMyList = lazy(() => import('../../components/pages/MyList/RenderMyList'))
 const LazyBookTickets = lazy(() => import('../../components/pages/BookTickets/RenderBookTickets'))
+const LazyBookSeats = lazy(() => import('../../components/pages/BookTickets/TabBookTickets/BookSeats/RenderBookSeats'))
 const LazyMovies = lazy(() => import('../../components/pages/Movies/RenderMovies'))
 const LazyMenu = lazy(() => import('../../components/pages/Menu/RenderMenu'))
 const LazyBookTicketsHistory = lazy(() => import('../../components/pages/BookTickets/BookTicketsHistory/RenderBookTicketsHistory'))
@@ -60,6 +61,14 @@ function RouterBody() {
                 <Route path="/book-tickets" element={
                     <React.Suspense fallback={<LoadingRoute />}>
                         <LazyBookTickets />
+                    </React.Suspense>
+                } >
+                    {returnRouteListBookTicketsPlaying}
+                </Route>
+
+                <Route path="/book-seats" element={
+                    <React.Suspense fallback={<LoadingRoute />}>
+                        <LazyBookSeats />
                     </React.Suspense>
                 } >
                     {returnRouteListBookTicketsPlaying}

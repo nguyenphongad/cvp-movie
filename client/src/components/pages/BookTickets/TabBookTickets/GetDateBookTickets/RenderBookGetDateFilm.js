@@ -8,6 +8,8 @@ import { GoLocation } from "react-icons/go"
 import { MdOutlineMyLocation } from "react-icons/md"
 import { BiChevronRight } from "react-icons/bi"
 import { Collapse } from "antd";
+import { Link } from 'react-router-dom';
+import RenderFuncGetIdMovies from '../../FunctionGetIdMovies/RenderFuncGetIdMovies';
 const { Panel } = Collapse;
 
 const RenderBookGetDateFilm = () => {
@@ -20,8 +22,11 @@ const RenderBookGetDateFilm = () => {
     ARRAY_GET_DATE.push({ item_day: FormatGetDate(nextGetDay) })
   }
 
-  const ARRAY_DAY_IN_WEEKEND = ['CHU NHAT', 'THU 2', 'THU 3', 'THU 4', 'THU 5', 'THU 6', 'THU 7'];
+  const ARRAY_DAY_IN_WEEKEND = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
   const [activeTabGetData, setActiveTabGetData] = useState(0);
+
+
+  const returnFuncListMovies = RenderFuncGetIdMovies(14);
 
   const ARRAY_GET_TAB_CONTENT_CINEMA = [
     {
@@ -437,7 +442,7 @@ const RenderBookGetDateFilm = () => {
         >
           <div>
             <div className="show-time_day">{date.item_day}</div>
-            <div className="show-day_in_week">{index === 0 ? 'HOM NAY' : ARRAY_DAY_IN_WEEKEND[(getNowDay.getDay() + index) % 7]}</div>
+            <div className="show-day_in_week">{index === 0 ? 'TODAY' : ARRAY_DAY_IN_WEEKEND[(getNowDay.getDay() + index) % 7]}</div>
           </div>
         </div>
       </>
@@ -508,9 +513,9 @@ const RenderBookGetDateFilm = () => {
                                 </div>
                                 <div className="tr_wrap_show-time">
                                   {item_show.time_premiere.map((item_run_time, k) => (
-                                    <a href="#" className="handle_show_time" key={k.run_time}>
+                                    <Link to={`../../book-seats/${returnFuncListMovies.getIdMovies}`} className="handle_show_time" key={k.run_time}>
                                       {item_run_time.run_time}
-                                    </a>
+                                    </Link>
                                   ))}
                                 </div>
                               </div>
