@@ -1,3 +1,133 @@
-.wrap_book_seat{
+.wrap_steps_booking_tickets {
+    width: 100%;
+    height: 55px;
+    background-color: #1d1e27;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    z-index: 2;
+    border-top:1px solid #302f2f ;
+}
+.wrap_book_seat {
     padding: 100px 50px;
+
+    .wrap_handle-book-seats {
+        display: flex;
+        margin-top: 30px;
+
+        .body_view_selected_seats {
+            // width: 100%;
+            .seat_Row {
+                display: flex;
+                &:last-child {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                > div {
+                    width: 40px;
+                    margin: 4px ;
+                }
+            }
+            .container_list_seats {
+                padding: 0px 20px;
+                .btn_seats {
+                    padding: 2px 2px 6px 2px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #eb4476;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    border: 2px solid transparent;
+                    border-bottom: none;
+                    transition: 0.4s;
+                    color: #ffffff;
+                    user-select: none;
+                    position: relative;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                    &::before {
+                        width: 100%;
+                        height: 3px;
+                        background-color: #db3164;
+                        content: "";
+                        position: absolute;
+                        bottom: 0px;
+                        border-left: 2px solid #db3164;
+                        border-right: 2px solid #db3164;
+                        border-radius: 3px;
+                    }
+                }
+                .seats_disabled {
+                    background-color: #353232 !important;
+                    color: white !important;
+                    cursor: not-allowed !important;
+                    &::before {
+                        background: none !important;
+                        border: none !important;
+                    }
+                }
+                .seats_selected {
+                    background-color: #d67e0a !important;
+                    color: white;
+                    border: 2px solid;
+                    border-bottom: none;
+                    &::before {
+                        background: none !important;
+                        border: none;
+                        border-bottom: 2px solid;
+                    }
+                }
+                .seats_fisrt_regular {
+                    background-color: #1e1ec0;
+                }
+                .seats_couple {
+                    width: 90px !important;
+                    background-color: #990430;
+                }
+            }
+        }
+
+        .total_info--select_seats {
+            width: 100%;
+            text-align: center;
+        }
+
+        // .btn_reset_seats {
+        //     margin-left: 20px;
+        //     font-size: 17px;
+        //     cursor: pointer;
+        //     path {
+        //         color: red;
+        //     }
+        // }
+
+        .total-info {
+            padding: 0px 50px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .before_screen_line {
+            text-align: center;
+            margin-bottom: 25px;
+            .border__line-screen {
+                margin: 0px auto;
+                // width: 85%;
+                height: 50px;
+                background-color: $main-color-while-fff;
+                border-top-left-radius: 45%;
+                border-top-right-radius: 45%;
+                position: relative;
+
+                .line_2_index {
+                    width: 100%;
+                    background-color: $main-color;
+                    position: absolute;
+                    z-index: 1;
+                    top: 5px;
+                }
+            }
+        }
+    }
 }

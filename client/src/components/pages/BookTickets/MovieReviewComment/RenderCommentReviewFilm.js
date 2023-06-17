@@ -133,7 +133,6 @@ const RenderCommentReviewFilm = () => {
                     <h2>SCREEN</h2>
                     <div className='border__line-screen'>
                         <div className='border__line-screen line_2_index'> </div>
-
                     </div>
                 </div>
                 <div className="seat-container">{renderSeats()}</div>

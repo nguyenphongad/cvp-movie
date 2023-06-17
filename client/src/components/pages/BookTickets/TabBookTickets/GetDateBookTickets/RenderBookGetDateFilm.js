@@ -513,9 +513,9 @@ const RenderBookGetDateFilm = () => {
                                 </div>
                                 <div className="tr_wrap_show-time">
                                   {item_show.time_premiere.map((item_run_time, k) => (
-                                    <Link to={`../../book-seats/${returnFuncListMovies.getIdMovies}`} className="handle_show_time" key={k.run_time}>
+                                    <a href={`../../book-seats/${returnFuncListMovies.getIdMovies}`} className="handle_show_time" key={k.run_time}>
                                       {item_run_time.run_time}
-                                    </Link>
+                                    </a>
                                   ))}
                                 </div>
                               </div>

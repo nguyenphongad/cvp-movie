@@ -1,7 +1,6 @@
 import { Modal, Skeleton } from "antd";
-import React, { useContext, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { ContextFromTabPlaying } from "../TabBookTickets/ContextTabBookTicketsPlaying";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { RxDotFilled } from "react-icons/rx"
 import { AiFillLike, AiOutlineClose } from "react-icons/ai";
 import { BsCardText } from "react-icons/bs";
@@ -173,7 +172,7 @@ const RenderModalPreviewPlaying = () => {
                             </>
                     }
 
-                    <RenderCommentReviewFilm/>
+                    {/* <RenderCommentReviewFilm/> */}
 
                     <Skeleton
                         active
