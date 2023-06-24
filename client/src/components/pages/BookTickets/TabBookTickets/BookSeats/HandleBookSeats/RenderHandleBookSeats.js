@@ -10,10 +10,48 @@ const SEAT_PRICE_REGULAR = 45000;
 const SEAT_PRICE_VIP = 55000;
 const SEAT_PRICE_COUPLE = 120000;
 const SEAT_REGULAR_ROWS = 3;
-const SEATS_DISABLED = ['H10', 'C4', 'H8', 'H9', 'I5', 'I6', 'I7', 'I1', 'I2',
+const SEATS_DISABLED = ['H10', 'C7', 'C8', 'H8', 'H9', 'I5', 'I6', 'I7', 'I1', 'I2',
     'G5', 'G8', 'H13', 'H14', 'L2', 'L3', 'E10', 'E11', 'J10', 'J11', 'J12',
-    'J13', 'J14', 'C5', 'G6', 'G7', 'H6', 'H7', 'F7', 'F8','G9','I8','I9','J6','J7','K8','K9'];
+    'J13', 'J14', 'G6', 'G7', 'H6', 'H7', 'F7', 'F8', 'G9', 'I8', 'I9', 'J6', 'J7', 'K8', 'K9'];
 
+const ReturnLayoutViewTaskSeats = () => {
+    const ARRAY_VIEW_TASK = [
+        {
+            content_view: "Seat sold",
+            color_className: "seat_sold",
+        },
+        {
+            content_view: "Seat of yours",
+            color_className: "seat_yours",
+        },
+        {
+            content_view: "Seat normal",
+            color_className: "seat_regular",
+        },
+        {
+            content_view: "Seat vip",
+            color_className: "seat_vip",
+        },
+        {
+            content_view: "Seat couple",
+            color_className: "seat_couple",
+        },
+    ];
+
+    const returnViewTaskSeat = ARRAY_VIEW_TASK.map((item, index) => {
+        return (
+            <div key={index} className='col_view'>
+                <div className={`seat_color_view ${item.color_className}`}></div>
+                <div className='content_view'>{item.content_view.toUpperCase()}</div>
+            </div>
+        )
+    })
+    return (
+        <div className='flex_row'>
+            {returnViewTaskSeat}
+        </div>
+    );
+}
 
 const RenderHandleBookSeats = () => {
     const [selectedSeats, setSelectedSeats] = useState([]);
@@ -33,7 +71,7 @@ const RenderHandleBookSeats = () => {
             if (selectedSeats.length < MAXIMUM_SELECT_SEAT) {
                 setSelectedSeats((prevSelectedSeats) => [...prevSelectedSeats, seatId]);
             } else {
-                alert("CHON TOI DA " + MAXIMUM_SELECT_SEAT + " GHE 1 LAN !!")
+                alert("CHON TOI DA " + MAXIMUM_SELECT_SEAT + " GHE 1 LAN !!");
             }
         }
     }
@@ -110,10 +148,7 @@ const RenderHandleBookSeats = () => {
             return seatLabel;
         }).join(", ");
 
-        const handleUnSelectedSeats = () => {
-            setSelectedSeats([]);
-        }
-
+        const handleUnSelectedSeats = () => setSelectedSeats([]);
         return (
             <span>
                 {selectedSeatsString}
@@ -126,14 +161,21 @@ const RenderHandleBookSeats = () => {
     };
 
     const { getIdMovies, LIST_ARRAY_MOVIE } = RenderFuncGetIdMovies(12);
+    const FuncReturnDataListMovies = (dataListArrayMovie) => {
+        if (getIdMovies === "") {
+            return undefined;
+        } else {
+            return dataListArrayMovie;
+        }
+    }
 
     return (
         <div className='wrap_handle-book-seats'>
             <div className="body_view_selected_seats">
                 <div className='before_screen_line'>
-                    <h2>SCREEN</h2>
+                    <h3>SCREEN 03</h3>
                     <div className='border__line-screen'>
-                        <div className='border__line-screen line_2_index'> </div>
+                        <div className='border__line-screen'> </div>
                     </div>
                 </div>
                 <div className='container_list_seats'>
@@ -141,17 +183,25 @@ const RenderHandleBookSeats = () => {
                 </div>
             </div>
             <div className="total_info--select_seats">
-                <div>
-                    {getIdMovies === "" ? undefined : LIST_ARRAY_MOVIE.titleFilm.toUpperCase()}
-                    {getIdMovies === "" ? undefined : LIST_ARRAY_MOVIE.dateMovieFilm}
+
+                <div className="view_task_seat">
+                    <ReturnLayoutViewTaskSeats />
                 </div>
-                <div className="selected_seats--info">
-                    Ghế đã chọn: {renderSelectedSeats()}
+
+                <div className='box_total_price-seat'>
+                    {FuncReturnDataListMovies(LIST_ARRAY_MOVIE.titleFilm.toUpperCase())}<br />
+                    {FuncReturnDataListMovies(LIST_ARRAY_MOVIE.dateMovieFilm)}
+
+                    <div className="selected_seats--info">
+                        SEAT(s): {renderSelectedSeats()}
+
+                    </div>
+                    <div className="total_price--seats">
+                        TOTAL PRICE: {totalPrice.toLocaleString()}đ
+                    </div>
 
                 </div>
-                <div className="total_price--seats">
-                    Tổng giá trị: {totalPrice.toLocaleString()}đ
-                </div>
+
             </div>
         </div>
     )

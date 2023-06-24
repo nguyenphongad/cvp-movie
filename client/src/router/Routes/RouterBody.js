@@ -26,10 +26,11 @@ function RouterBody() {
     const useOpenModalPreview = useContext(ContextFromTabPlaying);
 
     const returnRouteListBookTicketsPlaying = useOpenModalPreview.LIST_FILM_BOOK_PLAYING.map(index => {
+        const pathTitleToLower = index.titleFilmEnglish;
         return (
             <Route
                 key={index.id}
-                path={`${index.titleFilmEnglish.replace(/ /g, '-')}-${index.id}`}
+                path={`${pathTitleToLower.replace(/ /g, '-')}-${index.id}`}
                 element={<RenderModalPreviewPlaying />} />
         )
     })

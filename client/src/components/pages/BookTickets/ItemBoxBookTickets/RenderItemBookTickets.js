@@ -20,7 +20,6 @@ function RenderItemBookTickets(props) {
                 <div className="info-film">
                     <div className="date_movie">{props.dateMovieFilm}</div>
 
-
                     <div className="favorite-degree">
                         <AiFillLike />
                         {props.favoriteDegree}

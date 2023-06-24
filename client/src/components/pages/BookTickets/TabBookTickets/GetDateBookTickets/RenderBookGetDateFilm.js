@@ -48,42 +48,66 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":3,
                         "run_time": "15:00 ~ 17:12"
                       },
                       {
+                        
+                        "screen_number":1,
                         "run_time": "15:30 ~ 17:42"
                       },
                       {
+                        
+                        "screen_number":5,
                         "run_time": "16:30 ~ 18:42"
                       },
                       {
+                        
+                        "screen_number":3,
                         "run_time": "17:00 ~ 19:12"
                       },
                       {
+                        
+                        "screen_number":7,
                         "run_time": "17:30 ~ 19:42"
                       },
                       {
+                        
+                        "screen_number":8,
                         "run_time": "18:00 ~ 20:12"
                       },
                       {
+                        
+                        "screen_number":2,
                         "run_time": "19:00 ~ 21:12"
                       },
                       {
+                        
+                        "screen_number":4,
                         "run_time": "19:30 ~ 21:42"
                       },
                       {
+                        "screen_number":1,
                         "run_time": "20:00 ~ 22:12"
                       },
                       {
+                        
+                        "screen_number":5,
                         "run_time": "20:30 ~ 22:42"
                       },
                       {
+                        
+                        "screen_number":6,
                         "run_time": "21:30 ~ 23:42"
                       },
                       {
+                        
+                        "screen_number":7,
                         "run_time": "22:30 ~ 00:42"
                       },
                       {
+                        
+                        "screen_number":9,
                         "run_time": "23:00 ~ 01:12"
                       }
                     ]
@@ -92,9 +116,13 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "3D subtitles",
                     "time_premiere": [
                       {
+                        
+                        "screen_number":3,
                         "run_time": "22:00 ~ 01:10"
                       },
                       {
+                        
+                        "screen_number":4,
                         "run_time": "23:20 ~ 02:10"
                       },
                     ]
@@ -120,9 +148,11 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":5,
                         "run_time": "17:00 ~ 22:20"
                       },
                       {
+                        "screen_number":2,
                         "run_time": "21:00 ~ 01:15"
                       }
                     ]
@@ -140,12 +170,17 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        
+                        "screen_number":2,
                         "run_time": "12:00 ~ 15:20"
                       },
                       {
+                        
+                        "screen_number":7,
                         "run_time": "21:00 ~ 23:15"
                       },
                       {
+                        "screen_number":4,
                         "run_time": "00:00 ~ 02:15"
                       },
                     ]
@@ -170,12 +205,18 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        
+                        "screen_number":2,
                         "run_time": "18:00 ~ 21:20"
                       },
                       {
+                        
+                        "screen_number":9,
                         "run_time": "21:10 ~ 00:15"
                       },
                       {
+                        
+                        "screen_number":2,
                         "run_time": "00:10 ~ 02:15"
                       },
                     ]
@@ -208,21 +249,27 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":3,
                         "run_time": "09:00 ~ 11:10"
                       },
                       {
+                        "screen_number":2,
                         "run_time": "13:00 ~ 15:10"
                       },
                       {
+                        "screen_number":1,
                         "run_time": "14:00 ~ 16:10"
                       },
                       {
+                        "screen_number":7,
                         "run_time": "18:00 ~ 20:10"
                       },
                       {
+                        "screen_number":8,
                         "run_time": "20:00 ~ 00:10"
                       },
                       {
+                        "screen_number":7,
                         "run_time": "23:00 ~ 02:10"
                       }
                     ]
@@ -231,6 +278,7 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "3D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":2,
                         "run_time": "22:00 ~ 01:10"
                       },
                     ]
@@ -256,30 +304,39 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":2,
                         "run_time": "18:00 ~ 21:20"
                       },
                       {
+                        "screen_number":3,
                         "run_time": "21:10 ~ 00:15"
                       },
                       {
+                        "screen_number":1,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":2,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":5,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":6,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":7,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":8,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":5,
                         "run_time": "00:10 ~ 02:15"
                       },
                     ]
@@ -312,18 +369,23 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":3,
                         "run_time": "18:00 ~ 21:20"
                       },
                       {
+                        "screen_number":1,
                         "run_time": "21:10 ~ 00:15"
                       },
                       {
+                        "screen_number":4,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":8,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":4,
                         "run_time": "00:10 ~ 02:15"
                       },
                     ]
@@ -356,9 +418,11 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":1,
                         "run_time": "20:00 ~ 00:10"
                       },
                       {
+                        "screen_number":4,
                         "run_time": "23:00 ~ 02:10"
                       }
                     ]
@@ -367,6 +431,7 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "3D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":5,
                         "run_time": "22:00 ~ 01:10"
                       },
                     ]
@@ -392,15 +457,19 @@ const RenderBookGetDateFilm = () => {
                     "dimensional": "2D subtitles",
                     "time_premiere": [
                       {
+                        "screen_number":1,
                         "run_time": "18:00 ~ 21:20"
                       },
                       {
+                        "screen_number":4,
                         "run_time": "21:10 ~ 00:15"
                       },
                       {
+                        "screen_number":6,
                         "run_time": "00:10 ~ 02:15"
                       },
                       {
+                        "screen_number":9,
                         "run_time": "02:20 ~ 04:05"
                       },
                     ]
