@@ -15,7 +15,7 @@ const LIST_ITEM_SELECT_MENU_MOBILE = [
         id: 1,
         titleNameSelect: "Book tickets history",
         iconNameSelect: <RiHistoryLine />,
-        linkTo: "/booking-tickets-history",
+        linkTo: "/cinema/booking-tickets-history",
     },
     {
         id: 2,

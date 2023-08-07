@@ -114,8 +114,6 @@ function RenderBookTicketsHistory() {
                             :
                             <></>
                     }
-
-
                 </div>
             </div>
         )
@@ -125,7 +123,7 @@ function RenderBookTicketsHistory() {
         <div className='wrap__booking-history animation_scale-lg'>
             <div className="body_book-history-tickets">
                 <div className="heading_text">
-                    <Link to="/book-tickets">
+                    <Link to="/cinema/book-tickets">
                         <AiOutlineDoubleLeft />
                         BOOK TICKETS
                     </Link>

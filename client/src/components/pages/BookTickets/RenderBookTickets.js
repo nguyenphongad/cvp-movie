@@ -30,7 +30,8 @@ export const BookTicketsUpComing = () => {
 
 function RenderBookTickets() {
     const getPathname = useLocation();
-    const getIdMovies = getPathname.pathname.slice(14);
+    const getIdMovies = getPathname.pathname.slice(21);
+    
 
     if (getIdMovies === '') {
         document.title = "Book tickets | CVP-MOVIE"
@@ -110,7 +111,7 @@ function RenderBookTickets() {
                             </div>
                             <div className="tab__history-book">
                                 <div className="btn_to_history-book">
-                                    <Link to="../booking-tickets-history">
+                                    <Link to="../cinema/booking-tickets-history">
                                         BOOKING TICKETS HISTORY
                                         <AiOutlineDoubleRight />
                                     </Link>

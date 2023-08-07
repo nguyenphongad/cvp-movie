@@ -12,14 +12,14 @@ import { useContext } from 'react';
 import { ContextFromTabPlaying } from '../../components/pages/BookTickets/TabBookTickets/ContextTabBookTicketsPlaying';
 import RenderModalPreviewPlaying from '../../components/pages/BookTickets/ModalPreviewFilms/RenderModalPreviewPlaying';
 
-
-const LazyHome = lazy(() => import('../../components/pages/Home/Home'))
-const LazyMyList = lazy(() => import('../../components/pages/MyList/RenderMyList'))
-const LazyBookTickets = lazy(() => import('../../components/pages/BookTickets/RenderBookTickets'))
-const LazyLayoutBookSeats = lazy(() => import('../../components/pages/BookTickets/TabBookTickets/BookSeats/RenderLayoutBookSeats'))
-const LazyMovies = lazy(() => import('../../components/pages/Movies/RenderMovies'))
-const LazyMenu = lazy(() => import('../../components/pages/Menu/RenderMenu'))
-const LazyBookTicketsHistory = lazy(() => import('../../components/pages/BookTickets/BookTicketsHistory/RenderBookTicketsHistory'))
+const LazyHome = lazy(() => import('../../components/pages/Home/Home'));
+const LazyVideoPlayMovie = lazy(() => import('../../components/pages/Home/video-play-movie/RenderVideoPlayMovie'));
+const LazyMyList = lazy(() => import('../../components/pages/MyList/RenderMyList'));
+const LazyBookTickets = lazy(() => import('../../components/pages/BookTickets/RenderBookTickets'));
+const LazyLayoutBookSeats = lazy(() => import('../../components/pages/BookTickets/TabBookTickets/BookSeats/RenderLayoutBookSeats'));
+const LazyMovies = lazy(() => import('../../components/pages/Movies/RenderMovies'));
+const LazyMenu = lazy(() => import('../../components/pages/Menu/RenderMenu'));
+const LazyBookTicketsHistory = lazy(() => import('../../components/pages/BookTickets/BookTicketsHistory/RenderBookTicketsHistory'));
 
 
 function RouterBody() {
@@ -48,6 +48,11 @@ function RouterBody() {
                         <LazyHome />
                     </React.Suspense>
                 } />
+                <Route path="/play/wacthing-intro" element={
+                    <React.Suspense fallback={<LoadingRoute />}>
+                        <LazyVideoPlayMovie />
+                    </React.Suspense>
+                } />
 
                 <Route path="/movies" element={
                     <React.Suspense fallback={<LoadingRoute />}>
@@ -59,7 +64,7 @@ function RouterBody() {
                         <LazyMyList />
                     </React.Suspense>
                 } />
-                <Route path="/book-tickets" element={
+                <Route path="/cinema/book-tickets" element={
                     <React.Suspense fallback={<LoadingRoute />}>
                         <LazyBookTickets />
                     </React.Suspense>
@@ -67,7 +72,7 @@ function RouterBody() {
                     {returnRouteListBookTicketsPlaying}
                 </Route>
 
-                <Route path="/book-seats" element={
+                <Route path="/cinema/book-seats" element={
                     <React.Suspense fallback={<LoadingRoute />}>
                         <LazyLayoutBookSeats />
                     </React.Suspense>
@@ -75,7 +80,7 @@ function RouterBody() {
                     {returnRouteListBookTicketsPlaying}
                 </Route>
 
-                <Route path="/booking-tickets-history" element={
+                <Route path="/cinema/booking-tickets-history" element={
                     <React.Suspense fallback={<LoadingRoute />}>
                         <LazyBookTicketsHistory />
                     </React.Suspense>

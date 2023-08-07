@@ -43,26 +43,6 @@ function RenderSearchMain() {
             Nội dung tìm kiếm<br/>
             Nội dung tìm kiếm<br/>
             Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
-            Nội dung tìm kiếm<br/>
         </div>
     )
 }

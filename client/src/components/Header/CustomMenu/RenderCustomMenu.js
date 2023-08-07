@@ -47,7 +47,7 @@ function RenderCustomMenu() {
         },
         {
             id: 5,
-            to: "/book-tickets",
+            to: "/cinema/book-tickets",
             nameMenuHeader: "BOOK TICKETS",
             iconMenuHeader: <IoTicketSharp />,
             starNew: true

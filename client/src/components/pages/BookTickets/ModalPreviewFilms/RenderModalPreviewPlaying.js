@@ -11,7 +11,7 @@ import RenderFuncGetIdMovies from "../FunctionGetIdMovies/RenderFuncGetIdMovies"
 
 const RenderModalPreviewPlaying = () => {
 
-    const returnFuncListPreviewMovie = RenderFuncGetIdMovies(14);
+    const returnFuncListPreviewMovie = RenderFuncGetIdMovies(21);
 
     const listArrOjectMovies = returnFuncListPreviewMovie.LIST_ARRAY_MOVIE;
 
@@ -22,7 +22,7 @@ const RenderModalPreviewPlaying = () => {
     const handleGoBackModal = useNavigate();
     const handleCloseModalPreview = () => {
         getUseContextFromTabplaying.setIsModalPreviewMovies(false)
-        setTimeout(() => handleGoBackModal("/book-tickets"), 300)
+        setTimeout(() => handleGoBackModal("/cinema/book-tickets"), 300)
     }
 
     const [isOpenModalInTrailer, setisOpenModalInTrailer] = useState(false)
