@@ -6,8 +6,8 @@ import RenderBookingSeatsSteps from './BookingSteps/RenderBookingSeatsSteps';
 
 const RenderLayoutBookSeats = () => {
 
-    const { getIdMovies, LIST_ARRAY_MOVIE } = RenderFuncGetIdMovies(12);
-    // console.log(getIdMovies)
+    const { getIdMovies, LIST_ARRAY_MOVIE } = RenderFuncGetIdMovies(19);
+    console.log(getIdMovies)
 
     const isReturnLayoutGetIdMovies = getIdMovies === "";
 

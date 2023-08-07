@@ -160,7 +160,7 @@ const RenderHandleBookSeats = () => {
 
     };
 
-    const { getIdMovies, LIST_ARRAY_MOVIE } = RenderFuncGetIdMovies(12);
+    const { getIdMovies, LIST_ARRAY_MOVIE } = RenderFuncGetIdMovies(19);
     const FuncReturnDataListMovies = (dataListArrayMovie) => {
         if (getIdMovies === "") {
             return undefined;

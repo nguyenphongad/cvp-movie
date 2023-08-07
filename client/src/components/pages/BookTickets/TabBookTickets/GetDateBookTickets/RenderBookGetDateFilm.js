@@ -8,7 +8,6 @@ import { GoLocation } from "react-icons/go"
 import { MdOutlineMyLocation } from "react-icons/md"
 import { BiChevronRight } from "react-icons/bi"
 import { Collapse } from "antd";
-import { Link } from 'react-router-dom';
 import RenderFuncGetIdMovies from '../../FunctionGetIdMovies/RenderFuncGetIdMovies';
 const { Panel } = Collapse;
 
@@ -26,7 +25,7 @@ const RenderBookGetDateFilm = () => {
   const [activeTabGetData, setActiveTabGetData] = useState(0);
 
 
-  const returnFuncListMovies = RenderFuncGetIdMovies(14);
+  const returnFuncListMovies = RenderFuncGetIdMovies(21);
 
   const ARRAY_GET_TAB_CONTENT_CINEMA = [
     {
@@ -582,7 +581,7 @@ const RenderBookGetDateFilm = () => {
                                 </div>
                                 <div className="tr_wrap_show-time">
                                   {item_show.time_premiere.map((item_run_time, k) => (
-                                    <a href={`../../book-seats/${returnFuncListMovies.getIdMovies}`} className="handle_show_time" key={k.run_time}>
+                                    <a href={`../../cinema/book-seats/${returnFuncListMovies.getIdMovies}`} className="handle_show_time" key={k.run_time}>
                                       {item_run_time.run_time}
                                     </a>
                                   ))}

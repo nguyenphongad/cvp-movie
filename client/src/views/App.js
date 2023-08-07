@@ -11,6 +11,7 @@ import { withErrorBoundary } from 'react-error-boundary';
 import RenderErrorBounDary from '../components/error/RenderErrorBounDary';
 import RenderMaintenance from './RenderMaintenance';
 import RouterAuth from '../router/Routes/RouterAuth';
+import RouterVideoPlayMovie from '../router/Routes/RouterVideoPlayMovie';
 // import RenderLoadingStart from "./RenderLoadingStart"
 
 function App() {
@@ -27,19 +28,24 @@ function App() {
             MAINTENANCEPAGE ?
               <RenderMaintenance />
               :
-              AUTH_LOGIN ?
-                <>
-                  <RouterAuth />
-                </>
-                :
-                <>
-                  <RenderHeader />
-                  <RouterBody />
-                  <ScrollToTopRouter />
-                  <RenderFooter />
+              <>
+                {
+                  AUTH_LOGIN ?
+                    <>
+                      <RouterAuth />
+                    </>
+                    :
+                    <>
+                      <RenderHeader />
+                      <RouterBody />
+                      {/* <RouterVideoPlayMovie/> */}
+                      <ScrollToTopRouter />
+                      <RenderFooter />
+                    </>
+                }
 
 
-                </>
+              </>
           }
         </div>
       </BrowserRouter>
